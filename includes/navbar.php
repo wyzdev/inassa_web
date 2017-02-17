@@ -21,7 +21,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding: 5%">
-            <img src="img/logo_inassa.png" height="40" style="border-radius: 50%; border: 1px green solid;">
+            <img src="img/logo_inassa.png" height="40"  style="border-radius: 50%; border: 1px green solid;margin-right:5px;">
             <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Ajouter un utilisateur</a></li>

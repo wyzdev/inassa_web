@@ -17,9 +17,9 @@
 			            <div class="account-wall">
 			                <img class="profile-img" src="img/logo_inassa.png"
 			                    alt="">
-			                <form class="form-signin">
-			                <input type="text" class="form-control" placeholder="Nom d'utilisateur" required autofocus>
-			                <input type="password" class="form-control" placeholder="Mot de passe" required>
+			                <form class="form-signin" method = "post" action = "/inassa_web/accueil.php">
+			                <input type="text" class="form-control" placeholder="Nom d'utilisateur">
+			                <input type="password" class="form-control" placeholder="Mot de passe">
 			                <a href="accueil.php">
 			                	<button class="btn btn-lg btn-primary btn-block" type="submit">
 			                    Connexion</button>

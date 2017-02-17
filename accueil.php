@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/vertical_center.css">
     <title>INASSA - Accueil</title>
   </head>
   
