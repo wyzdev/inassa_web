@@ -15,7 +15,7 @@
     	<?php include("includes/navbar.php"); ?>
 
     	<!-- Espace pour le tableau "HISTORIQUE GLOBAL" -->
-      <div class="container">
+      <div class="container table-responsive">
         <?php include("includes/tableau.php") ?>
       </div>
 
