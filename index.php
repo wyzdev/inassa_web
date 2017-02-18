@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
 		<link rel="stylesheet" type="text/css" href="css/vertical_center.css">
 		<link rel="stylesheet" type="text/css" href="css/login_form.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>INASSA</title>
 	</head>
 

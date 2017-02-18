@@ -3,7 +3,8 @@
   <head>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/vertical_center.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INASSA - Accueil</title>
   </head>
   
@@ -23,24 +24,3 @@
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 </html>
-
-<!-- <script type="text/javascript">
-  $('ul#menu li').click(function(e) {
-      $('.nav li.active').removeClass('active');
-      var $this = $(this);
-      $this.addClass('active');
-      e.preventDefault();
-  });
-</script> -->
-<!-- <script type="text/javascript">
-  $(function() {
-      $(".nav li").click(function() {
-          $(".nav li").removeClass('active');
-          setTimeout(function() {
-              var page = $.QueryString("page");
-              $(".nav li:eq(" + page + ")").addClass("active");
-          }, 3);
-
-      });
-  });
-</script> -->
