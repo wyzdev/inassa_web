@@ -1,0 +1,13 @@
+
+#example_wrapper{
+	text-align: right;
+}
+#example_length, #example_info, .table
+{
+	text-align: left;
+}
+.input-group
+{
+	width:100%;
+}
+

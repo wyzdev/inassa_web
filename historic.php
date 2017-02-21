@@ -3,6 +3,7 @@
 	<head>
 
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/historique.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/dataTablesbootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
@@ -15,7 +16,7 @@
     	<?php include("includes/navbar.php"); ?>
 
     	<!-- Espace pour le tableau "HISTORIQUE GLOBAL" -->
-      <div class="container table-responsive">
+      <div class="container-fluid  table-responsive">
         <?php include("includes/tableau.php") ?>
       </div>
 

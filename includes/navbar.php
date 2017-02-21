@@ -24,13 +24,13 @@
           <img src="img/logo_inassa.png" height="40"  style="border-radius: 50%; border: 1px green solid;margin-right:5px;">
           <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Ajouter un utilisateur</a></li>
+          <li><a href="add_user.php">Ajouter un utilisateur</a></li>
           <li class="divider"></li>
           <li><a href="index.php">Deconnexion</a></li>
         </ul>
       </li>
     </ul>
-    <div class="col-sm-3 col-md-3 navbar-right">
+    <div class="col-sm-5 col-md-5 navbar-right">
         <form class="navbar-form" role="search">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Rechercher un client" name="q">
