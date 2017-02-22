@@ -8,14 +8,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">INASSA</a>
+    <a class="navbar-brand" href="accueil.php">INASSA</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
     <ul class="nav navbar-nav" id="menu">
       <li class="active"><a href="accueil.php">Accueil</a></li>
-      <li><a href="historic.php">Historique</a></li>
+      <li><a href="historique.php">Historique</a></li>
       
     </ul>
     <ul class="nav navbar-nav navbar-right">

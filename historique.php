@@ -17,7 +17,7 @@
 
     	<!-- Espace pour le tableau "HISTORIQUE GLOBAL" -->
       <div class="container-fluid  table-responsive">
-        <?php include("includes/tableau.php") ?>
+        <?php include("includes/tableau_historique.php") ?>
       </div>
 
 	    <!-- Espace FOOTER -->

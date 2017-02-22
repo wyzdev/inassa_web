@@ -1,0 +1,40 @@
+/*barre de recherche dans le navbar*/
+.input-group
+{
+	width:100%;
+}
+
+/*barre de recherche dans le datatable*/
+#example_wrapper{
+	text-align: right;
+}
+
+#example_length, #example_info, .table
+{
+	text-align: left;
+}
+
+
+.center{
+	text-align: center;
+}
+
+.margin-10{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.check-container{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.label{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.account-wall{
+	margin-bottom: 20px;
+}
