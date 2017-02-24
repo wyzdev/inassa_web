@@ -1,36 +1,16 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
-		<link rel="stylesheet" type="text/css" href="css/vertical_center.css">
-		<link rel="stylesheet" type="text/css" href="css/login_form.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>INASSA</title>
-	</head>
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @since         0.10.0
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
 
-
-	<body>
-		<div class="container-fluid vertical-center">
-			<div class="container">
-			    <div class="row">
-			        <div class="col-sm-6 col-md-4 col-md-offset-4">
-			            <div class="account-wall">
-			                <img class="profile-img" src="img/logo_inassa.png"
-			                    alt="">
-			                <form class="form-signin" method = "post" action = "/inassa_web/accueil.php">
-			                <input type="text" class="form-control" placeholder="Nom d'utilisateur">
-			                <input type="password" class="form-control" placeholder="Mot de passe">
-			                <a href="accueil.php">
-			                	<button class="btn btn-lg btn-primary btn-block" type="submit">
-			                    Connexion</button>
-			                </a>
-			                </form>
-			            </div>
-			        </div>
-			    </div>
-			</div>
-		</div>
-	    
-	</body>
-</html>
+require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';

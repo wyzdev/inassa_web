@@ -1,0 +1,23 @@
+.dropdown-toggle{
+	padding-top: 5%  !important;
+	padding-bottom: 5%  !important;
+	margin: 0px;
+	display: inline-block; width: 70px;
+	width: 100%;
+	text-align: center;
+}
+
+.dropdown {
+	padding: 0px;
+	padding: 0px !important;
+}
+
+
+.dropdown-toggle  img{
+	border-radius: 50%;
+	border: 1px green solid;
+}
+
+.navbar-bottom{
+	margin-bottom: 0;
+}
