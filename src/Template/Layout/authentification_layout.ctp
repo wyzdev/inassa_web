@@ -18,8 +18,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('bootstrap') ?>
-    <?= $this->Html->css('bootstrap-theme') ?>
+    <?= $this->Html->css('bootstrap/bootstrap') ?>
+    <?= $this->Html->css('bootstrap/bootstrap-theme') ?>
     <?php //$this->Html->css('vertical_center') ?>
     <?= $this->Html->css('login_form') ?>
 
@@ -31,7 +31,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
   <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="accueil.php">INASSA</a>
+        <?= $this->Html->link('INASSA', ['controller' => 'users', 'action' => 'login'], ['class' => 'navbar-brand']);?>
     </div>
   </nav>
 

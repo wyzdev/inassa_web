@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fb8aba01-544d-4d80-afba-69fea2c30bdc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inassa_web.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/Migrations/20170227165758_Migrate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logs/cli-error.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/ClientsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Users/addusers.ctp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Users/login.ctp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Users/test.ctp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmp/bake/Bake-config-skeleton-ctp.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controller/AuthentificationsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controller/SearchclientsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_debug_kit_en__u_s" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/base.css" afterPath="$PROJECT_DIR$/webroot/css/cake/base.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap-theme.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap-theme.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap-theme.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap-theme.min.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap.css" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.min.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/cake.css" afterPath="$PROJECT_DIR$/webroot/css/cake/cake.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.bootstrap.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.bootstrap4.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.bootstrap4.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.bootstrap4.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.bootstrap4.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.foundation.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.foundation.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.foundation.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.foundation.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.jqueryui.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.jqueryui.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.jqueryui.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.jqueryui.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.material.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.material.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.material.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.material.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.semanticui.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.semanticui.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.semanticui.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.semanticui.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.uikit.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.uikit.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/dataTables.uikit.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/dataTables.uikit.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/home.css" afterPath="$PROJECT_DIR$/webroot/css/cake/home.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/jquery.dataTables.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/jquery.dataTables.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/jquery.dataTables.min.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/jquery.dataTables.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/css/jquery.dataTables_themeroller.css" afterPath="$PROJECT_DIR$/webroot/css/data_table/jquery.dataTables_themeroller.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/img/cake-logo.png" afterPath="$PROJECT_DIR$/webroot/img/cake/cake-logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/img/cake.icon.png" afterPath="$PROJECT_DIR$/webroot/img/cake/cake.icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/img/cake.logo.svg" afterPath="$PROJECT_DIR$/webroot/img/cake/cake.logo.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/img/cake.power.gif" afterPath="$PROJECT_DIR$/webroot/img/cake/cake.power.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/bootstrap.js" afterPath="$PROJECT_DIR$/webroot/js/bootstrap/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/webroot/js/bootstrap/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.bootstrap4.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.bootstrap4.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.bootstrap4.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.bootstrap4.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.foundation.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.foundation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.foundation.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.foundation.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.jqueryui.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.jqueryui.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.jqueryui.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.jqueryui.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.material.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.material.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.material.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.material.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.semanticui.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.semanticui.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.semanticui.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.semanticui.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.uikit.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.uikit.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/dataTables.uikit.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/dataTables.uikit.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/empty" afterPath="$PROJECT_DIR$/src/Template/Clients/gestion.ctp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/jquery.dataTables.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webroot/js/jquery.dataTables.min.js" afterPath="$PROJECT_DIR$/webroot/js/data_table/jquery.dataTables.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_addresses" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_addresses" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_locals" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_locals" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_logs" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_logs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_users" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_users" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_cake_en__u_s" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_cake_en__u_s" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/debug_kit.sqlite" afterPath="$PROJECT_DIR$/tmp/debug_kit.sqlite" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/favicon.ico" afterPath="$PROJECT_DIR$/webroot/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/images/Sorting icons.psd" afterPath="$PROJECT_DIR$/webroot/images/Sorting icons.psd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/images/favicon.ico" afterPath="$PROJECT_DIR$/webroot/images/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/images/sort_asc.png" afterPath="$PROJECT_DIR$/webroot/images/sort_asc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/images/sort_asc_disabled.png" afterPath="$PROJECT_DIR$/webroot/images/sort_asc_disabled.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/images/sort_both.png" afterPath="$PROJECT_DIR$/webroot/images/sort_both.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/images/sort_desc.png" afterPath="$PROJECT_DIR$/webroot/images/sort_desc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/images/sort_desc_disabled.png" afterPath="$PROJECT_DIR$/webroot/images/sort_desc_disabled.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.php" afterPath="$PROJECT_DIR$/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/debug.log" afterPath="$PROJECT_DIR$/logs/debug.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/error.log" afterPath="$PROJECT_DIR$/logs/error.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AddressesController.php" afterPath="$PROJECT_DIR$/src/Controller/AddressesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AddusersController.php" afterPath="$PROJECT_DIR$/src/Controller/AddusersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AppController.php" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/HistoriquesController.php" afterPath="$PROJECT_DIR$/src/Controller/HistoriquesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/LocalsController.php" afterPath="$PROJECT_DIR$/src/Controller/LocalsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/LogsController.php" afterPath="$PROJECT_DIR$/src/Controller/LogsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/UsersController.php" afterPath="$PROJECT_DIR$/src/Controller/UsersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Entity/Address.php" afterPath="$PROJECT_DIR$/src/Model/Entity/Address.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Entity/Local.php" afterPath="$PROJECT_DIR$/src/Model/Entity/Local.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Entity/Log.php" afterPath="$PROJECT_DIR$/src/Model/Entity/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Entity/User.php" afterPath="$PROJECT_DIR$/src/Model/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Table/AddressesTable.php" afterPath="$PROJECT_DIR$/src/Model/Table/AddressesTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Table/LocalsTable.php" afterPath="$PROJECT_DIR$/src/Model/Table/LocalsTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Table/LogsTable.php" afterPath="$PROJECT_DIR$/src/Model/Table/LogsTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Table/UsersTable.php" afterPath="$PROJECT_DIR$/src/Model/Table/UsersTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Addresses/add.ctp" afterPath="$PROJECT_DIR$/src/Template/Addresses/add.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Addresses/edit.ctp" afterPath="$PROJECT_DIR$/src/Template/Addresses/edit.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Addresses/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Addresses/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Addresses/view.ctp" afterPath="$PROJECT_DIR$/src/Template/Addresses/view.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Addusers/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Addusers/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Authentifications/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Authentifications/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Historiques/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Historiques/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Layout/authentification_layout.ctp" afterPath="$PROJECT_DIR$/src/Template/Layout/authentification_layout.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Layout/default.ctp" afterPath="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Locals/add.ctp" afterPath="$PROJECT_DIR$/src/Template/Locals/add.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Locals/edit.ctp" afterPath="$PROJECT_DIR$/src/Template/Locals/edit.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Locals/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Locals/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Locals/view.ctp" afterPath="$PROJECT_DIR$/src/Template/Locals/view.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Logs/add.ctp" afterPath="$PROJECT_DIR$/src/Template/Logs/add.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Logs/edit.ctp" afterPath="$PROJECT_DIR$/src/Template/Logs/edit.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Logs/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Logs/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Logs/view.ctp" afterPath="$PROJECT_DIR$/src/Template/Logs/view.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Searchclients/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Searchclients/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Users/add.ctp" afterPath="$PROJECT_DIR$/src/Template/Users/add.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Users/edit.ctp" afterPath="$PROJECT_DIR$/src/Template/Users/edit.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Users/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Users/index.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Users/view.ctp" afterPath="$PROJECT_DIR$/src/Template/Users/view.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Fixture/AddressesFixture.php" afterPath="$PROJECT_DIR$/tests/Fixture/AddressesFixture.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Fixture/LocalsFixture.php" afterPath="$PROJECT_DIR$/tests/Fixture/LocalsFixture.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Fixture/LogsFixture.php" afterPath="$PROJECT_DIR$/tests/Fixture/LogsFixture.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Fixture/UsersFixture.php" afterPath="$PROJECT_DIR$/tests/Fixture/UsersFixture.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Controller/AddressesControllerTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/AddressesControllerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Controller/LocalsControllerTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/LocalsControllerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Controller/LogsControllerTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/LogsControllerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Controller/UsersControllerTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/UsersControllerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/AddressesTableTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/AddressesTableTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/LocalsTableTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/LocalsTableTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/LogsTableTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/LogsTableTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/UsersTableTest.php" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/UsersTableTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Controller-controller-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Controller-controller-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-add-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-add-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-delete-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-delete-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-edit-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-edit-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-index-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-index-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-view-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-view-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-form-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Element-form-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Layout-default-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Layout-default-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Model-entity-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Model-entity-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-Model-table-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-Model-table-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-tests-fixture-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-tests-fixture-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/Bake-tests-test-case-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/Bake-tests-test-case-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/add-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/add-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/edit-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/edit-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/index-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/index-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bake/view-ctp.php" afterPath="$PROJECT_DIR$/tmp/bake/view-ctp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/css/accueil.css" afterPath="$PROJECT_DIR$/webroot/css/accueil.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/css/add_user.css" afterPath="$PROJECT_DIR$/webroot/css/add_user.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/css/historique.css" afterPath="$PROJECT_DIR$/webroot/css/historique.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/css/navbar.css" afterPath="$PROJECT_DIR$/webroot/css/navbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/jquery.js" afterPath="$PROJECT_DIR$/webroot/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/jquery.min.js" afterPath="$PROJECT_DIR$/webroot/js/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/script_datatable.js" afterPath="$PROJECT_DIR$/webroot/js/script_datatable.js" />
+    </list>
+    <ignored path="inassa_web.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="inassa_web" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="addusers.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Users/addusers.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="17" />
+              <folding>
+                <marker date="1488904170471" expanded="true" signature="4135:4256" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gestion.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Clients/gestion.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Historiques/index.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/UsersController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="815">
+              <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.ctp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Template/Layout/default.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="59" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Users/test.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Users/view.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersTable.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Table/UsersTable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="137" column="47" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script_datatable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webroot/js/script_datatable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Template/Layout/authentification_layout.ctp" />
+        <option value="$PROJECT_DIR$/src/Controller/ClientsController.php" />
+        <option value="$PROJECT_DIR$/config/routes.php" />
+        <option value="$PROJECT_DIR$/webroot/css/navbar.css" />
+        <option value="$PROJECT_DIR$/src/Controller/AppController.php" />
+        <option value="$PROJECT_DIR$/webroot/css/add_user.css" />
+        <option value="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.css" />
+        <option value="$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/src/Template/Users/addusers.ctp" />
+        <option value="$PROJECT_DIR$/webroot/js/script_datatable.js" />
+        <option value="$PROJECT_DIR$/src/Template/Historiques/index.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Users/test.ctp" />
+        <option value="$PROJECT_DIR$/src/Model/Table/UsersTable.php" />
+        <option value="$PROJECT_DIR$/src/Template/Clients/gestion.ctp" />
+        <option value="$PROJECT_DIR$/src/Controller/UsersController.php" />
+        <option value="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="27" />
+    <option name="width" value="1368" />
+    <option name="height" value="742" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb8aba01-544d-4d80-afba-69fea2c30bdc" name="Default" comment="" />
+      <created>1488819174819</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1488819174819</updated>
+      <workItem from="1488819179357" duration="20381000" />
+      <workItem from="1488900306254" duration="14037000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="34418000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20241691" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Controller/ClientsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/css/navbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="26" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/fonts/glyphicons-halflings-regular.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="287" column="6" selection-start-line="287" selection-start-column="5" selection-end-line="287" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AddusersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Addusers/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="73" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Searchclients/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/User.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="4" column="3413" selection-start-line="4" selection-start-column="3413" selection-end-line="4" selection-end-column="3413" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/css/bootstrap/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="266" column="317" selection-start-line="266" selection-start-column="317" selection-end-line="266" selection-end-column="317" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/css/add_user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Users/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Users/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Layout/authentification_layout.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="23" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Layout/error.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/css/login_form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Users/login.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="6" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/script_datatable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Users/view.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Users/addusers.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <marker date="1488904170471" expanded="true" signature="4135:4256" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Users/test.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Table/UsersTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="137" column="47" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Historiques/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="815">
+          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Clients/gestion.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Layout/default.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="59" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

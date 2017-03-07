@@ -19,11 +19,10 @@ class UsersController extends AppController
     public function index()
     {
         //debug($this->request);
-        /*$users = $this->paginate($this->Users);
+        $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
-        $this->set('_serialize', ['users']);*/
-        die('salut');
+        $this->set('_serialize', ['users']);
     }
 
     /**
@@ -108,4 +107,80 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/*    public function beforeFilter() {
+        //parent::beforeFilter();
+        // Allow users to register and logout.
+        //$this->Auth->allow('add', 'logout');
+    }*/
+
+
+    public function addusers(){
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user->password = 'admin123';
+            $user->status = 1;
+            $user->first_login = 1;
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__("L'utilisateur a été sauvegardé."));
+                return $this->redirect(['action' => 'addusers']);
+            }
+            $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
+        }
+        $this->set('user', $user);
+
+        $users = $this->paginate($this->Users);
+
+        $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
+    }
+
+    public function login() {
+        $this->viewBuilder()->setLayout('authentification_layout');
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
+            }
+            $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayer encore'));
+        }
+    }
+
+    public function logout() {
+        return $this->redirect($this->Auth->logout());
+    }
+
+    public function changepassword(){
+        $user =$this->Users->get($this->Auth->user('id'));
+        if (!empty($this->request->data)) {
+            $user = $this->Users->patchEntity($user,
+                [
+                    'password1' => $this->request->data['password1'],
+                    'password2' => $this->request->data['password2']
+                ],
+                ['validate' => 'password'] );
+            $user->first_login = 0;
+            if ($this->Users->save($user)) {
+                $this->Flash->success('The password is successfully changed');
+
+                $this->Auth->setUser($user);
+                $this->redirect(
+                    [
+                        'controller' => 'clients',
+                        'action' => 'gestion'
+                    ]);
+            } else {
+                $this->Flash->error('There was an error during the save!');
+            }
+        }
+    }
+
+    public function test(){
+
+    }
+
 }

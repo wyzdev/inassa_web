@@ -17,74 +17,85 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('title'); ?>
     </title>
     <?= $this->Html->meta('icon'); ?>
-    <?= $this->Html->css('bootstrap'); ?>
-    <?= $this->Html->css('bootstrap-theme'); ?>
+    <?= $this->Html->css('bootstrap/bootstrap'); ?>
+    <?= $this->Html->css('bootstrap/bootstrap-theme'); ?>
+    <?= $this->Html->css('login_form') ?>
     <?= $this->Html->css('navbar'); ?>
     <?= $this->fetch('meta'); ?>
     <?= $this->fetch('css'); ?>
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="accueil.php">INASSA</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <?= $this->Html->link('INASSA', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'navbar-brand']); ?>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-      <ul class="nav navbar-nav" id="menu">
-        <li class="active"><a href="accueil.php">Accueil</a></li>
-        <li><a href="historique.php">Historique</a></li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="img/logo_inassa.png" height="40"  style="border-radius: 50%; border: 1px green solid;margin-right:5px;">
-            <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="add_user.php">Ajouter un utilisateur</a></li>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id="menu">
+            <li class='active'><?= $this->Html->link('Accueil', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'active']); ?></li>
+            <li><?= $this->Html->link('Historique', ['controller' => 'historiques']); ?></li>
+            <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
+                <li><?= $this->Html->link('Ajouter un utilisateur', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown']); ?></li>
+            <?php } ?>
             <li class="divider"></li>
-            <li><a href="index.php">Deconnexion</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="col-sm-5 col-md-5 navbar-right">
-          <form class="navbar-form" role="search">
-          <div class="input-group">
-              <input type="text" class="form-control" placeholder="Rechercher un client" name="q">
-              <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-              </div>
-          </div>
-          </form>
-      </div>
+            <li><?= $this->Html->link('Deconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown']); ?></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown img-dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <?= $this->Html->image('logo_inassa.png', ['height' => '40', 'class' => 'img-navbar']); ?>
+                    <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
+                        <li><?= $this->Html->link('Ajouter un utilisateur', ['controller' => 'users', 'action' => 'addusers']); ?></li>
+                        <li class="divider"></li>
+                    <?php } ?>
+                    <li><?= $this->Html->link('Deconnexion', ['controller' => 'users', 'action' => 'logout']); ?></li>
+                </ul>
+            </li>
+
+
+        </ul>
+        <div class="col-sm-5 col-md-5 navbar-right">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Rechercher un client" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div><!-- /.navbar-collapse -->
-  </nav>
-    <?= $this->Flash->render(); ?>
+</nav>
+<?= $this->Flash->render(); ?>
 
-    <!-- Cette Helper permet d'afficher le contenu de la page actuelle -->
-    <?= $this->fetch('content'); ?>
+<!-- Cette Helper permet d'afficher le contenu de la page actuelle -->
+<?= $this->fetch('content'); ?>
 
-    <footer class="navbar navbar-default navbar-bottom">
-      <div class="container">
+<footer class="navbar navbar-default navbar-bottom">
+    <div class="container">
         <p class="navbar-text pull-left">Copyright © INASSA 2017
         </p>
-      </div>
-    </footer>
-  
-  <?= $this->fetch('script'); ?>
+    </div>
+</footer>
+
+<?= $this->fetch('script'); ?>
 </body>
 
-<?= $this->Html->script('jquery.min')?>
-<?= $this->Html->script('bootstrap')?>
-<?= $this->Html->script('jquery.dataTables.min'); ?>
-<?= $this->Html->script('dataTables.bootstrap.min'); ?>
+<?= $this->Html->script('jquery.min') ?>
+<?= $this->Html->script('bootstrap/bootstrap') ?>
+<?= $this->Html->script('data_table/jquery.dataTables.min'); ?>
+<?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>
 <?= $this->Html->script('script_datatable'); ?>
 </html>

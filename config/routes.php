@@ -49,6 +49,17 @@ Router::scope('/users',
 
 Router::defaultRouteClass(DashedRoute::class);
 
+Router::scope('/users', 
+    ['controller' => 'Users'], 
+    function ($routes){
+        $routes->connect('/login', ['action' => 'login']);
+    });
+
+Router::scope('/clients',
+    ['controller' => 'Clients'],
+    function ($routes){
+        $routes->connect('/gestion', ['action' => 'gestion']);
+    });
 Router::scope('/', function (RouteBuilder $routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

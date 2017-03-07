@@ -43,7 +43,7 @@ class UsersTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
-        $validator
+        /*$validator
             ->integer('id')
             ->allowEmpty('id', 'create');
 
@@ -82,6 +82,65 @@ class UsersTable extends Table
             ->boolean('first_login')
             ->requirePresence('first_login', 'create')
             ->notEmpty('first_login');
+
+        return $validator;*/
+        return $validator
+            ->notEmpty('username', "Un nom d'utilisateur est nécessaire")
+            ->notEmpty('password', 'Un mot de passe est nécessaire');
+    }
+
+    public function validationPassword(Validator $validator)
+    {
+        $validator
+            ->add('password1',
+                [
+                    'length' =>
+                        [
+                            'rule' =>
+                                [
+                                    'minLength', 6
+                                ],
+                            'message' => 'The password have to be at least 6 characters!',
+                        ]
+                ])
+            ->add('password1',
+                [
+                    'match' =>
+                        [
+                            'rule' =>
+                                [
+                                    'compareWith',
+                                    'password2'
+                                ],
+                            'message' => 'The passwords does not match!',
+                        ]
+                ])
+            ->notEmpty('password1');
+        $validator
+            ->add('password2',
+                ['length' =>
+                    [
+                        'rule' =>
+                            [
+                                'minLength',
+                                6
+                            ],
+                        'message' => 'The password have to be at least 6 characters!',
+                    ]
+                ])
+            ->add('password2',
+                [
+                    'match' =>
+                        [
+                            'rule' =>
+                                [
+                                    'compareWith',
+                                    'password1'
+                                ],
+                            'message' => 'The passwords does not match!',
+                        ]
+                ])
+            ->notEmpty('password2');
 
         return $validator;
     }
