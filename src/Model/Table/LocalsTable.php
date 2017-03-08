@@ -9,7 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Locals Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Addresses
  * @property \Cake\ORM\Association\HasMany $Logs
  *
  * @method \App\Model\Entity\Local get($primaryKey, $options = [])
@@ -37,10 +36,6 @@ class LocalsTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->belongsTo('Addresses', [
-            'foreignKey' => 'address_id',
-            'joinType' => 'INNER'
-        ]);
         $this->hasMany('Logs', [
             'foreignKey' => 'local_id'
         ]);
@@ -59,28 +54,15 @@ class LocalsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->integer('local_code')
-            ->requirePresence('local_code', 'create')
-            ->notEmpty('local_code');
+            ->numeric('latitude')
+            ->requirePresence('latitude', 'create')
+            ->notEmpty('latitude');
 
         $validator
-            ->requirePresence('local_name', 'create')
-            ->notEmpty('local_name');
+            ->numeric('longitude')
+            ->requirePresence('longitude', 'create')
+            ->notEmpty('longitude');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['address_id'], 'Addresses'));
-
-        return $rules;
     }
 }

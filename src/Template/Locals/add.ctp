@@ -7,8 +7,6 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Locals'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Addresses'), ['controller' => 'Addresses', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Address'), ['controller' => 'Addresses', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Logs'), ['controller' => 'Logs', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Log'), ['controller' => 'Logs', 'action' => 'add']) ?></li>
     </ul>
@@ -18,9 +16,8 @@
     <fieldset>
         <legend><?= __('Add Local') ?></legend>
         <?php
-            echo $this->Form->input('local_code');
-            echo $this->Form->input('address_id', ['options' => $addresses]);
-            echo $this->Form->input('local_name');
+            echo $this->Form->input('latitude');
+            echo $this->Form->input('longitude');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

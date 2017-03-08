@@ -7,8 +7,6 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Local'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Addresses'), ['controller' => 'Addresses', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Address'), ['controller' => 'Addresses', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Logs'), ['controller' => 'Logs', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Log'), ['controller' => 'Logs', 'action' => 'add']) ?></li>
     </ul>
@@ -19,9 +17,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('local_code') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('address_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('local_name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('latitude') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('longitude') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,9 +26,8 @@
             <?php foreach ($locals as $local): ?>
             <tr>
                 <td><?= $this->Number->format($local->id) ?></td>
-                <td><?= $this->Number->format($local->local_code) ?></td>
-                <td><?= $local->has('address') ? $this->Html->link($local->address->id, ['controller' => 'Addresses', 'action' => 'view', $local->address->id]) : '' ?></td>
-                <td><?= h($local->local_name) ?></td>
+                <td><?= $this->Number->format($local->latitude) ?></td>
+                <td><?= $this->Number->format($local->longitude) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $local->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $local->id]) ?>

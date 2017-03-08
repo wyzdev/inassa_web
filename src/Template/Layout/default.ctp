@@ -43,7 +43,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <li class='active'><?= $this->Html->link('Accueil', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'active']); ?></li>
             <li><?= $this->Html->link('Historique', ['controller' => 'historiques']); ?></li>
             <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
-                <li><?= $this->Html->link('Ajouter un utilisateur', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown']); ?></li>
+                <li><?= $this->Html->link('Parametres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown']); ?></li>
             <?php } ?>
             <li class="divider"></li>
             <li><?= $this->Html->link('Deconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown']); ?></li>
@@ -53,10 +53,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <li class="dropdown img-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <?= $this->Html->image('logo_inassa.png', ['height' => '40', 'class' => 'img-navbar']); ?>
+                    <?= '<b>'.$this->request->session()->read('Auth.User')['first_name']. '</b>' ?>
                     <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
-                        <li><?= $this->Html->link('Ajouter un utilisateur', ['controller' => 'users', 'action' => 'addusers']); ?></li>
+                        <li><?= $this->Html->link('Parametres', ['controller' => 'users', 'action' => 'addusers']); ?></li>
                         <li class="divider"></li>
                     <?php } ?>
                     <li><?= $this->Html->link('Deconnexion', ['controller' => 'users', 'action' => 'logout']); ?></li>

@@ -10,3 +10,25 @@ Stack Trace:
 #4 {main}
 
 
+2017-03-08 21:47:57 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'inassa_db.addresses' doesn't exist
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'addresses', Array, Object(Cake\Database\Schema\TableSchema))
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(63): Cake\Database\Schema\Collection->describe('addresses', Array)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/ORM/Table.php(533): Cake\Database\Schema\CachedCollection->describe('addresses')
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/ORM/Table.php(590): Cake\ORM\Table->getSchema()
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(266): Cake\ORM\Table->schema()
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(216): Bake\Shell\Task\ModelTask->findBelongsTo(Object(App\Model\Table\AddressesTable), Array)
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(App\Model\Table\AddressesTable))
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(App\Model\Table\AddressesTable), 'addresses', 'Addresses')
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('Addresses')
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/BakeShell.php(257): Bake\Shell\Task\ModelTask->main('Addresses')
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Addresses', 0)
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/BakeShell.php(260): Cake\Collection\Collection->each(Object(Closure))
+#12 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(458): Bake\Shell\BakeShell->all('addresses')
+#13 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Cake\Console\Shell->runCommand(Array, true, Array)
+#14 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#15 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#16 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#17 {main}
+
+

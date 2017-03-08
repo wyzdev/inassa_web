@@ -18,9 +18,6 @@ class LocalsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Addresses']
-        ];
         $locals = $this->paginate($this->Locals);
 
         $this->set(compact('locals'));
@@ -37,7 +34,7 @@ class LocalsController extends AppController
     public function view($id = null)
     {
         $local = $this->Locals->get($id, [
-            'contain' => ['Addresses', 'Logs']
+            'contain' => ['Logs']
         ]);
 
         $this->set('local', $local);
@@ -61,8 +58,7 @@ class LocalsController extends AppController
             }
             $this->Flash->error(__('The local could not be saved. Please, try again.'));
         }
-        $addresses = $this->Locals->Addresses->find('list', ['limit' => 200]);
-        $this->set(compact('local', 'addresses'));
+        $this->set(compact('local'));
         $this->set('_serialize', ['local']);
     }
 
@@ -87,8 +83,7 @@ class LocalsController extends AppController
             }
             $this->Flash->error(__('The local could not be saved. Please, try again.'));
         }
-        $addresses = $this->Locals->Addresses->find('list', ['limit' => 200]);
-        $this->set(compact('local', 'addresses'));
+        $this->set(compact('local'));
         $this->set('_serialize', ['local']);
     }
 

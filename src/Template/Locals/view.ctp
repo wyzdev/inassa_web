@@ -10,8 +10,6 @@
         <li><?= $this->Form->postLink(__('Delete Local'), ['action' => 'delete', $local->id], ['confirm' => __('Are you sure you want to delete # {0}?', $local->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Locals'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Local'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Addresses'), ['controller' => 'Addresses', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Address'), ['controller' => 'Addresses', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Logs'), ['controller' => 'Logs', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Log'), ['controller' => 'Logs', 'action' => 'add']) ?> </li>
     </ul>
@@ -20,20 +18,16 @@
     <h3><?= h($local->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Address') ?></th>
-            <td><?= $local->has('address') ? $this->Html->link($local->address->id, ['controller' => 'Addresses', 'action' => 'view', $local->address->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Local Name') ?></th>
-            <td><?= h($local->local_name) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($local->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Local Code') ?></th>
-            <td><?= $this->Number->format($local->local_code) ?></td>
+            <th scope="row"><?= __('Latitude') ?></th>
+            <td><?= $this->Number->format($local->latitude) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Longitude') ?></th>
+            <td><?= $this->Number->format($local->longitude) ?></td>
         </tr>
     </table>
     <div class="related">

@@ -139,6 +139,13 @@ class UsersController extends AppController
     }
 
     public function login() {
+        if ($this->request->session()->read('Auth.User')){
+            $this->redirect(
+                [
+                    'controller' => 'clients',
+                    'action'     => 'gestion'
+                ]);
+        }
         $this->viewBuilder()->setLayout('authentification_layout');
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
@@ -146,7 +153,7 @@ class UsersController extends AppController
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
             }
-            $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayer encore'));
+            $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayez encore'));
         }
     }
 

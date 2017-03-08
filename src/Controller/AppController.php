@@ -50,8 +50,7 @@ class AppController extends Controller
             ],
             'logoutRedirect' => [
                 'controller' => 'users',
-                'action' => 'logout',
-                'home'
+                'action' => 'login'
             ]
         ]);
 

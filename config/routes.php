@@ -60,6 +60,8 @@ Router::scope('/clients',
     function ($routes){
         $routes->connect('/gestion', ['action' => 'gestion']);
     });
+
+
 Router::scope('/', function (RouteBuilder $routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

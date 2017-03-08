@@ -17,7 +17,6 @@ class LocalsControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.locals',
-        'app.addresses',
         'app.logs'
     ];
 

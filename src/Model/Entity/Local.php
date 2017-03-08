@@ -7,11 +7,9 @@ use Cake\ORM\Entity;
  * Local Entity
  *
  * @property int $id
- * @property int $local_code
- * @property int $address_id
- * @property string $local_name
+ * @property float $latitude
+ * @property float $longitude
  *
- * @property \App\Model\Entity\Address $address
  * @property \App\Model\Entity\Log[] $logs
  */
 class Local extends Entity
