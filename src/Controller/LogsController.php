@@ -18,9 +18,6 @@ class LogsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Locals']
-        ];
         $logs = $this->paginate($this->Logs);
 
         $this->set(compact('logs'));
@@ -37,7 +34,7 @@ class LogsController extends AppController
     public function view($id = null)
     {
         $log = $this->Logs->get($id, [
-            'contain' => ['Locals']
+            'contain' => []
         ]);
 
         $this->set('log', $log);
@@ -61,8 +58,7 @@ class LogsController extends AppController
             }
             $this->Flash->error(__('The log could not be saved. Please, try again.'));
         }
-        $locals = $this->Logs->Locals->find('list', ['limit' => 200]);
-        $this->set(compact('log', 'locals'));
+        $this->set(compact('log'));
         $this->set('_serialize', ['log']);
     }
 
@@ -87,8 +83,7 @@ class LogsController extends AppController
             }
             $this->Flash->error(__('The log could not be saved. Please, try again.'));
         }
-        $locals = $this->Logs->Locals->find('list', ['limit' => 200]);
-        $this->set(compact('log', 'locals'));
+        $this->set(compact('log'));
         $this->set('_serialize', ['log']);
     }
 
@@ -110,5 +105,14 @@ class LogsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+
+    public function historique()
+    {
+        $logs = $this->paginate($this->Logs);
+
+        $this->set(compact('logs'));
+        $this->set('_serialize', ['logs']);
     }
 }

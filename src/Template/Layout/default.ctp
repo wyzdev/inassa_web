@@ -40,10 +40,27 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" id="menu">
-            <li class='active'><?= $this->Html->link('Accueil', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'active']); ?></li>
-            <li><?= $this->Html->link('Historique', ['controller' => 'historiques']); ?></li>
+            <?php if ($this->request->action == 'gestion')
+                echo "<li class='active'>";
+            else
+                echo "<li>";?>
+            <?= $this->Html->link('Accueil', ['controller' => 'clients', 'action' => 'gestion']); ?></li>
+
+            <?php if ($this->request->action == 'historique')
+                echo "<li class='active'>";
+            else
+                echo "<li>";?>
+
+            <?= $this->Html->link('Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
+
             <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
-                <li><?= $this->Html->link('Parametres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown']); ?></li>
+                <?php
+                if ($this->request->action == 'addusers')
+                    echo "<li class='active'>";
+                else
+                    echo "<li>";
+                ?>
+                <?= $this->Html->link('Parametres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown']); ?></li>
             <?php } ?>
             <li class="divider"></li>
             <li><?= $this->Html->link('Deconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown']); ?></li>
@@ -52,12 +69,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown img-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <?= $this->Html->image('logo_inassa.png', ['height' => '40', 'class' => 'img-navbar']); ?>
+                    <?= $this->Html->image('logo_inassa.png', ['height' => '36', 'class' => 'img-navbar']); ?>
                     <?= '<b>'.$this->request->session()->read('Auth.User')['first_name']. '</b>' ?>
                     <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
-                        <li><?= $this->Html->link('Parametres', ['controller' => 'users', 'action' => 'addusers']); ?></li>
+                        <?php
+                        if ($this->request->action == 'addusers')
+                            echo "<li class='active'>";
+                        else
+                            echo "<li>";
+                        ?>
+                        <?= $this->Html->link('Parametres', ['controller' => 'users', 'action' => 'addusers']); ?></li>
                         <li class="divider"></li>
                     <?php } ?>
                     <li><?= $this->Html->link('Deconnexion', ['controller' => 'users', 'action' => 'logout']); ?></li>

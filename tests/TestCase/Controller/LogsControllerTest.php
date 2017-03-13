@@ -16,9 +16,7 @@ class LogsControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.logs',
-        'app.locals',
-        'app.addresses'
+        'app.logs'
     ];
 
     /**

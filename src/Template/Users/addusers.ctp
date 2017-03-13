@@ -14,8 +14,8 @@
                     <h3 class="center">Ajouter un nouvel utilisateur</h3>
                     <div class="form-signin">
                         <?= $this->Form->create($user); ?>
-                        <?= $this->Form->input('first_name', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Prenom")) ?>
                         <?= $this->Form->input('last_name', array('class' => 'form-control margin-10', 'label'=>false,"placeholder"=>"NOM")) ?>
+                        <?= $this->Form->input('first_name', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Prenom")) ?>
                         <?= $this->Form->input('username', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Nom d'utilisateur")) ?>
                         <?= $this->Form->input('email', array('type' => 'email', 'class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"E-mail")) ?>
                         <?= $this->Form->input('access', array('type' => 'checkbox', 'class' => 'bold', 'value' => 'value-admin', 'label' => 'Admin'))?>
@@ -67,15 +67,15 @@
                                         $checked_status = false;
                                 ?>
                                 <?= $this->Form->create() ?>
-                                    <?= $this->Form->input('actif',
+                                    <?= $this->Form->input('admin',
                                         [
                                             'type' => 'checkbox',
                                             'label' => ' Admin',
-                                            'id' => 'actif',
+                                            'id' => $user->id,
                                             'name' => 'admin',
                                             'value' => 'value-admin',
-                                            'selected' => 1,
-                                            'checked' => $checked_admin
+                                            'checked' => $checked_admin,
+                                            'onclick' => 'updateUserAdmin()'
                                         ]); ?>
                                 <?= $this->Form->end() ?>
                             </td>

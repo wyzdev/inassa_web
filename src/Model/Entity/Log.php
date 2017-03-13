@@ -12,9 +12,8 @@ use Cake\ORM\Entity;
  * @property string $last_name
  * @property \Cake\I18n\Time $date
  * @property bool $status
- * @property int $local_id
- *
- * @property \App\Model\Entity\Local $local
+ * @property float $latitude
+ * @property float $longitude
  */
 class Log extends Entity
 {

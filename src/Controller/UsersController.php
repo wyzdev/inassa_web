@@ -118,6 +118,8 @@ class UsersController extends AppController
 
 
     public function addusers(){
+        if ($this->request->session()->read('Auth.User')['access'] == 0)
+            $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -139,19 +141,22 @@ class UsersController extends AppController
     }
 
     public function login() {
-        if ($this->request->session()->read('Auth.User')){
+        if ($this->request->session()->read('Auth.User'))
             $this->redirect(
                 [
                     'controller' => 'clients',
                     'action'     => 'gestion'
                 ]);
-        }
         $this->viewBuilder()->setLayout('authentification_layout');
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
-                $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
+                if ($user['status']){
+                    $this->Auth->setUser($user);
+                    return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
+                }
+                else
+                    $this->Flash->error(__('Vous n\'etes pas actif dans la base de donnees'));
             }
             $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayez encore'));
         }
@@ -187,7 +192,10 @@ class UsersController extends AppController
     }
 
     public function test(){
-
+        //$this->layout='ajax';
+        // result can be anything coming from $this->data
+        $result =  'Hello Dolly!';
+        $this->set("result", $result);
     }
 
 }

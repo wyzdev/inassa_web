@@ -9,8 +9,8 @@
                     <div class="form-signin">
                         <?= $this->Html->image('logo_inassa.png', ['alt' => 'Logo de INASSA', 'class' => 'profile-img']); ?>
                         <?= $this->Form->create(); ?>
-                            <?= $this->Form->input('username', array('class' => 'margin-10 form-control', 'label'=>false, "placeholder"=>"Username")) ?>
-                            <?= $this->Form->input('password', array('type' => 'password', 'class' => 'margin-10 form-control', 'label'=>false,"placeholder"=>"Password")) ?>
+                            <?= $this->Form->input('username', array('class' => 'margin-10 form-control', 'label'=>false, "placeholder"=>"Nom d'utilisateur")) ?>
+                            <?= $this->Form->input('password', array('type' => 'password', 'class' => 'margin-10 form-control', 'label'=>false,"placeholder"=>"Mot de passe")) ?>
 
                             <?= $this->Form->button('Connexion', ['class' => 'margin-top-20 btn btn-lg btn-primary btn-block']) ?>
                         <?= $this->Form->end(); ?>

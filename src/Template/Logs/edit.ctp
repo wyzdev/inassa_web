@@ -13,8 +13,6 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Logs'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Locals'), ['controller' => 'Locals', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Local'), ['controller' => 'Locals', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="logs form large-9 medium-8 columns content">
@@ -27,7 +25,8 @@
             echo $this->Form->input('last_name');
             echo $this->Form->input('date');
             echo $this->Form->input('status');
-            echo $this->Form->input('local_id', ['options' => $locals]);
+            echo $this->Form->input('latitude');
+            echo $this->Form->input('longitude');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

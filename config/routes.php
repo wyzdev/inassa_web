@@ -42,11 +42,6 @@ use Cake\Routing\Route\DashedRoute;
  *
  */
 
-Router::scope('/users', 
-    ['controller' => 'Users'], function($routes){
-        $routes->connect('/manage/*', ['action' => 'manage']);
-    });
-
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/users', 
@@ -54,6 +49,11 @@ Router::scope('/users',
     function ($routes){
         $routes->connect('/login', ['action' => 'login']);
     });
+
+Router::connect('/utilisateurs/parametres', ['controller' => 'users', 'action' => 'addusers']);
+Router::connect('/login', ['controller' => 'users', 'action' => 'login']);
+Router::connect('/test', ['controller' => 'users', 'action' => 'test']);
+Router::connect('/historiques', ['controller' => 'logs', 'action' => 'historique']);
 
 Router::scope('/clients',
     ['controller' => 'Clients'],

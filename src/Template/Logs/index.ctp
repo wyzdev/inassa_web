@@ -7,8 +7,6 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Log'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Locals'), ['controller' => 'Locals', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Local'), ['controller' => 'Locals', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="logs index large-9 medium-8 columns content">
@@ -22,7 +20,8 @@
                 <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('local_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('latitude') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('longitude') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -35,7 +34,8 @@
                 <td><?= h($log->last_name) ?></td>
                 <td><?= h($log->date) ?></td>
                 <td><?= h($log->status) ?></td>
-                <td><?= $log->has('local') ? $this->Html->link($log->local->id, ['controller' => 'Locals', 'action' => 'view', $log->local->id]) : '' ?></td>
+                <td><?= $this->Number->format($log->latitude) ?></td>
+                <td><?= $this->Number->format($log->longitude) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $log->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $log->id]) ?>

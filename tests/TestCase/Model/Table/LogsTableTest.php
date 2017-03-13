@@ -24,9 +24,7 @@ class LogsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.logs',
-        'app.locals',
-        'app.addresses'
+        'app.logs'
     ];
 
     /**
@@ -69,16 +67,6 @@ class LogsTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

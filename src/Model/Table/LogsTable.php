@@ -9,8 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Logs Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Locals
- *
  * @method \App\Model\Entity\Log get($primaryKey, $options = [])
  * @method \App\Model\Entity\Log newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Log[] newEntities(array $data, array $options = [])
@@ -35,11 +33,6 @@ class LogsTable extends Table
         $this->table('logs');
         $this->displayField('id');
         $this->primaryKey('id');
-
-        $this->belongsTo('Locals', [
-            'foreignKey' => 'local_id',
-            'joinType' => 'INNER'
-        ]);
     }
 
     /**
@@ -67,7 +60,7 @@ class LogsTable extends Table
             ->notEmpty('last_name');
 
         $validator
-            ->dateTime('date')
+            ->date('date')
             ->requirePresence('date', 'create')
             ->notEmpty('date');
 
@@ -76,20 +69,16 @@ class LogsTable extends Table
             ->requirePresence('status', 'create')
             ->notEmpty('status');
 
+        $validator
+            ->decimal('latitude')
+            ->requirePresence('latitude', 'create')
+            ->notEmpty('latitude');
+
+        $validator
+            ->decimal('longitude')
+            ->requirePresence('longitude', 'create')
+            ->notEmpty('longitude');
+
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['local_id'], 'Locals'));
-
-        return $rules;
     }
 }
