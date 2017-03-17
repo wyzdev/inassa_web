@@ -118,7 +118,7 @@ class UsersController extends AppController
 
 
     public function addusers(){
-        if ($this->request->session()->read('Auth.User')['access'] == 0)
+        if (!$this->request->session()->read('Auth.User')['access'])
             $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
@@ -166,16 +166,19 @@ class UsersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
 
-    public function changepassword(){
-        $user =$this->Users->get($this->Auth->user('id'));
+    public function changepassword()
+    {
+        $user = $this->Users->get($this->Auth->user('id'));
+        //$user = $this->Users->newEntity();
         if (!empty($this->request->data)) {
-            $user = $this->Users->patchEntity($user,
-                [
-                    'password1' => $this->request->data['password1'],
-                    'password2' => $this->request->data['password2']
-                ],
-                ['validate' => 'password'] );
-            $user->first_login = 0;
+            $user = $this->Users->patchEntity($user, [
+                'password'      => $this->request->data['password1'],
+                'password1'     => $this->request->data['password1'],
+                'password2'     => $this->request->data['password2']
+            ],
+                ['validate' => 'password']
+            );
+            $user->first_login = false;
             if ($this->Users->save($user)) {
                 $this->Flash->success('The password is successfully changed');
 
@@ -187,10 +190,11 @@ class UsersController extends AppController
                     ]);
             } else {
                 $this->Flash->error('There was an error during the save!');
+                $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
             }
         }
+        $this->set('user',$user);
     }
-
     public function test(){
         //$this->layout='ajax';
         // result can be anything coming from $this->data

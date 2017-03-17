@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Model
@@ -43,7 +44,7 @@ class UsersTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
-        /*$validator
+        $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
 
@@ -83,63 +84,41 @@ class UsersTable extends Table
             ->requirePresence('first_login', 'create')
             ->notEmpty('first_login');
 
-        return $validator;*/
-        return $validator
-            ->notEmpty('username', "Un nom d'utilisateur est nécessaire")
-            ->notEmpty('password', 'Un mot de passe est nécessaire');
+        /*$validator
+            ->notEmpty('title', "Un nom d'utilisateur est nécessaire")
+            ->notEmpty('password', 'Un mot de passe est nécessaire');*/
+        return $validator;
     }
 
-    public function validationPassword(Validator $validator)
+    public function validationPassword(Validator $validator )
     {
         $validator
-            ->add('password1',
-                [
-                    'length' =>
-                        [
-                            'rule' =>
-                                [
-                                    'minLength', 6
-                                ],
-                            'message' => 'The password have to be at least 6 characters!',
-                        ]
-                ])
-            ->add('password1',
-                [
-                    'match' =>
-                        [
-                            'rule' =>
-                                [
-                                    'compareWith',
-                                    'password2'
-                                ],
-                            'message' => 'The passwords does not match!',
-                        ]
-                ])
+            ->add('password1', [
+                'length' => [
+                    'rule' => ['minLength', 6],
+                    'message' => 'The password have to be at least 6 characters!',
+                ]
+            ])
+            ->add('password1',[
+                'match'=>[
+                    'rule'=> ['compareWith','password2'],
+                    'message'=>'The passwords does not match!',
+                ]
+            ])
             ->notEmpty('password1');
         $validator
-            ->add('password2',
-                ['length' =>
-                    [
-                        'rule' =>
-                            [
-                                'minLength',
-                                6
-                            ],
-                        'message' => 'The password have to be at least 6 characters!',
-                    ]
-                ])
-            ->add('password2',
-                [
-                    'match' =>
-                        [
-                            'rule' =>
-                                [
-                                    'compareWith',
-                                    'password1'
-                                ],
-                            'message' => 'The passwords does not match!',
-                        ]
-                ])
+            ->add('password2', [
+                'length' => [
+                    'rule' => ['minLength', 6],
+                    'message' => 'The password have to be at least 6 characters!',
+                ]
+            ])
+            ->add('password2',[
+                'match'=>[
+                    'rule'=> ['compareWith','password1'],
+                    'message'=>'The passwords does not match!',
+                ]
+            ])
             ->notEmpty('password2');
 
         return $validator;

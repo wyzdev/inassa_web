@@ -32,3 +32,166 @@ Stack Trace:
 #17 {main}
 
 
+2017-03-14 18:42:50 Error: [PDOException] SQLSTATE[HY000] [2002] Connection refused
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(47): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=127....', Array)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Connection.php(358): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Database/Connection.php(377): Cake\Database\Connection->getSchemaCollection()
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(951): Cake\Database\Connection->schemaCollection()
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(903): Bake\Shell\Task\ModelTask->_getAllTables()
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(207): Bake\Shell\Task\ModelTask->listAll()
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#12 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'clients', 'Clients')
+#13 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('Clients')
+#14 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/BakeShell.php(257): Bake\Shell\Task\ModelTask->main('Clients')
+#15 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Clients', 0)
+#16 /opt/lampp/htdocs/inassa_web/vendor/cakephp/bake/src/Shell/BakeShell.php(260): Cake\Collection\Collection->each(Object(Closure))
+#17 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(458): Bake\Shell\BakeShell->all('clients')
+#18 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Cake\Console\Shell->runCommand(Array, true, Array)
+#19 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#20 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#21 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#22 {main}
+
+
+2017-03-17 16:52:08 Error: [Symfony\Component\Console\Exception\CommandNotFoundException] Command "CreateLogs" is not defined.
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('CreateLogs')
+#1 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'CreateLogs', 'global_number:s...', 'first_name:stri...', 'last_name:strin...', 'date:datetime', 'status:boolean', 'latitude:decima...', 'longitude:decim...')
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2017-03-17 16:59:20 Error: [InvalidArgumentException] Migration "20170317165321_CreateLogs.php" has the same name as "20170317164712_create_logs.php"
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/CakeManager.php(64): Phinx\Migration\Manager->getMigrations()
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Command/Status.php(70): Migrations\CakeManager->printStatus('default', NULL)
+#2 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Command/Command.php(262): Migrations\Command\Status->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(826): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Status), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'status')
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#12 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#13 {main}
+
+
+2017-03-17 16:59:40 Error: [InvalidArgumentException] Migration "20170317165321_CreateLogs.php" has the same name as "20170317164712_create_logs.php"
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/CakeManager.php(64): Phinx\Migration\Manager->getMigrations()
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Command/Status.php(70): Migrations\CakeManager->printStatus('default', NULL)
+#2 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Command/Command.php(262): Migrations\Command\Status->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(826): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Status), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'status')
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#12 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#13 {main}
+
+
+2017-03-17 17:00:05 Error: [InvalidArgumentException] Migration "20170317165535_CreateLogs.php" has the same name as "20170317164712_create_logs.php"
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/CakeManager.php(64): Phinx\Migration\Manager->getMigrations()
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Command/Status.php(70): Migrations\CakeManager->printStatus('default', NULL)
+#2 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Command/Command.php(262): Migrations\Command\Status->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(826): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Status), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'status')
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#12 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#13 {main}
+
+
+2017-03-17 17:02:58 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Drop" could not be found.
+Exception Attributes: array (
+  'class' => 'Drop',
+)
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(223): Cake\Console\ShellDispatcher->findShell('Drop')
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2017-03-17 17:03:14 Error: [Symfony\Component\Console\Exception\CommandNotFoundException] Command "Drop" is not defined.
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('Drop')
+#1 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'Drop', 'CreateLogs')
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2017-03-17 17:03:20 Error: [Symfony\Component\Console\Exception\CommandNotFoundException] Command "DropLogs" is not defined.
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('DropLogs')
+#1 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'DropLogs')
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2017-03-17 17:03:37 Error: [Symfony\Component\Console\Exception\CommandNotFoundException] Command "drop" is not defined.
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('drop')
+#1 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'drop', 'CreateLogs')
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+
+2017-03-17 17:04:15 Error: [Symfony\Component\Console\Exception\CommandNotFoundException] Command "drop" is not defined.
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('drop')
+#1 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'drop', 'CreateLogs')
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#6 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#7 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#8 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#9 {main}
+
+

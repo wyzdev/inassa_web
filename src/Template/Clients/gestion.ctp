@@ -1,4 +1,6 @@
 <?= $this->Html->css('accueil'); ?>
+<?= $this->assign('title', 'INASSA - Accueil'); ?>
+
 
     <div class="container">
         <!-- <p class="text-center">
@@ -17,7 +19,6 @@
             <div class="status-carte center-horizontal margin-bottom-20">
                 <span class="status">Carte Active : 1Z3E4RTFG</span>
             </div>
-            </p>
 
         </div>
         <div class="center-horizontal container-fluid center-horizontal margin-10">

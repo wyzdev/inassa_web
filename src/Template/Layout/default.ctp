@@ -89,7 +89,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
         </ul>
-        <div class="col-sm-5 col-md-5 navbar-right">
+
+        <?php
+        if ($this->request->action == 'gestion'){
+            echo '<div class="col-sm-5 col-md-5 navbar-right">
             <form class="navbar-form" role="search">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Rechercher un client" name="q">
@@ -99,7 +102,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     </div>
                 </div>
             </form>
-        </div>
+        </div>';
+        }?>
     </div><!-- /.navbar-collapse -->
 </nav>
 <?= $this->Flash->render(); ?>

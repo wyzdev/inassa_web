@@ -61,8 +61,18 @@ Router::scope('/clients',
         $routes->connect('/gestion', ['action' => 'gestion']);
     });
 
+//Dans config/routes.php
+
+/*Router::scope('/', function ($routes) {
+    $routes->extensions(['json']);
+    $routes->resources('Recipes');
+});*/
+
+
 
 Router::scope('/', function (RouteBuilder $routes) {
+    $routes->extensions(['json']);
+    $routes->resources('Recipes');
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
