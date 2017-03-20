@@ -60,7 +60,7 @@ class Initial extends AbstractMigration
                 'limit' => 255,
                 'null' => false,
             ])
-            ->addColumn('date', 'date', [
+            ->addColumn('date', 'timestamp', [
                 'default' => null,
                 'limit' => null,
                 'null' => false,
@@ -81,6 +81,11 @@ class Initial extends AbstractMigration
                 'null' => false,
                 'precision' => 18,
                 'scale' => 15,
+            ])
+            ->addColumn('postal_address', 'string', [
+                'default' => null,
+                'limit' => 255,
+                'null' => false,
             ])
             ->create();
 

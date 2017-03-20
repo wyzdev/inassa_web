@@ -53,18 +53,7 @@
             <tr>
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
-                <td>
-                    <?php
-                    $lat = $log->latitude;
-                    $lng = $log->longitude;
-                    $json = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?latlng=' . $lat . ',' . $lng);
-                    $obj = json_decode($json);
-                    if ($obj->status == 'OK')
-                        echo $obj->results[0]->formatted_address;
-                    else
-                        echo "Il y a quelque chose qui ne marche pas";
-                    ?>
-                </td>
+                <td><?= $log->postal_address ?></td>
                 <td><?= $log->global_number ?></td>
                 <td><?= $log->date ?></td>
                 <td>

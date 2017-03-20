@@ -60,7 +60,7 @@ class LogsTable extends Table
             ->notEmpty('last_name');
 
         $validator
-            ->date('date')
+            ->date('datetime')
             ->requirePresence('date', 'create')
             ->notEmpty('date');
 
