@@ -21,8 +21,8 @@ echo $this->Form->button('Add Info', array(
 $this->Form->end();*/
 ?>
 
-<?php echo $result; ?>
-<?php echo $this->Form->input('your_field', array('id' => 'resultField')); ?>
+<?php /*echo $result; */?><!--
+<?php /*echo $this->Form->input('your_field', array('id' => 'resultField')); */?>
 <script>
     jQuery("#performAjaxLink").click(
         function()
@@ -31,7 +31,7 @@ $this->Form->end();*/
                 type:'POST',
                 async: true,
                 cache: false,
-                url: '<?= \Cake\Routing\Router::Url(['controller' => 'users', 'action' => 'test'], TRUE); ?>',
+                url: '<?/*= \Cake\Routing\Router::Url(['controller' => 'users', 'action' => 'test'], TRUE); */?>',
                 success: function(response) {
                     jQuery('#resultField').val(response);
                 },
@@ -40,4 +40,6 @@ $this->Form->end();*/
             return false;
         }
     );
-</script>
+</script>-->
+
+<?= $this->Html->link("click", [''], ['class' => 'ajax', 'latitude' => 12.34343]);?>

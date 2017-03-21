@@ -122,6 +122,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </body>
 
 <?= $this->Html->script('jquery.min') ?>
+<?= $this->Html->script('printMap') ?>
 <?= $this->Html->script('bootstrap/bootstrap') ?>
 <?= $this->Html->script('data_table/jquery.dataTables.min'); ?>
 <?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>

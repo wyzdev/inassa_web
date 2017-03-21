@@ -53,7 +53,7 @@
             <tr>
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
-                <td><?= $log->postal_address ?></td>
+                <td><?= '<a data-toggle="modal" data-target="#myModal" class="ajax" latitude="'.$log->latitude.'" longitude="'.$log->longitude.'">'.$log->postal_address.'</a>' ?></td>
                 <td><?= $log->global_number ?></td>
                 <td><?= $log->date ?></td>
                 <td>
@@ -67,4 +67,35 @@
         <?php endforeach; ?>
         </tbody>
     </table>
+</div>
+
+
+
+<?= $this->Html->css('Leaflet/leaflet') ?>
+<?= $this->Html->script('Leaflet/leaflet') ?>
+
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Position exacte</h4>
+                </div>
+                <div class="modal-body col-sm-12" id="map-container">
+                    <!--Map-->
+                    <!--<div id="mapid" style="height: 300px; border: 1px solid green;"></div>-->
+                    <!--//Map-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ferme</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
