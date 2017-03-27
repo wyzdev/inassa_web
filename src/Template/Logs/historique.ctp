@@ -53,7 +53,7 @@
             <tr>
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
-                <td><?= '<a data-toggle="modal" data-target="#myModal" class="ajax" latitude="'.$log->latitude.'" longitude="'.$log->longitude.'">'.$log->postal_address.'</a>' ?></td>
+                <td><?= '<a data-toggle="modal" data-target="#myModal" class="ajax" latitude="'.$log->latitude.'" longitude="'.$log->longitude.'" style="cursor: pointer;">'.$log->postal_address.'</a>' ?></td>
                 <td><?= $log->global_number ?></td>
                 <td><?= $log->date ?></td>
                 <td>
@@ -91,7 +91,7 @@
                     <!--//Map-->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Ferme</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
 
