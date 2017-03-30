@@ -55,3 +55,7 @@
 .hand:hover{
 	cursor: hand;
 }
+
+nav{
+	margin-bottom: 1px !important;
+}

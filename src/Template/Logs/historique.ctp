@@ -31,9 +31,8 @@
         <thead>
         <tr>
             <th>Nom</th>
-            <th>Prenom</th>
+            <th>Prénom</th>
             <th>Localisation</th>
-            <th>Carte</th>
             <th>Date</th>
             <th>Status</th>
         </tr>
@@ -41,9 +40,8 @@
         <tfoot>
         <tr>
             <th>Nom</th>
-            <th>Prenom</th>
+            <th>Prénom</th>
             <th>Localisation</th>
-            <th>Carte</th>
             <th>Date</th>
             <th>Status</th>
         </tr>
@@ -54,7 +52,6 @@
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
                 <td><?= '<a data-toggle="modal" data-target="#myModal" class="ajax" latitude="'.$log->latitude.'" longitude="'.$log->longitude.'" style="cursor: pointer;">'.$log->postal_address.'</a>' ?></td>
-                <td><?= $log->global_number ?></td>
                 <td><?= $log->date ?></td>
                 <td>
                     <?php

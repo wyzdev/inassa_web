@@ -81,10 +81,20 @@ class LogsController extends AppController
 
     public function historique()
     {
-        $logs = $this->paginate($this->Logs);
 
-        $this->set(compact('logs'));
-        $this->set('_serialize', ['logs']);
+        if ($this->request->session()->read('Auth.User')['first_login']){
+            $this->redirect(
+                [
+                    'controller' => 'clients',
+                    'action' => 'gestion'
+                ]);
+        }
+        else {
+            $logs = $this->paginate($this->Logs);
+
+            $this->set(compact('logs'));
+            $this->set('_serialize', ['logs']);
+        }
     }
 }
 

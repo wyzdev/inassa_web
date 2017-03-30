@@ -22,12 +22,7 @@
 
         </div>
         <div class="center-horizontal container-fluid center-horizontal margin-10">
-            <a class="btn btn-default btn-primary col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Desactiver
-                la carte</a>
-            <a class="btn btn-default btn-primary col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Activer la
-                carte</a>
-            <a class="btn btn-default btn-primary col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Historique
-                du client</a>
+            <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Voir l'historique de ce client</a>
         </div>
     </div>
 

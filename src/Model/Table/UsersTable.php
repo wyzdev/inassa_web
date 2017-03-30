@@ -69,10 +69,10 @@ class UsersTable extends Table
             ->requirePresence('email', 'create')
             ->notEmpty('email');
 
-        $validator
+    /*    $validator
             ->boolean('access')
             ->requirePresence('access', 'create')
-            ->notEmpty('access');
+            ->notEmpty('access');*/
 
         $validator
             ->boolean('status')

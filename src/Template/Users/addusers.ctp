@@ -1,4 +1,4 @@
-<?= $this->assign('title', 'INASSA - Ajouter un utilisateur'); ?>
+<?= $this->assign('title', 'INASSA - Paramètres'); ?>
 
 <?= $this->Html->css('add_user'); ?>
 <?= $this->Html->css('login_form'); ?>
@@ -15,7 +15,7 @@
                     <div class="form-signin">
                         <?= $this->Form->create($user); ?>
                         <?= $this->Form->input('last_name', array('class' => 'form-control margin-10', 'label'=>false,"placeholder"=>"NOM")) ?>
-                        <?= $this->Form->input('first_name', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Prenom")) ?>
+                        <?= $this->Form->input('first_name', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Prénom")) ?>
                         <?= $this->Form->input('username', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Nom d'utilisateur")) ?>
                         <?= $this->Form->input('email', array('type' => 'email', 'class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"E-mail")) ?>
                         <?= $this->Form->input('access', array('type' => 'checkbox', 'class' => 'bold', 'value' => 'value-admin', 'label' => 'Admin'))?>
@@ -31,21 +31,21 @@
                 <thead>
                 <tr>
                     <th>Nom</th>
-                    <th>Prenom</th>
+                    <th>Prénom</th>
                     <th>Nom d'utilisateur</th>
-                    <th>Acces</th>
+                    <th>Accès</th>
                     <th>Status</th>
-                    <th>Reinitialiser</th>
+                    <th>Réinitialiser</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
                     <th>Nom</th>
-                    <th>Prenom</th>
+                    <th>Prénom</th>
                     <th>Nom d'utilisateur</th>
-                    <th>Acces</th>
+                    <th>Accès</th>
                     <th>Status</th>
-                    <th>Reinitialiser</th>
+                    <th>Réinitialiser</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -71,11 +71,12 @@
                                         [
                                             'type' => 'checkbox',
                                             'label' => ' Admin',
-                                            'id' => $user->id,
+                                            'id' => 'admin'.$user->id,
+                                            'num' => $user->id,
                                             'name' => 'admin',
                                             'value' => 'value-admin',
                                             'checked' => $checked_admin,
-                                            'onclick' => 'updateUserAdmin()'
+                                            'class' => 'access'
                                         ]); ?>
                                 <?= $this->Form->end() ?>
                             </td>
@@ -85,15 +86,17 @@
                                         [
                                             'type' => 'checkbox',
                                             'label' => ' Actif',
-                                            'id' => 'actif',
-                                            'name' => 'admin',
-                                            'value' => 'value-admin',
-                                            'checked' => $checked_status
+                                            'id' => 'actif'.$user->id,
+                                            'num' => $user->id,
+                                            'name' => 'actif',
+                                            'value' => 'value-actif',
+                                            'checked' => $checked_status,
+                                            'class' => 'status'
                                         ]); ?>
                                 <?= $this->Form->end() ?>
                             </td>
                             <td>
-                                <a href=""><span class="glyphicon glyphicon-retweet dark" style="color: red; margin-left: 30px;"></span></a>
+                                <?= '<a style="cursor: pointer;" class="reset" firstname="'.$user->first_name.'" lastname="'.$user->last_name.'" '.'num="'.$user->id.'">' ?><span class="glyphicon glyphicon-retweet dark" style="color: red; margin-left: 30px;"></span></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

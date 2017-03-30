@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Users Controller
@@ -110,15 +112,16 @@ class UsersController extends AppController
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-/*    public function beforeFilter() {
-        //parent::beforeFilter();
-        // Allow users to register and logout.
-        //$this->Auth->allow('add', 'logout');
-    }*/
+    /*    public function beforeFilter() {
+            //parent::beforeFilter();
+            // Allow users to register and logout.
+            //$this->Auth->allow('add', 'logout');
+        }*/
 
 
-    public function addusers(){
-        if (!$this->request->session()->read('Auth.User')['access'])
+    public function addusers()
+    {
+        if (!$this->request->session()->read('Auth.User')['access'] or $this->request->session()->read('Auth.User')['first_login'])
             $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
@@ -140,29 +143,30 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
-    public function login() {
+    public function login()
+    {
         if ($this->request->session()->read('Auth.User'))
             $this->redirect(
                 [
                     'controller' => 'clients',
-                    'action'     => 'gestion'
+                    'action' => 'gestion'
                 ]);
         $this->viewBuilder()->setLayout('authentification_layout');
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
-                if ($user['status']){
+                if ($user['status']) {
                     $this->Auth->setUser($user);
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
-                }
-                else
+                } else
                     $this->Flash->error(__('Vous n\'etes pas actif dans la base de donnees'));
             }
             $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayez encore'));
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         return $this->redirect($this->Auth->logout());
     }
 
@@ -172,9 +176,9 @@ class UsersController extends AppController
         //$user = $this->Users->newEntity();
         if (!empty($this->request->data)) {
             $user = $this->Users->patchEntity($user, [
-                'password'      => $this->request->data['password1'],
-                'password1'     => $this->request->data['password1'],
-                'password2'     => $this->request->data['password2']
+                'password' => $this->request->data['password1'],
+                'password1' => $this->request->data['password1'],
+                'password2' => $this->request->data['password2']
             ],
                 ['validate' => 'password']
             );
@@ -193,13 +197,106 @@ class UsersController extends AppController
                 $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
             }
         }
-        $this->set('user',$user);
+        $this->set('user', $user);
     }
-    public function test(){
-        //$this->layout='ajax';
-        // result can be anything coming from $this->data
-        $result =  'Hello Dolly!';
-        $this->set("result", $result);
+
+    public function test()
+    {
+        $usersTable = TableRegistry::get('Users');
+        if ($this->request->is('ajax')) {
+            // echo $_POST['value_to_send'];
+            $id = $this->request->data('value_to_send');
+            $user = $this->Users->get($id);
+            if ($this->request->session()->read('Auth.User')['id'] != $id) {
+                if ($user->access)
+                    $user->access = false;
+                else
+                    $user->access = true;
+
+                $usersTable->save($user);
+            } else
+                echo 'no';
+
+
+            //or debug($this->request->data);
+            echo $user;
+            die();
+        }
+    }
+
+
+    public function updateAccess()
+    {
+        $usersTable = TableRegistry::get('Users');
+        if ($this->request->is('ajax')) {
+            // echo $_POST['value_to_send'];
+            $id = $this->request->data('value_to_send');
+            $user = $this->Users->get($id);
+            if ($this->request->session()->read('Auth.User')['id'] != $id) {
+                if ($user->access)
+                    $user->access = false;
+                else
+                    $user->access = true;
+
+                $usersTable->save($user);
+            } else
+                echo 'no';
+
+
+            //or debug($this->request->data);
+            //echo $user;
+            die();
+        }
+    }
+
+    public function updateStatus()
+    {
+        $usersTable = TableRegistry::get('Users');
+        if ($this->request->is('ajax')) {
+            // echo $_POST['value_to_send'];
+            $id = $this->request->data('value_to_send');
+            $user = $this->Users->get($id);
+            if ($this->request->session()->read('Auth.User')['id'] != $id) {
+                if ($user->status)
+                    $user->status = false;
+                else
+                    $user->status = true;
+
+                $usersTable->save($user);
+            } else
+                echo 'no';
+
+
+            //or debug($this->request->data);
+            //echo $user;
+            die();
+        }
+    }
+
+    public function resetAccount()
+    {
+        $usersTable = TableRegistry::get('Users');
+        if ($this->request->is('ajax')) {
+            // echo $_POST['value_to_send'];
+            $id = $this->request->data('value_to_send');
+            $user = $this->Users->get($id);
+            if ($this->request->session()->read('Auth.User')['id'] != $id) {
+                {
+                    $user->access = false;
+                    $user->status = true;
+                    $user->first_login = true;
+                    $user->password = 'admin123';
+
+                $usersTable->save($user);
+                }
+            } else
+                echo 'no';
+
+
+            //or debug($this->request->data);
+            //echo $user;
+            die();
+        }
     }
 
 }
