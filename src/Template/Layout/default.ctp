@@ -147,7 +147,6 @@ if ($this->request->action != 'addusers') {
 <?= $this->Html->script('datepicker') ?>
 <?= $this->Html->script('bootstrap-datepicker.fr.min') ?>
 <?= $this->Html->script('toggle_search_form') ?>
-<?= $this->Html->script('printMap') ?>
 <?= $this->Html->script('addusers') ?>
 <?= $this->Html->script('update_database') ?>
 <?= $this->Html->script('bootstrap/bootstrap') ?>
