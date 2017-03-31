@@ -1,5 +1,4 @@
-.search_form {
-    height: 130px;
-    padding-top: 50px;
-    background-color: #4d4d4d;
+.search_client {
+    background-color: #9d9d9d;
+    display: none;
 }

@@ -21,7 +21,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('bootstrap/bootstrap-theme'); ?>
     <?= $this->Html->css('login_form') ?>
     <?= $this->Html->css('search_form') ?>
+    <?= $this->Html->css('bootstrap-datepicker.min') ?>
     <?= $this->Html->css('navbar'); ?>
+    <?= $this->Html->css('accueil'); ?>
     <?= $this->fetch('meta'); ?>
     <?= $this->fetch('css'); ?>
 </head>
@@ -95,24 +97,36 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
 <?php
-if ($this->request->action == 'gestion') {
-    echo '';
-} ?>
-
-<div class="col-sm-12 col-md-12" style="display: block; ">
-    <div class="row search_form" id="demo" class="collapse">
-        <?= $this->Form->create(); ?>
-            <?= $this->Form->input('last_name', array('class' => 'col-md-2 col-md-offset-1', 'label'=> false,"placeholder"=>"NOM")) ?>
-            <?= $this->Form->input('first_name', array('class' => 'col-md-2 col-md-offset-1', 'label'=> false, "placeholder"=>"Prénom")) ?>
-            <?= $this->Form->input('dob', array('class' => 'col-md-2 col-md-offset-1', 'label'=> false, "placeholder"=>"1970 / 12 / 31")) ?>
-            <?= $this->Form->button('search', ['value' => 'GO', 'class' => 'col-md-offset-1 col-md-1']) ?>
-        <?= $this->Form->end(); ?>
-    </div>
+if ($this->request->action != 'addusers') {
+    $print_or_not = ($this->request->action == 'gestion') ? 'style = "display: block"' : '';
+    echo '
+<div class="col-sm-12 col-md-12">
+    <div class="row search_client" '.$print_or_not.'>'
+        .$this->Form->create().
+        '<div class=" col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">'
+            .$this->Form->input("first_name", array("class" => "form-control margin-10", "label"=> false, "placeholder"=>"Prénom")).
+        '</div>
+        <div class=" col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">'
+            .$this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")).
+        '</div>
+        <div class=" col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+            <div class="input-group margin-10">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+              <input name="dob" id="dob" type="text" class="form-control  datepicker" placeholder="Date de naissance">
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-2 col-md-offset-1" style="text-align: center;">'
+            .$this->Form->button("GO", ["class" => "margin-10 btn btn-md btn-default"]).
+        '</div>'
+        .$this->Form->end().
+    '</div>
 
     <button class="btn btn-default search_" type="submit">
         <i class="glyphicon glyphicon-search"></i>
     </button>
-</div>
+</div>';
+
+} ?>
 <?= $this->Flash->render(); ?>
 
 <!-- Cette Helper permet d'afficher le contenu de la page actuelle -->
@@ -129,8 +143,12 @@ if ($this->request->action == 'gestion') {
 </body>
 
 <?= $this->Html->script('jquery.min') ?>
+<?= $this->Html->script('bootstrap-datepicker.min') ?>
+<?= $this->Html->script('datepicker') ?>
+<?= $this->Html->script('bootstrap-datepicker.fr.min') ?>
 <?= $this->Html->script('toggle_search_form') ?>
 <?= $this->Html->script('printMap') ?>
+<?= $this->Html->script('addusers') ?>
 <?= $this->Html->script('update_database') ?>
 <?= $this->Html->script('bootstrap/bootstrap') ?>
 <?= $this->Html->script('data_table/jquery.dataTables.min'); ?>

@@ -18,8 +18,9 @@
                         <?= $this->Form->input('first_name', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Prénom")) ?>
                         <?= $this->Form->input('username', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Nom d'utilisateur")) ?>
                         <?= $this->Form->input('email', array('type' => 'email', 'class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"E-mail")) ?>
-                        <?= $this->Form->input('access', array('type' => 'checkbox', 'class' => 'bold', 'value' => 'value-admin', 'label' => 'Admin'))?>
 
+                        <?= $this->Form->select('access', ['medecin' => 'Medecin', 'admin' => 'Admin', 'user' => 'Simple utilisateur'], ['empty' => true, 'class' => 'form-control', 'id' => 'role']) ?>
+                        <?= $this->Form->input('hopital', array('class' => 'form-control margin-10', 'label' => false, "placeholder" => "Hopital", "id" => "hospital_field")) ?>
                         <?= $this->Form->button('Enregistrer', ['class' => 'margin-top-20 btn btn-lg btn-primary btn-block']) ?>
                         <?= $this->Form->end(); ?>
                     </div>

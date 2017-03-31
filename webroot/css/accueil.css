@@ -4,6 +4,7 @@
 }
 
 .info_client{
+	margin-top: 15px;
 	margin-bottom: 15px;
 }
 
@@ -48,4 +49,8 @@
 .input-group
 {
 	width:100%;
+}
+
+.container, .container-fluid{
+	margin-top: 15px !important;
 }

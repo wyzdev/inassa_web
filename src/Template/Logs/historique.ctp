@@ -51,7 +51,7 @@
             <tr>
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
-                <td><?= '<a data-toggle="modal" data-target="#myModal" class="ajax" latitude="'.$log->latitude.'" longitude="'.$log->longitude.'" style="cursor: pointer;">'.$log->postal_address.'</a>' ?></td>
+                <td><?= $log->postal_address ?></td>
                 <td><?= $log->date ?></td>
                 <td>
                     <?php

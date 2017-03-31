@@ -1,7 +1,11 @@
 $(document).ready(function(){
     $("button").click(function(){
-        $(".search_form").toggle(400, function () {
+        $(".search_client").toggle(400, function () {
 
         });
     });
+});
+
+$(function(){
+    $("#dob").prop("readonly", true);
 });
