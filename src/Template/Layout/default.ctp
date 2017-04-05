@@ -37,7 +37,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <?= $this->Html->link('INASSA', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'navbar-brand']); ?>
+        <a class="navbar-brand">INASSA</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,6 +55,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li>"; ?>
 
             <?= $this->Html->link('Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
+            <!--<li><?/*= $this->Html->link('Test', ['controller' => 'users', 'action' => 'test']); */?></li>-->
 
             <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
                 <?php
@@ -115,13 +116,12 @@ if ($this->request->action != 'addusers') {
               <input name="dob" id="dob" type="text" class="form-control  datepicker" placeholder="Date de naissance">
             </div>
         </div>
-        <div class="col-xs-12 col-md-2 col-md-offset-1" style="text-align: center;">'
-            .$this->Form->button("GO", ["class" => "margin-10 btn btn-md btn-default"]).
-        '</div>'
+        <div class="col-xs-12 col-md-2 col-md-offset-1" style="text-align: center;">
+        <button class="margin-10 btn btn-default btn-md">GO</button></div>'
         .$this->Form->end().
     '</div>
 
-    <button class="btn btn-default search_" type="submit">
+    <button class="btn btn-default search_ button_search" type="submit">
         <i class="glyphicon glyphicon-search"></i>
     </button>
 </div>';
@@ -138,6 +138,9 @@ if ($this->request->action != 'addusers') {
         </p>
     </div>
 </footer>
+<!--'
+            .$this->Form->button("GO", ["class" => "margin-10 btn btn-md btn-default"]).
+        '-->
 
 <?= $this->fetch('script'); ?>
 </body>
@@ -154,3 +157,4 @@ if ($this->request->action != 'addusers') {
 <?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>
 <?= $this->Html->script('script_datatable'); ?>
 </html>
+

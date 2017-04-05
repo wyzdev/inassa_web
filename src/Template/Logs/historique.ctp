@@ -21,9 +21,6 @@
 <?php //$this->Html->script('dataTables.bootstrap.min', array('inline' => false)); ?>
 
 
-<!--C'est un script qui va nous permettre de faire marcher le datatable  -->
-
-<?php //$this->Html->script('script_datatable', array('inline' => false)); ?>
 
 <!-- Block contenant un exemple de tableau -->
 <div class="container-fluid  table-responsive">
@@ -64,35 +61,4 @@
         <?php endforeach; ?>
         </tbody>
     </table>
-</div>
-
-
-
-<?= $this->Html->css('Leaflet/leaflet') ?>
-<?= $this->Html->script('Leaflet/leaflet') ?>
-
-<div class="container">
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Position exacte</h4>
-                </div>
-                <div class="modal-body col-sm-12" id="map-container">
-                    <!--Map-->
-                    <!--<div id="mapid" style="height: 300px; border: 1px solid green;"></div>-->
-                    <!--//Map-->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
 </div>

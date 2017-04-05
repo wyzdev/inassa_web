@@ -1,45 +1,23 @@
-<?php
-/*$lat = 18.5407074;
-$lng = -72.319546;
-$json = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?latlng=' . $lat . ',' . $lng);
 
-$obj = json_decode(file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?latlng=' . $lat . ',' . $lng)->results[0]->formatted_address;
-$obj = json_decode($json);
-echo $json;
-if ($obj->status == 'OK')
-    echo $obj->results[0]->formatted_address;
-else
-    echo "Il y a quelque chose qui ne va pas.";*/
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Launch Demo Modal</a>
 
-/*echo $this->Form->create('Users');
-echo $this->Form->input('name', array('id'=>'name'));
-echo $this->Form->input('age', array('id'=>'age'));
-echo $this->Form->button('Add Info', array(
-    'type'=>'button',
-    'onclick'=>'infoAdd();'
-));
-$this->Form->end();*/
-?>
-
-<?php /*echo $result; */?><!--
-<?php /*echo $this->Form->input('your_field', array('id' => 'resultField')); */?>
-<script>
-    jQuery("#performAjaxLink").click(
-        function()
-        {
-            jQuery.ajax({
-                type:'POST',
-                async: true,
-                cache: false,
-                url: '<?/*= \Cake\Routing\Router::Url(['controller' => 'users', 'action' => 'test'], TRUE); */?>',
-                success: function(response) {
-                    jQuery('#resultField').val(response);
-                },
-                data:jQuery('form').serialize()
-            });
-            return false;
-        }
-    );
-</script>-->
-
-<?= $this->Html->link("click", [''], ['class' => 'ajax', 'latitude' => 12.34343]);?>
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>

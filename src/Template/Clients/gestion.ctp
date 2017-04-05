@@ -2,31 +2,33 @@
 
 
 <div class="container" style="">
-    <!-- <p class="text-center">
-      Recherchez le client pour activer ou désactiver sa carte ...
-    </p> -->
-    <div class="info_client container-fluid" style="">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="title_search margin-bottom-20">Recherche Active</h3>
-                <p class="info-container">
-                    <span class="indicatif">Client</span>
-                    <span class="deux-point">:</span>
-                    <span class="result">John DOE</span>
-                    <br/>
-                    <span class="indicatif">Date de naissance</span>
-                    <span class="deux-point">:</span>
-                    <span class="result">07 / 04 / 1973</span>
-                </p>
-                <div class="status-carte center-horizontal margin-bottom-20">
-                    <span class="status">Carte Active : 1Z3E4RTFG</span>
+    <p class="text-center">
+        Recherchez un client ...
+    </p>
+    <div class="client" style="display: none;">
+        <div class="info_client container-fluid" style="">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title_search margin-bottom-20">Recherche Active</h3>
+                    <p class="info-container">
+                        <span class="indicatif">Client</span>
+                        <span class="deux-point">:</span>
+                        <span class="result">John DOE</span>
+                        <br/>
+                        <span class="indicatif">Date de naissance</span>
+                        <span class="deux-point">:</span>
+                        <span class="result">07 / 04 / 1973</span>
+                    </p>
+                    <div class="status-carte center-horizontal margin-bottom-20">
+                        <span class="status">Carte Active</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-    <div class="center-horizontal container-fluid center-horizontal margin-10">
-        <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Voir l'historique de ce client</a>
+        </div>
+        <div class="center-horizontal container-fluid center-horizontal margin-10">
+            <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Voir l'historique de ce client</a>
+        </div>
     </div>
 </div>
 

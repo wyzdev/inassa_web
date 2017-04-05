@@ -97,12 +97,32 @@
                                 <?= $this->Form->end() ?>
                             </td>
                             <td>
-                                <?= '<a style="cursor: pointer;" class="reset" firstname="'.$user->first_name.'" lastname="'.$user->last_name.'" '.'num="'.$user->id.'">' ?><span class="glyphicon glyphicon-retweet dark" style="color: red; margin-left: 30px;"></span></a>
+                                <?= '<a href="#myModal" data-toggle="modal" style="cursor: pointer;" class="reset" firstname="'.$user->first_name.'" lastname="'.$user->last_name.'" '.'num="'.$user->id.'">' ?><span class="glyphicon glyphicon-retweet dark" style="color: red; margin-left: 30px;"></span></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Confirmation</h3>
+            </div>
+            <div class="modal-body" id="reset-user_modal-body">
+
+            </div>
+            <div class="modal-footer" id="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">NON</button>
+                <button type="button" class="btn btn-warning confirmation_reset" data-dismiss="modal">OUI</button>
+            </div>
         </div>
     </div>
 </div>

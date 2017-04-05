@@ -1,7 +1,10 @@
+
+var id;
+
 $(function () {
     $('.access').click('click', function () {
         var balise = $(this);
-        var id = balise.attr("num");
+        id = balise.attr("num");
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
@@ -30,7 +33,7 @@ $(function () {
 $(function () {
     $('.status').click('click', function () {
         var balise = $(this);
-        var id = balise.attr("num");
+        id = balise.attr("num");
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
@@ -59,27 +62,36 @@ $(function () {
 $(function () {
     $('.reset').click('click', function () {
         var balise = $(this);
-        var id = balise.attr("num");
-        if (confirm('Voulez vous vraiment réinitialiser le compte de ' + $(this).attr("firstname") + ' ' + $(this).attr("lastname"))) {
-            $.ajax({
-                type: "POST",
-                data: {value_to_send: id},
-                url: "/users/resetAccount/",
-                success: function (data) {
-                    if (data == 'no') {
-                        alert("Vous ne pouvez pas reinitialiser votre compte");
-                    }
-                    else {
-                        $("#" + "admin" + id).prop('checked', false);
-                        $("#" + "status" + id).prop('checked', true);
-                    }
+        id = balise.attr("num");
 
-                },
-                error: function () {
-                    alert("false");
+        document.getElementById('reset-user_modal-body').innerHTML = '<p>Est-ce que vous voulez vraiment réinitialiser le compte de <b>' + $(this).attr("firstname") + ' ' + $(this).attr("lastname") + '</b>?</p>' +
+            '<p class="text-warning"><small>Le mot de passe et le droit d\'accès seront remis à l\'état d\'origine.</small></p>';
+
+
+    });
+});
+
+$(function () {
+    $('.confirmation_reset').click('click', function () {
+        $.ajax({
+            type: "POST",
+            data: {value_to_send: id},
+            url: "/users/resetAccount/",
+            success: function (data) {
+                if (data == 'no') {
+                    alert("Vous ne pouvez pas réinitialiser votre compte");
                 }
-            });
-        }
+                else {
+                    // alert("entrer et admin : admin"+id+" et status : status"+id);
+                    $("#" + "admin" + id).prop('checked', false);
+                    $("#" + "actif" + id).prop('checked', true);
+                }
+
+            },
+            error: function () {
+                alert("false");
+            }
+        });
 
 
     });

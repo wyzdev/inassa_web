@@ -3,14 +3,6 @@ $(function () {
         var values = $(this);
         var lat = values.attr('latitude');
         var lng = values.attr('longitude');
-        //alert("latitude = " + lat + "longitude = " + lng);
-
-
-       /* if (mymap != undefined || mymap != null) {
-            mymap.off();
-            mymap.remove();
-            mymap._resetView();
-        }*/
 
         document.getElementById('map-container').innerHTML = "<div id='mapid' style=\"height: 300px; border: 1px solid green;\"></div>";
 

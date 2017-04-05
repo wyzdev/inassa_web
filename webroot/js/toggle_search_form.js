@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("button").click(function(){
+    $(".button_search").click(function(){
         $(".search_client").toggle(400, function () {
 
         });
