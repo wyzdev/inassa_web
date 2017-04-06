@@ -3,9 +3,6 @@
 <?= $this->Html->css('add_user'); ?>
 <?= $this->Html->css('login_form'); ?>
 
-
-
-
 <div class="container-fluid">
     <div class="row">
         <div class=" col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 vertical-center">
@@ -19,8 +16,8 @@
                         <?= $this->Form->input('username', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Nom d'utilisateur")) ?>
                         <?= $this->Form->input('email', array('type' => 'email', 'class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"E-mail")) ?>
 
-                        <?= $this->Form->select('access', ['medecin' => 'Medecin', 'admin' => 'Admin', 'user' => 'Simple utilisateur'], ['empty' => true, 'class' => 'form-control', 'id' => 'role']) ?>
-                        <?= $this->Form->input('hopital', array('class' => 'form-control margin-10', 'label' => false, "placeholder" => "Hopital", "id" => "hospital_field")) ?>
+                        <?= $this->Form->select('role', ['medecin' => 'Médecin', 'admin' => 'Admin', 'user' => 'Simple utilisateur'], ['empty' => true, 'class' => 'form-control', 'id' => 'role']) ?>
+                        <?= $this->Form->input('institution', array('class' => 'form-control margin-10', 'label' => false, "placeholder" => "Hopital", "id" => "hospital_field")) ?>
                         <?= $this->Form->button('Enregistrer', ['class' => 'margin-top-20 btn btn-lg btn-primary btn-block']) ?>
                         <?= $this->Form->end(); ?>
                     </div>
@@ -34,6 +31,7 @@
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Nom d'utilisateur</th>
+                    <th>Établissement</th>
                     <th>Accès</th>
                     <th>Status</th>
                     <th>Réinitialiser</th>
@@ -44,6 +42,7 @@
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Nom d'utilisateur</th>
+                    <th>Établissement</th>
                     <th>Accès</th>
                     <th>Status</th>
                     <th>Réinitialiser</th>
@@ -53,33 +52,39 @@
 
                     <?php foreach ($users as $user): ?>
                         <tr>
-                            <td><?= h($user->last_name) ?></td>
-                            <td><?= h($user->first_name) ?></td>
-                            <td><?= h($user->username) ?></td>
+                            <td><?= $user->last_name ?></td>
+                            <td><?= $user->first_name ?></td>
+                            <td><?= $user->username ?></td>
+                            <td><?= $user->institution ?></td>
                             <td>
                                 <?php
-                                    if (h($user->access))
+                                    if ($user->role == 'admin')
                                         $checked_admin = true;
                                     else
                                         $checked_admin = false;
-                                    if (h($user->status))
+                                    if ($user->status)
                                         $checked_status = true;
                                     else
                                         $checked_status = false;
                                 ?>
-                                <?= $this->Form->create() ?>
-                                    <?= $this->Form->input('admin',
-                                        [
-                                            'type' => 'checkbox',
-                                            'label' => ' Admin',
-                                            'id' => 'admin'.$user->id,
-                                            'num' => $user->id,
-                                            'name' => 'admin',
-                                            'value' => 'value-admin',
-                                            'checked' => $checked_admin,
-                                            'class' => 'access'
-                                        ]); ?>
-                                <?= $this->Form->end() ?>
+                                <?php if ($user->role == 'admin' or $user->role == 'user'){
+                                    ?>
+                                    <?= $this->Form->create() ?>
+                                        <?= $this->Form->input('admin',
+                                            [
+                                                'type' => 'checkbox',
+                                                'label' => ' Admin',
+                                                'id' => 'admin'.$user->id,
+                                                'num' => $user->id,
+                                                'name' => 'admin',
+                                                'value' => 'value-admin',
+                                                'checked' => $checked_admin,
+                                                'class' => 'access'
+                                            ]); ?>
+                                    <?= $this->Form->end() ?>
+                                <?php }else
+                                    echo 'Médecin'
+                                        ?>
                             </td>
                             <td>
                                 <?= $this->Form->create() ?>
@@ -96,8 +101,8 @@
                                         ]); ?>
                                 <?= $this->Form->end() ?>
                             </td>
-                            <td>
-                                <?= '<a href="#myModal" data-toggle="modal" style="cursor: pointer;" class="reset" firstname="'.$user->first_name.'" lastname="'.$user->last_name.'" '.'num="'.$user->id.'">' ?><span class="glyphicon glyphicon-retweet dark" style="color: red; margin-left: 30px;"></span></a>
+                            <td style="padding-top: 6px; padding-left: 40px;">
+                                <?= '<a href="#myModal" data-toggle="modal" style="cursor: pointer;" class="reset" firstname="'.$user->first_name.'" lastname="'.$user->last_name.'" '.'num="'.$user->id.'">' ?><span class="glyphicon glyphicon-retweet dark" style="color: red;"></span></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -20,7 +19,6 @@ class UsersController extends AppController
      */
     public function index()
     {
-        //debug($this->request);
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
@@ -111,17 +109,9 @@ class UsersController extends AppController
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-    /*    public function beforeFilter() {
-            //parent::beforeFilter();
-            // Allow users to register and logout.
-            //$this->Auth->allow('add', 'logout');
-        }*/
-
-
     public function addusers()
     {
-        if (!$this->request->session()->read('Auth.User')['access'] or $this->request->session()->read('Auth.User')['first_login'])
+        if ($this->request->session()->read('Auth.User')['role'] != 'admin' or $this->request->session()->read('Auth.User')['first_login'])
             $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
@@ -129,6 +119,8 @@ class UsersController extends AppController
             $user->password = 'admin123';
             $user->status = 1;
             $user->first_login = 1;
+          /*  debug($user);
+            die();*/
             if ($this->Users->save($user)) {
                 $this->Flash->success(__("L'utilisateur a été sauvegardé."));
                 return $this->redirect(['action' => 'addusers']);
@@ -229,14 +221,14 @@ class UsersController extends AppController
     {
         $usersTable = TableRegistry::get('Users');
         if ($this->request->is('ajax')) {
-            // echo $_POST['value_to_send'];
+            //echo $_POST['value_to_send'];
             $id = $this->request->data('value_to_send');
             $user = $this->Users->get($id);
             if ($this->request->session()->read('Auth.User')['id'] != $id) {
-                if ($user->access)
-                    $user->access = false;
+                if ($user->role == 'admin')
+                    $user->role = 'user';
                 else
-                    $user->access = true;
+                    $user->role = 'admin';
 
                 $usersTable->save($user);
             } else
@@ -281,22 +273,21 @@ class UsersController extends AppController
             $id = $this->request->data('value_to_send');
             $user = $this->Users->get($id);
             if ($this->request->session()->read('Auth.User')['id'] != $id) {
-                {
-                    $user->access = false;
-                    $user->status = true;
-                    $user->first_login = true;
-                    $user->password = 'admin123';
+                //$user->institution = 'INASSA';
+                if ($user->role == 'admin')
+                    $user->role = 'user';
+                $user->status = true;
+                $user->first_login = true;
+                $user->password = 'admin123';
 
                 $usersTable->save($user);
-                }
             } else
                 echo 'no';
 
 
-            //or debug($this->request->data);
-            //echo $user;
+//            debug($this->request->data);
+//            echo $user;
             die();
         }
     }
-
 }

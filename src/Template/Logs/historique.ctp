@@ -48,7 +48,7 @@
             <tr>
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
-                <td><?= $log->postal_address ?></td>
+                <td><?= $log->institution ?></td>
                 <td><?= $log->date ?></td>
                 <td>
                     <?php

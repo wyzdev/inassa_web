@@ -11,11 +11,14 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property string $first_name
  * @property string $last_name
  * @property string $username
+ * @property string $institution
  * @property string $password
  * @property string $email
- * @property bool $access
+ * @property string $role
  * @property bool $status
  * @property bool $first_login
+ * @property \Cake\I18n\Time $created
+ * @property \Cake\I18n\Time $modified
  */
 class User extends Entity
 {

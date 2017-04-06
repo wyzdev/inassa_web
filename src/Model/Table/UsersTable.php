@@ -5,7 +5,6 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Model
@@ -17,6 +16,8 @@ use Cake\Auth\DefaultPasswordHasher;
  * @method \App\Model\Entity\User patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\User[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class UsersTable extends Table
 {
@@ -34,6 +35,8 @@ class UsersTable extends Table
         $this->table('users');
         $this->displayField('id');
         $this->primaryKey('id');
+
+        $this->addBehavior('Timestamp');
     }
 
     /**
@@ -61,6 +64,10 @@ class UsersTable extends Table
             ->notEmpty('username');
 
         $validator
+            ->requirePresence('institution', 'create');
+           // ->notEmpty('institution');
+
+        $validator
             ->requirePresence('password', 'create')
             ->notEmpty('password');
 
@@ -69,10 +76,9 @@ class UsersTable extends Table
             ->requirePresence('email', 'create')
             ->notEmpty('email');
 
-    /*    $validator
-            ->boolean('access')
-            ->requirePresence('access', 'create')
-            ->notEmpty('access');*/
+        $validator
+            ->requirePresence('role', 'create')
+            ->notEmpty('role');
 
         $validator
             ->boolean('status')
@@ -83,43 +89,6 @@ class UsersTable extends Table
             ->boolean('first_login')
             ->requirePresence('first_login', 'create')
             ->notEmpty('first_login');
-
-        /*$validator
-            ->notEmpty('title', "Un nom d'utilisateur est nécessaire")
-            ->notEmpty('password', 'Un mot de passe est nécessaire');*/
-        return $validator;
-    }
-
-    public function validationPassword(Validator $validator )
-    {
-        $validator
-            ->add('password1', [
-                'length' => [
-                    'rule' => ['minLength', 6],
-                    'message' => 'The password have to be at least 6 characters!',
-                ]
-            ])
-            ->add('password1',[
-                'match'=>[
-                    'rule'=> ['compareWith','password2'],
-                    'message'=>'The passwords does not match!',
-                ]
-            ])
-            ->notEmpty('password1');
-        $validator
-            ->add('password2', [
-                'length' => [
-                    'rule' => ['minLength', 6],
-                    'message' => 'The password have to be at least 6 characters!',
-                ]
-            ])
-            ->add('password2',[
-                'match'=>[
-                    'rule'=> ['compareWith','password1'],
-                    'message'=>'The passwords does not match!',
-                ]
-            ])
-            ->notEmpty('password2');
 
         return $validator;
     }

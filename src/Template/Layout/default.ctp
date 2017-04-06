@@ -55,9 +55,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li>"; ?>
 
             <?= $this->Html->link('Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
-            <!--<li><?/*= $this->Html->link('Test', ['controller' => 'users', 'action' => 'test']); */?></li>-->
+            <li><?= $this->Html->link('Test', ['controller' => 'users', 'action' => 'test']); ?></li>
 
-            <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
+            <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                 <?php
                 if ($this->request->action == 'addusers')
                     echo "<li class='active'>";
@@ -77,7 +77,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <?= '<b>' . $this->request->session()->read('Auth.User')['first_name'] . '</b>' ?>
                     <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <?php if ($this->request->session()->read('Auth.User')['access']) { ?>
+                    <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                         <?php
                         if ($this->request->action == 'addusers')
                             echo "<li class='active'>";

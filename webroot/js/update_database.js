@@ -88,8 +88,11 @@ $(function () {
                 }
 
             },
-            error: function () {
-                alert("false");
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                //alert(xhr.responseText);
+                alert(thrownError);
+                //alert("false");
             }
         });
 
