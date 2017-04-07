@@ -55,7 +55,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li>"; ?>
 
             <?= $this->Html->link('Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
-            <li><?= $this->Html->link('Test', ['controller' => 'users', 'action' => 'test']); ?></li>
+            <!--<li><?/*= $this->Html->link('Test', ['controller' => 'users', 'action' => 'test']); */?></li>-->
 
             <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                 <?php
@@ -93,6 +93,21 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
         </ul>
+        <?php
+        if ($this->request->action != 'addusers') {
+            $print_or_not = ($this->request->action == 'gestion') ? 'style = "display: block"' : '';
+            echo '
+                 <div class="col-sm-5 col-md-5 navbar-right">
+                    <button type="button" class="btn btn-default margin-10" data-toggle="collapse" data-target="#filter-panel">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </div>
+            ';
+        }
+
+        ?>
+
+
     </div><!-- /.navbar-collapse -->
 </nav>
 
@@ -101,7 +116,57 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 if ($this->request->action != 'addusers') {
     $print_or_not = ($this->request->action == 'gestion') ? 'style = "display: block"' : '';
     echo '
-<div class="col-sm-12 col-md-12">
+    <div class="container">
+    <div class="row">
+        <div id="filter-panel" class="collapse filter-panel">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-inline" role="form">
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">'
+        . $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) .
+        '</div> <!-- form group [rows] -->
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">'
+        . $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) .
+        '</div><!-- form group [search] -->
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">                       
+                            <div >
+                                <div class="input-group">
+                                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                  <input name="dob" id="dob" type="text" class="form-control  datepicker" placeholder="Date de naissance">
+                                </div>
+                            </div>
+                        </div> <!-- form group [order by] -->
+                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <button type="submit" class="btn btn-default filter-col">
+                                <span class="glyphicon glyphicon-search"></span> Rechercher
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    ';
+
+} ?>
+
+
+<?= $this->Flash->render(); ?>
+
+<!-- Cette Helper permet d'afficher le contenu de la page actuelle -->
+<?= $this->fetch('content'); ?>
+
+<footer class="navbar navbar-default navbar-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">Copyright © INASSA 2017
+        </p>
+    </div>
+</footer>
+<!--'
+            .$this->Form->button("GO", ["class" => "margin-10 btn btn-md btn-default"]).
+        '-->
+<!--<div class="col-sm-12 col-md-12">
     <div class="row search_client" '.$print_or_not.'>'
         .$this->Form->create().
         '<div class=" col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">'
@@ -124,23 +189,7 @@ if ($this->request->action != 'addusers') {
     <button class="btn btn-default search_ button_search" type="submit">
         <i class="glyphicon glyphicon-search"></i>
     </button>
-</div>';
-
-} ?>
-<?= $this->Flash->render(); ?>
-
-<!-- Cette Helper permet d'afficher le contenu de la page actuelle -->
-<?= $this->fetch('content'); ?>
-
-<footer class="navbar navbar-default navbar-bottom">
-    <div class="container">
-        <p class="navbar-text pull-left">Copyright © INASSA 2017
-        </p>
-    </div>
-</footer>
-<!--'
-            .$this->Form->button("GO", ["class" => "margin-10 btn btn-md btn-default"]).
-        '-->
+</div>-->
 
 <?= $this->fetch('script'); ?>
 </body>

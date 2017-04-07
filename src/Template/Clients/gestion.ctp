@@ -2,10 +2,10 @@
 
 
 <div class="container" style="">
-    <p class="text-center">
+   <!-- <p class="text-center">
         Recherchez un client ...
-    </p>
-    <div class="client" style="display: none;">
+    </p>-->
+    <div class="client" style="display: ;">
         <div class="info_client container-fluid" style="">
             <div class="row">
                 <div class="col-md-12">
