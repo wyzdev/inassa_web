@@ -11,7 +11,7 @@ use Cake\ORM\TableRegistry;
  */
 class UsersController extends AppController
 {
-
+    public $components = array('Email');
     /**
      * Index method
      *
@@ -192,28 +192,14 @@ class UsersController extends AppController
         $this->set('user', $user);
     }
 
-    public function test()
-    {
-        $usersTable = TableRegistry::get('Users');
-        if ($this->request->is('ajax')) {
-            // echo $_POST['value_to_send'];
-            $id = $this->request->data('value_to_send');
-            $user = $this->Users->get($id);
-            if ($this->request->session()->read('Auth.User')['id'] != $id) {
-                if ($user->access)
-                    $user->access = false;
-                else
-                    $user->access = true;
-
-                $usersTable->save($user);
-            } else
-                echo 'no';
-
-
-            //or debug($this->request->data);
-            echo $user;
-            die();
-        }
+    public function test() {
+        // just to test out the sending email using SMTP is OK, create a method that will be able to access from public
+        $to = 'hollyn.derisse@esih.edu';
+        $subject = 'Hi buddy, i got a message for you.';
+        $message = 'Nothing much. Just test out my Email Component using PHPMailer.';
+        $mail = $this->Email->send($to, $subject, $message);
+        $this->set('mail',$mail);
+        $this->render(false);
     }
 
 
