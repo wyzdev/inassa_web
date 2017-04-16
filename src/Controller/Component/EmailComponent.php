@@ -26,7 +26,7 @@ class EmailComponent extends Component {
         $mail->Password   = "HDR2013#";
 
         $mail->From = $sender;
-        $mail->FromName = "HOLLYN DERISSE";
+        $mail->FromName = "INASSA";
 
         $mail->AddAddress($to);
 

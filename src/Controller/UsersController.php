@@ -116,12 +116,12 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
-            $user->password = 'admin123';
+            $randomPassword = $this->randomPassword();
+            $user->password = $randomPassword;
             $user->status = 1;
             $user->first_login = 1;
-          /*  debug($user);
-            die();*/
             if ($this->Users->save($user)) {
+                $this->sendPassword($user->email, $randomPassword);
                 $this->Flash->success(__("L'utilisateur a été sauvegardé."));
                 return $this->redirect(['action' => 'addusers']);
             }
@@ -133,6 +133,17 @@ class UsersController extends AppController
 
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
+    }
+
+    function randomPassword() {
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 8; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
     }
 
     public function login()
@@ -190,6 +201,15 @@ class UsersController extends AppController
             }
         }
         $this->set('user', $user);
+    }
+
+    private function sendPassword($usermail, $userpassword){
+        $to = $usermail;
+        $subject = 'Votre mot de passe';
+        $message = 'Votre mot de passe est : '.$userpassword;
+        $mail = $this->Email->send($to, $subject, $message);
+        $this->set('mail',$mail);
+        $this->render(false);
     }
 
     public function test() {
@@ -262,11 +282,13 @@ class UsersController extends AppController
                 //$user->institution = 'INASSA';
                 if ($user->role == 'admin')
                     $user->role = 'user';
+                $newPassword = $this->randomPassword();
                 $user->status = true;
                 $user->first_login = true;
-                $user->password = 'admin123';
+                $user->password = $newPassword;
 
-                $usersTable->save($user);
+                if ($usersTable->save($user))
+                    $this->sendPassword($user->email, $newPassword);
             } else
                 echo 'no';
 
