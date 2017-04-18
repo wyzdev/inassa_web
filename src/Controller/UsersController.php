@@ -2,7 +2,10 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\User;
+use App\Model\Table\UsersTable;
 use Cake\ORM\TableRegistry;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Controller
@@ -108,6 +111,17 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    public function requestUser() {
+        $user = $this->Auth->identify();
+        $message = true;
+        if ($user)
+            $message = false;
+
+        $this->set([
+            'error' => $message,
+            'user' => $user
+        ]);
+    }
 
     public function addusers()
     {
@@ -158,13 +172,30 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
-                if ($user['status']) {
+                if ($user['status'] && $user['role'] != 'medecin') {
                     $this->Auth->setUser($user);
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
                 } else
                     $this->Flash->error(__('Vous n\'etes pas actif dans la base de donnees'));
             }
             $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayez encore'));
+        }
+    }
+
+    public function forgotPassword() {
+
+        $user = $this->Users->newEntity();
+        $user = $this->Users->patchEntity($user, $this->request->getData());
+
+        $result = $this->Users->findByUsername($user->username)->toArray();
+        if ($result){
+            $newPassword = $this->randomPassword();
+            $this->sendPassword($user->email, $newPassword);
+            $modif = $this->Users->get($result[0]['id']);
+            $modif->password = $newPassword;
+            $modif->first_login = true;
+            $modif->status = true;
+            $this->Users->save($modif);
         }
     }
 
@@ -176,7 +207,6 @@ class UsersController extends AppController
     public function changepassword()
     {
         $user = $this->Users->get($this->Auth->user('id'));
-        //$user = $this->Users->newEntity();
         if (!empty($this->request->data)) {
             $user = $this->Users->patchEntity($user, [
                 'password' => $this->request->data['password1'],
@@ -214,12 +244,23 @@ class UsersController extends AppController
 
     public function test() {
         // just to test out the sending email using SMTP is OK, create a method that will be able to access from public
-        $to = 'hollyn.derisse@esih.edu';
-        $subject = 'Hi buddy, i got a message for you.';
-        $message = 'Nothing much. Just test out my Email Component using PHPMailer.';
-        $mail = $this->Email->send($to, $subject, $message);
-        $this->set('mail',$mail);
-        $this->render(false);
+//        $to = 'hollyn.derisse@esih.edu';
+//        $subject = 'Hi buddy, i got a message for you.';
+//        $message = 'Nothing much. Just test out my Email Component using PHPMailer.';
+//        $mail = $this->Email->send($to, $subject, $message);
+//        $this->set('mail',$mail);
+//        $this->render(false);
+//        $usersTable = TableRegistry::get('Users');
+//        $hasher = new DefaultPasswordHasher();
+//        debug($this->request->session()->read('Auth.User'));
+        //debug($this->Users->find('all')->where(['Users.username' => 'hollyn_derisse', 'Users.password' => '$2y$10$.WPw0oxAa4GaCHodxOKweuRb2tV8VTVV5n5zCS6V/O4yNTnkNtlGm'])->toArray());
+//        $usersTable->find('all')
+//            ->where(['Users.username' => 'hollyn_derisse']));
+            //->contain(['Comments', 'Authors']));
+        $result = $this->Users->findByUsername('hollyn_derisse')->toArray();
+//        $result = $this->Users->get(1)->toArray();
+        debug($result[0]['username']);
+        die();
     }
 
 
@@ -227,7 +268,6 @@ class UsersController extends AppController
     {
         $usersTable = TableRegistry::get('Users');
         if ($this->request->is('ajax')) {
-            //echo $_POST['value_to_send'];
             $id = $this->request->data('value_to_send');
             $user = $this->Users->get($id);
             if ($this->request->session()->read('Auth.User')['id'] != $id) {
@@ -239,10 +279,6 @@ class UsersController extends AppController
                 $usersTable->save($user);
             } else
                 echo 'no';
-
-
-            //or debug($this->request->data);
-            //echo $user;
             die();
         }
     }
@@ -251,7 +287,6 @@ class UsersController extends AppController
     {
         $usersTable = TableRegistry::get('Users');
         if ($this->request->is('ajax')) {
-            // echo $_POST['value_to_send'];
             $id = $this->request->data('value_to_send');
             $user = $this->Users->get($id);
             if ($this->request->session()->read('Auth.User')['id'] != $id) {
@@ -263,10 +298,6 @@ class UsersController extends AppController
                 $usersTable->save($user);
             } else
                 echo 'no';
-
-
-            //or debug($this->request->data);
-            //echo $user;
             die();
         }
     }
@@ -279,7 +310,6 @@ class UsersController extends AppController
             $id = $this->request->data('value_to_send');
             $user = $this->Users->get($id);
             if ($this->request->session()->read('Auth.User')['id'] != $id) {
-                //$user->institution = 'INASSA';
                 if ($user->role == 'admin')
                     $user->role = 'user';
                 $newPassword = $this->randomPassword();
@@ -291,10 +321,6 @@ class UsersController extends AppController
                     $this->sendPassword($user->email, $newPassword);
             } else
                 echo 'no';
-
-
-//            debug($this->request->data);
-//            echo $user;
             die();
         }
     }

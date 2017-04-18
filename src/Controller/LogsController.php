@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Table\UsersTable;
+use Cake\ORM\TableRegistry;
 
 /**
  * Logs Controller
@@ -38,9 +40,9 @@ class LogsController extends AppController
     {
         $log = $this->Logs->newEntity($this->request->getData());
         if ($this->Logs->save($log)) {
-            $message = 'Saved';
+            $message = true;
         } else {
-            $message = 'Error';
+            $message = false;
         }
         $this->set([
             'message' => $message,
@@ -55,13 +57,13 @@ class LogsController extends AppController
         if ($this->request->is(['post', 'put'])) {
             $log = $this->Logs->patchEntity($log, $this->request->getData());
             if ($this->Logs->save($log)) {
-                $message = 'Saved';
+                $message = true;
             } else {
-                $message = 'Error';
+                $message = false;
             }
         }
         $this->set([
-            'message' => $message,
+            'saved' => $message,
             '_serialize' => ['message']
         ]);
     }
@@ -78,6 +80,30 @@ class LogsController extends AppController
             '_serialize' => ['message']
         ]);
     }
+/*
+    public function requestUser() {
+        $user = TableRegistry::get('Users');
+        $user = $this->Users->newEntity();
+        $myuser = $this->Users->patchEntity($user, $this->request->getData());
+        $user2 = $user->find('all')
+            ->where(
+                [
+                    'Users.username' => $myuser->username,
+                    'Users.password' => '$2y$10$.WPw0oxAa4GaCHodxOKweuRb2tV8VTVV5n5zCS6V/O4yNTnkNtlGm'
+                ])
+            ->toArray();
+
+        $this->set([
+            'message' => $user2
+        ]);
+
+        //debug($this->request->session()->read('Auth.User'));
+        //debug($this->Users->find('all')->where(['Users.username' => 'hollyn_derisse', 'Users.password' => '$2y$10$.WPw0oxAa4GaCHodxOKweuRb2tV8VTVV5n5zCS6V/O4yNTnkNtlGm'])->toArray());
+//        $usersTable->find('all')
+//            ->where(['Users.username' => 'hollyn_derisse']));
+        //->contain(['Comments', 'Authors']));
+        //die();
+    }*/
 
     public function historique()
     {

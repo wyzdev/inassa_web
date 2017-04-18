@@ -5323,3 +5323,462 @@ Cake\Http\Server::run() - CORE\src\Http\Server.php, line 82
 
 
 
+2017-04-17 14:50:59 Notice: Deprecated (8192): Non-static method Cake\ORM\Table::get() should not be called statically in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 225]
+Request URL: /users/test
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::test() - APP/Controller/UsersController.php, line 225
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 15:15:44 Notice: Notice (8): Undefined property: Cake\Auth\DefaultPasswordHasher::$hash in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 228]
+Request URL: /users/test
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::test() - APP/Controller/UsersController.php, line 228
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 15:47:32 Notice: Deprecated (8192): Non-static method Cake\ORM\Table::find() should not be called statically in [/opt/lampp/htdocs/inassa_web/src/Controller/LogsController.php, line 84]
+Request URL: /logs/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\LogsController::requestUser() - APP/Controller/LogsController.php, line 84
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 15:47:45 Notice: Deprecated (8192): Non-static method Cake\ORM\Table::find() should not be called statically in [/opt/lampp/htdocs/inassa_web/src/Controller/LogsController.php, line 84]
+Request URL: /logs/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\LogsController::requestUser() - APP/Controller/LogsController.php, line 84
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 15:48:20 Notice: Deprecated (8192): Non-static method Cake\ORM\Table::get() should not be called statically in [/opt/lampp/htdocs/inassa_web/src/Controller/LogsController.php, line 84]
+Request URL: /logs/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\LogsController::requestUser() - APP/Controller/LogsController.php, line 84
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 16:48:59 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Controller/LogsController.php, line 89]
+Request URL: /logs/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\LogsController::requestUser() - APP/Controller/LogsController.php, line 89
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 17:12:21 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 128]
+Request URL: /users/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::requestUser() - APP/Controller/UsersController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 17:12:47 Notice: Notice (8): Undefined index: password in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 128]
+Request URL: /users/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::requestUser() - APP/Controller/UsersController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 17:13:24 Notice: Notice (8): Undefined variable: resultSecurity in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 127]
+Request URL: /users/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::requestUser() - APP/Controller/UsersController.php, line 127
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 17:19:07 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 122]
+Request URL: /users/requestUser
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::requestUser() - APP/Controller/UsersController.php, line 122
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 17:19:11 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 122]
+Request URL: /users/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::requestUser() - APP/Controller/UsersController.php, line 122
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 17:19:59 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 122]
+Request URL: /users/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::requestUser() - APP/Controller/UsersController.php, line 122
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 17:20:22 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 122]
+Request URL: /users/requestUser.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::requestUser() - APP/Controller/UsersController.php, line 122
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 21:00:03 Notice: Notice (8): Undefined variable: primaryKey in [/opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/ORM/Table.php, line 1400]
+Request URL: /users/forgotPassword.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+Cake\ORM\Table::get() - CORE/src/ORM/Table.php, line 1400
+App\Controller\UsersController::forgotPassword() - APP/Controller/UsersController.php, line 190
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-17 21:13:54 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 191]
+Request URL: /users/forgotPassword.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::forgotPassword() - APP/Controller/UsersController.php, line 191
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-18 15:21:32 Notice: Notice (8): Undefined property: Cake\ORM\Query::$password in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 204]
+Request URL: /users/forgotPassword.json
+Client IP: 172.16.1.137
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::forgotPassword() - APP/Controller/UsersController.php, line 204
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-18 15:34:28 Notice: Notice (8): Undefined index: password in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 268]
+Request URL: /users/test
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::test() - APP/Controller/UsersController.php, line 268
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-18 15:35:01 Notice: Notice (8): Undefined index: id in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 268]
+Request URL: /users/test
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::test() - APP/Controller/UsersController.php, line 268
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-18 16:23:57 Notice: Notice (8): Undefined variable: modif in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 209]
+Request URL: /users/forgotPassword.json
+Client IP: 192.168.0.138
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::forgotPassword() - APP/Controller/UsersController.php, line 209
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-04-18 16:24:04 Notice: Notice (8): Undefined variable: modif in [/opt/lampp/htdocs/inassa_web/src/Controller/UsersController.php, line 209]
+Request URL: /users/forgotPassword.json
+Client IP: 192.168.0.138
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+App\Controller\UsersController::forgotPassword() - APP/Controller/UsersController.php, line 209
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 93
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 82
+[main] - ROOT/webroot/index.php, line 37
+
+
+

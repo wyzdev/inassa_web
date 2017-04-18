@@ -17,6 +17,26 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('title'); ?>
     </title>
     <?= $this->Html->meta('icon'); ?>
+
+    <style>
+        div.message {
+            text-align: center;
+            cursor: pointer;
+            display: block;
+            font-weight: normal;
+            padding: 0 1.5rem 0 1.5rem;
+            transition: height 300ms ease-out 0s;
+            background-color: #a0d3e8;
+            color: #626262;
+            top: 15px;
+            right: 15px;
+            z-index: 999;
+            overflow: hidden;
+            height: 50px;
+            line-height: 2.5em;
+            box-radius: 5px;
+        }
+    </style>
     <?= $this->Html->css('bootstrap/bootstrap'); ?>
     <?= $this->Html->css('bootstrap/bootstrap-theme'); ?>
     <?= $this->Html->css('login_form') ?>
