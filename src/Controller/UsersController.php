@@ -172,7 +172,7 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
-                if ($user['status'] && $user['role'] != 'medecin') {
+                if ($user['status']) {
                     $this->Auth->setUser($user);
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
                 } else
@@ -240,6 +240,27 @@ class UsersController extends AppController
         $mail = $this->Email->send($to, $subject, $message);
         $this->set('mail',$mail);
         $this->render(false);
+    }
+
+    public function changePasswordMedecin(){
+        $post = $this->request->data;
+
+        $result = $this->Users->findByUsername($post['username'])->toArray();
+
+        $message = true;
+        $user = $this->Users->get($result[0]['id']);
+        if ($user){
+            $user->password = $post['password'];
+            $user->email = $post['email'];
+            $user->first_login = false;
+            $this->Users->save($user);
+
+            $message = false;
+        }
+        $this->set([
+            'error' => $message,
+            'user' => $user
+        ]);
     }
 
     public function test() {
