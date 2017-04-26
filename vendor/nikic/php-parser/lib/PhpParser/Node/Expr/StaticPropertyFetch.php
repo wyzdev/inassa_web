@@ -2,8 +2,8 @@
 
 namespace PhpParser\Node\Expr;
 
-use PhpParser\Node\Expr;
 use PhpParser\Node\Name;
+use PhpParser\Node\Expr;
 
 class StaticPropertyFetch extends Expr
 {
@@ -20,7 +20,7 @@ class StaticPropertyFetch extends Expr
      * @param array       $attributes Additional attributes
      */
     public function __construct($class, $name, array $attributes = array()) {
-        parent::__construct($attributes);
+        parent::__construct(null, $attributes);
         $this->class = $class;
         $this->name = $name;
     }

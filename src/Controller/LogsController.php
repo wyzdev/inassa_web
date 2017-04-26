@@ -38,14 +38,16 @@ class LogsController extends AppController
 
     public function add()
     {
-        $log = $this->Logs->newEntity($this->request->getData());
-        if ($this->Logs->save($log)) {
-            $message = true;
-        } else {
-            $message = false;
+        $data = $this->request->data;
+        $log = '';
+        $message = true;
+        if (isset($data['token']) && $this->TOKEN == $data['token']) {
+            $log = $this->Logs->newEntity($this->request->getData());
+            if ($this->Logs->save($log))
+                $message = false;
         }
         $this->set([
-            'message' => $message,
+            'error' => $message,
             'log' => $log,
             '_serialize' => ['message', 'log']
         ]);
@@ -80,30 +82,6 @@ class LogsController extends AppController
             '_serialize' => ['message']
         ]);
     }
-/*
-    public function requestUser() {
-        $user = TableRegistry::get('Users');
-        $user = $this->Users->newEntity();
-        $myuser = $this->Users->patchEntity($user, $this->request->getData());
-        $user2 = $user->find('all')
-            ->where(
-                [
-                    'Users.username' => $myuser->username,
-                    'Users.password' => '$2y$10$.WPw0oxAa4GaCHodxOKweuRb2tV8VTVV5n5zCS6V/O4yNTnkNtlGm'
-                ])
-            ->toArray();
-
-        $this->set([
-            'message' => $user2
-        ]);
-
-        //debug($this->request->session()->read('Auth.User'));
-        //debug($this->Users->find('all')->where(['Users.username' => 'hollyn_derisse', 'Users.password' => '$2y$10$.WPw0oxAa4GaCHodxOKweuRb2tV8VTVV5n5zCS6V/O4yNTnkNtlGm'])->toArray());
-//        $usersTable->find('all')
-//            ->where(['Users.username' => 'hollyn_derisse']));
-        //->contain(['Comments', 'Authors']));
-        //die();
-    }*/
 
     public function historique()
     {

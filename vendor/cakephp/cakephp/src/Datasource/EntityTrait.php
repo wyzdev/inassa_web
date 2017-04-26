@@ -433,7 +433,8 @@ trait EntityTrait
             return $this;
         }
 
-        $this->_hidden += $properties;
+        $properties = array_merge($this->_hidden, $properties);
+        $this->_hidden = array_unique($properties);
 
         return $this;
     }
@@ -482,7 +483,8 @@ trait EntityTrait
             return $this;
         }
 
-        $this->_virtual += $properties;
+        $properties = array_merge($this->_virtual, $properties);
+        $this->_virtual = array_unique($properties);
 
         return $this;
     }
@@ -777,6 +779,16 @@ trait EntityTrait
     }
 
     /**
+     * Gets the dirty properties.
+     *
+     * @return array
+     */
+    public function getDirty()
+    {
+        return array_keys($this->_dirty);
+    }
+
+    /**
      * Sets the entire entity as clean, which means that it will appear as
      * no properties being modified or added at all. This is an useful call
      * for an initial object hydration
@@ -975,6 +987,7 @@ trait EntityTrait
         while ($len) {
             $part = array_shift($path);
             $len = count($path);
+            $val = null;
             if ($entity instanceof EntityInterface) {
                 $val = $entity->get($part);
             } elseif (is_array($entity)) {
@@ -1232,7 +1245,7 @@ trait EntityTrait
     {
         return $this->_properties + [
             '[new]' => $this->isNew(),
-            '[accessible]' => array_filter($this->_accessible),
+            '[accessible]' => $this->_accessible,
             '[dirty]' => $this->_dirty,
             '[original]' => $this->_original,
             '[virtual]' => $this->_virtual,

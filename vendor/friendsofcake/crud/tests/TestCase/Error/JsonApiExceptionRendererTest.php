@@ -45,7 +45,11 @@ class JsonApiExceptionRendererTest extends TestCase
         $controller = $this->getMockBuilder('Cake\Controller\Controller')
             ->setMethods(['render'])
             ->getMock();
-        $controller->request = new Request();
+        $controller->request = new Request([
+            'environment' => [
+                'HTTP_ACCEPT' => 'application/vnd.api+json'
+            ]
+        ]);
         $controller->response = new Response();
 
         $renderer = $this->getMockBuilder('Crud\Error\JsonApiExceptionRenderer')
@@ -68,6 +72,9 @@ class JsonApiExceptionRendererTest extends TestCase
 
         $expected = ['message', 'url', 'code'];
         $actual = $viewVars['_serialize'];
+        $actual = array_flip($actual);
+        unset($actual['file'], $actual['line']);
+        $actual = array_flip($actual);
         $this->assertEquals($expected, $actual);
 
         $this->assertEquals($viewVars['message'], 'Hello World');
@@ -93,7 +100,11 @@ class JsonApiExceptionRendererTest extends TestCase
         $controller = $this->getMockBuilder('Cake\Controller\Controller')
             ->setMethods(['render'])
             ->getMock();
-        $controller->request = new Request();
+        $controller->request = new Request([
+            'environment' => [
+                'HTTP_ACCEPT' => 'application/vnd.api+json'
+            ]
+        ]);
         $controller->response = new Response();
 
         $renderer = $this->getMockBuilder('Crud\Error\JsonApiExceptionRenderer')
@@ -137,7 +148,11 @@ class JsonApiExceptionRendererTest extends TestCase
             ->setMethods(['render'])
             ->getMock();
 
-        $controller->request = new Request();
+        $controller->request = new Request([
+            'environment' => [
+                'HTTP_ACCEPT' => 'application/vnd.api+json'
+            ]
+        ]);
 
         $response = $this->getMockBuilder('Cake\Network\Response')
             ->setMethods(['statusCode'])

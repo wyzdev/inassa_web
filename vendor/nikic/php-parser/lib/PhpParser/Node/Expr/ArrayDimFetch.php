@@ -19,12 +19,12 @@ class ArrayDimFetch extends Expr
      * @param array     $attributes Additional attributes
      */
     public function __construct(Expr $var, Expr $dim = null, array $attributes = array()) {
-        parent::__construct($attributes);
+        parent::__construct(null, $attributes);
         $this->var = $var;
         $this->dim = $dim;
     }
 
-    public function getSubNodeNames() {
+    public function getSubnodeNames() {
         return array('var', 'dim');
     }
 }

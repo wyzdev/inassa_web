@@ -9,8 +9,6 @@
 
 namespace JsonSchema\Constraints;
 
-use JsonSchema\Entity\JsonPointer;
-
 /**
  * The StringConstraint Constraints, validates an string against a given schema
  *
@@ -22,7 +20,7 @@ class StringConstraint extends Constraint
     /**
      * {@inheritDoc}
      */
-    public function check($element, $schema = null, JsonPointer $path = null, $i = null)
+    public function check($element, $schema = null, $path = null, $i = null)
     {
         // Verify maxLength
         if (isset($schema->maxLength) && $this->strlen($element) > $schema->maxLength) {
@@ -39,7 +37,7 @@ class StringConstraint extends Constraint
         }
 
         // Verify a regex pattern
-        if (isset($schema->pattern) && !preg_match('#' . str_replace('#', '\\#', $schema->pattern) . '#u', $element)) {
+        if (isset($schema->pattern) && !preg_match('#' . str_replace('#', '\\#', $schema->pattern) . '#', $element)) {
             $this->addError($path, "Does not match the regex pattern " . $schema->pattern, 'pattern', array(
                 'pattern' => $schema->pattern,
             ));

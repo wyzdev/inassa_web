@@ -216,3 +216,97 @@ Stack Trace:
 #4 {main}
 
 
+2017-04-26 12:46:25 Error: [Cake\Console\Exception\MissingShellException] Shell class for "-H" could not be found. in /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => '-H',
+)
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('-H')
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2017-04-26 13:58:29 Error: [InvalidArgumentException] Could not find class "Migrate" in file "/opt/lampp/htdocs/inassa_web/config/Migrations/20170227165758_Migrate.php" in /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php on line 596
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php(258): Phinx\Migration\Manager->getMigrations()
+#1 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Console/Command/Migrate.php(113): Phinx\Migration\Manager->migrate('default', NULL)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/ConfigurationTrait.php(165): Phinx\Console\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Command/Migrate.php(64): Migrations\Command\Migrate->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Command/Command.php(264): Migrations\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(846): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(192): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(123): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'migrate')
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(230): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#12 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#13 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#14 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#15 {main}
+
+
+2017-04-26 14:25:15 Error: [InvalidArgumentException] Could not find class "Migrate" in file "/opt/lampp/htdocs/inassa_web/config/Migrations/20170227165758_Migrate.php" in /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php on line 596
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php(258): Phinx\Migration\Manager->getMigrations()
+#1 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Console/Command/Migrate.php(113): Phinx\Migration\Manager->migrate('default', NULL)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/ConfigurationTrait.php(165): Phinx\Console\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Command/Migrate.php(64): Migrations\Command\Migrate->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Command/Command.php(264): Migrations\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(846): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(192): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(123): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'migrate')
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(230): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#12 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#13 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#14 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#15 {main}
+
+
+2017-04-26 14:28:43 Error: [InvalidArgumentException] There was a problem connecting to the database: SQLSTATE[HY000] [1049] Unknown database 'inassa_db' in /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Db/Adapter/MysqlAdapter.php on line 115
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Db/Adapter/PdoAdapter.php(238): Phinx\Db\Adapter\MysqlAdapter->connect()
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/CakeAdapter.php(57): Phinx\Db\Adapter\PdoAdapter->getConnection()
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/ConfigurationTrait.php(220): Migrations\CakeAdapter->__construct(Object(Phinx\Db\Adapter\MysqlAdapter), Object(Cake\Database\Connection))
+#3 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Console/Command/Migrate.php(72): Migrations\Command\Migrate->bootstrap(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/ConfigurationTrait.php(165): Phinx\Console\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Command/Migrate.php(64): Migrations\Command\Migrate->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Command/Command.php(264): Migrations\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(846): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(192): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(123): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'migrate')
+#12 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(230): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#14 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#15 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#16 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#17 {main}
+
+
+2017-04-26 14:29:30 Error: [InvalidArgumentException] Could not find class "Migrate" in file "/opt/lampp/htdocs/inassa_web/config/Migrations/20170227165758_Migrate.php" in /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php on line 596
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php(258): Phinx\Migration\Manager->getMigrations()
+#1 /opt/lampp/htdocs/inassa_web/vendor/robmorgan/phinx/src/Phinx/Console/Command/Migrate.php(113): Phinx\Migration\Manager->migrate('default', NULL)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/ConfigurationTrait.php(165): Phinx\Console\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Command/Migrate.php(64): Migrations\Command\Migrate->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Command/Command.php(264): Migrations\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(846): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(192): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /opt/lampp/htdocs/inassa_web/vendor/symfony/console/Application.php(123): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(101): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/Shell.php(472): Migrations\Shell\MigrationsShell->main('migrations', 'migrate')
+#10 /opt/lampp/htdocs/inassa_web/vendor/cakephp/migrations/src/Shell/MigrationsShell.php(156): Cake\Console\Shell->runCommand(Array, true, Array)
+#11 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(230): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#12 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#13 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#14 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#15 {main}
+
+

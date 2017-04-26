@@ -49,7 +49,7 @@ class GitDownloader extends VcsDownloader implements DvcsDownloaderInterface
 
         // --dissociate option is only available since git 2.3.0-rc0
         $gitVersion = $this->gitUtil->getVersion();
-        $msg = " Cloning ".$this->getShortHash($ref);
+        $msg = "Cloning ".$this->getShortHash($ref);
         if ($gitVersion && version_compare($gitVersion, '2.3.0-rc0', '>=')) {
             $this->io->writeError('', true, IOInterface::DEBUG);
             $this->io->writeError(sprintf('    Cloning to cache at %s', ProcessExecutor::escape($cachePath)), true, IOInterface::DEBUG);
@@ -57,7 +57,7 @@ class GitDownloader extends VcsDownloader implements DvcsDownloaderInterface
                 $this->gitUtil->syncMirror($url, $cachePath);
                 if (is_dir($cachePath)) {
                     $cacheOptions = sprintf('--dissociate --reference %s ', ProcessExecutor::escape($cachePath));
-                    $msg = " Cloning ".$this->getShortHash($ref).' from cache';
+                    $msg = "Cloning ".$this->getShortHash($ref).' from cache';
                 }
             } catch (\RuntimeException $e) {}
         }
@@ -251,7 +251,7 @@ class GitDownloader extends VcsDownloader implements DvcsDownloaderInterface
         $this->io->writeError('    <error>The package has modified files:</error>');
         $this->io->writeError(array_slice($changes, 0, 10));
         if (count($changes) > 10) {
-            $this->io->writeError('    <info>'.count($changes) - 10 . ' more files modified, choose "v" to view the full list</info>');
+            $this->io->writeError('    <info>' . (count($changes) - 10) . ' more files modified, choose "v" to view the full list</info>');
         }
 
         while (true) {

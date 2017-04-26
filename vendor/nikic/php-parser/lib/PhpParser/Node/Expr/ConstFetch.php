@@ -2,8 +2,8 @@
 
 namespace PhpParser\Node\Expr;
 
-use PhpParser\Node\Expr;
 use PhpParser\Node\Name;
+use PhpParser\Node\Expr;
 
 class ConstFetch extends Expr
 {
@@ -17,7 +17,7 @@ class ConstFetch extends Expr
      * @param array $attributes Additional attributes
      */
     public function __construct(Name $name, array $attributes = array()) {
-        parent::__construct($attributes);
+        parent::__construct(null, $attributes);
         $this->name = $name;
     }
 

@@ -2,10 +2,12 @@
 
 
 <div class="container" style="">
-   <!-- <p class="text-center">
-        Recherchez un client ...
-    </p>-->
     <div class="client" style="display: ;">
+        <p class="text-center">
+            Recherchez un client ...
+        </p>
+    </div>
+    <!--<div class="client" style="display: ;">
         <div class="info_client container-fluid" style="">
             <div class="row">
                 <div class="col-md-12">
@@ -29,7 +31,7 @@
         <div class="center-horizontal container-fluid center-horizontal margin-10">
             <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Voir l'historique de ce client</a>
         </div>
-    </div>
+    </div>-->
 </div>
 
 

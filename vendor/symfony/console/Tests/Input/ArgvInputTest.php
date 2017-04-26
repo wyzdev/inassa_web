@@ -11,12 +11,13 @@
 
 namespace Symfony\Component\Console\Tests\Input;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class ArgvInputTest extends \PHPUnit_Framework_TestCase
+class ArgvInputTest extends TestCase
 {
     public function testConstructor()
     {
@@ -163,7 +164,12 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidInput($argv, $definition, $expectedExceptionMessage)
     {
-        $this->setExpectedException('RuntimeException', $expectedExceptionMessage);
+        if (method_exists($this, 'expectException')) {
+            $this->expectException('RuntimeException');
+            $this->expectExceptionMessage($expectedExceptionMessage);
+        } else {
+            $this->setExpectedException('RuntimeException', $expectedExceptionMessage);
+        }
 
         $input = new ArgvInput($argv);
         $input->bind($definition);
@@ -300,21 +306,6 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($input->hasParameterOption('--foo'), '->hasParameterOption() returns true if the given option with provided value is in the raw input');
     }
 
-    public function testHasParameterOptionOnlyOptions()
-    {
-        $input = new ArgvInput(array('cli.php', '-f', 'foo'));
-        $this->assertTrue($input->hasParameterOption('-f', true), '->hasParameterOption() returns true if the given short option is in the raw input');
-
-        $input = new ArgvInput(array('cli.php', '--foo', '--', 'foo'));
-        $this->assertTrue($input->hasParameterOption('--foo', true), '->hasParameterOption() returns true if the given long option is in the raw input');
-
-        $input = new ArgvInput(array('cli.php', '--foo=bar', 'foo'));
-        $this->assertTrue($input->hasParameterOption('--foo', true), '->hasParameterOption() returns true if the given long option with provided value is in the raw input');
-
-        $input = new ArgvInput(array('cli.php', '--', '--foo'));
-        $this->assertFalse($input->hasParameterOption('--foo', true), '->hasParameterOption() returns false if the given option is in the raw input but after an end of options signal');
-    }
-
     public function testToString()
     {
         $input = new ArgvInput(array('cli.php', '-f', 'foo'));
@@ -327,25 +318,21 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider provideGetParameterOptionValues
      */
-    public function testGetParameterOptionEqualSign($argv, $key, $onlyParams, $expected)
+    public function testGetParameterOptionEqualSign($argv, $key, $expected)
     {
         $input = new ArgvInput($argv);
-        $this->assertEquals($expected, $input->getParameterOption($key, false, $onlyParams), '->getParameterOption() returns the expected value');
+        $this->assertEquals($expected, $input->getParameterOption($key), '->getParameterOption() returns the expected value');
     }
 
     public function provideGetParameterOptionValues()
     {
         return array(
-            array(array('app/console', 'foo:bar', '-e', 'dev'), '-e', false, 'dev'),
-            array(array('app/console', 'foo:bar', '--env=dev'), '--env', false, 'dev'),
-            array(array('app/console', 'foo:bar', '-e', 'dev'), array('-e', '--env'), false, 'dev'),
-            array(array('app/console', 'foo:bar', '--env=dev'), array('-e', '--env'), false, 'dev'),
-            array(array('app/console', 'foo:bar', '--env=dev', '--en=1'), array('--en'), false, '1'),
-            array(array('app/console', 'foo:bar', '--env=dev', '', '--en=1'), array('--en'), false, '1'),
-            array(array('app/console', 'foo:bar', '--env', 'val'), '--env', false, 'val'),
-            array(array('app/console', 'foo:bar', '--env', 'val', '--dummy'), '--env', false, 'val'),
-            array(array('app/console', 'foo:bar', '--', '--env=dev'), '--env', false, 'dev'),
-            array(array('app/console', 'foo:bar', '--', '--env=dev'), '--env', true, false),
+            array(array('app/console', 'foo:bar', '-e', 'dev'), '-e', 'dev'),
+            array(array('app/console', 'foo:bar', '--env=dev'), '--env', 'dev'),
+            array(array('app/console', 'foo:bar', '-e', 'dev'), array('-e', '--env'), 'dev'),
+            array(array('app/console', 'foo:bar', '--env=dev'), array('-e', '--env'), 'dev'),
+            array(array('app/console', 'foo:bar', '--env=dev', '--en=1'), array('--en'), '1'),
+            array(array('app/console', 'foo:bar', '--env=dev', '', '--en=1'), array('--en'), '1'),
         );
     }
 

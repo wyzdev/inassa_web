@@ -9,8 +9,6 @@
 
 namespace JsonSchema\Constraints;
 
-use JsonSchema\Entity\JsonPointer;
-
 /**
  * The CollectionConstraint Constraints, validates an array against a given schema
  *
@@ -19,24 +17,10 @@ use JsonSchema\Entity\JsonPointer;
  */
 class CollectionConstraint extends Constraint
 {
-
     /**
      * {@inheritDoc}
      */
-    public function check($value, $schema = null, JsonPointer $path = null, $i = null)
-    {
-        $this->_check($value, $schema, $path, $i);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function coerce(&$value, $schema = null, JsonPointer $path = null, $i = null)
-    {
-        $this->_check($value, $schema, $path, $i, true);
-    }
-
-    protected function _check(&$value, $schema = null, JsonPointer $path = null, $i = null, $coerce = false)
+    public function check($value, $schema = null, $path = null, $i = null)
     {
         // Verify minItems
         if (isset($schema->minItems) && count($value) < $schema->minItems) {
@@ -61,95 +45,66 @@ class CollectionConstraint extends Constraint
 
         // Verify items
         if (isset($schema->items)) {
-            $this->validateItems($value, $schema, $path, $i, $coerce);
+            $this->validateItems($value, $schema, $path, $i);
         }
     }
 
     /**
      * Validates the items
      *
-     * @param array            $value
-     * @param \stdClass        $schema
-     * @param JsonPointer|null $path
-     * @param string           $i
-	 * @param boolean          $coerce
+     * @param array     $value
+     * @param \stdClass $schema
+     * @param string    $path
+     * @param string    $i
      */
-    protected function validateItems(&$value, $schema = null, JsonPointer $path = null, $i = null, $coerce = false)
+    protected function validateItems($value, $schema = null, $path = null, $i = null)
     {
         if (is_object($schema->items)) {
             // just one type definition for the whole array
+            foreach ($value as $k => $v) {
+                $initErrors = $this->getErrors();
 
-            if (isset($schema->items->type)
-                && (
-                    $schema->items->type == 'string'
-                    || $schema->items->type == 'number'
-                    || $schema->items->type == 'integer'
-                )
-                && !isset($schema->additionalItems)
-            ) {
-                // performance optimization
-                $type = $schema->items->type;
-                $typeValidator = $this->factory->createInstanceFor('type');
-				$validator = $this->factory->createInstanceFor($type === 'integer' ? 'number' : $type);
+                // First check if its defined in "items"
+                $this->checkUndefined($v, $schema->items, $path, $k);
 
-                foreach ($value as $k => $v) {
-					$k_path = $this->incrementPath($path, $k);
-					if($coerce) {
-						$typeValidator->coerce($v, $schema->items, $k_path, $i);
-					} else {
-						$typeValidator->check($v, $schema->items, $k_path, $i);
-					}
-
-					$validator->check($v, $schema->items, $k_path, $i);
+                // Recheck with "additionalItems" if the first test fails
+                if (count($initErrors) < count($this->getErrors()) && (isset($schema->additionalItems) && $schema->additionalItems !== false)) {
+                    $secondErrors = $this->getErrors();
+                    $this->checkUndefined($v, $schema->additionalItems, $path, $k);
                 }
-                $this->addErrors($typeValidator->getErrors());
-                $this->addErrors($validator->getErrors());
-            } else {
-                foreach ($value as $k => $v) {
-                    $initErrors = $this->getErrors();
 
-                    // First check if its defined in "items"
-                    $this->checkUndefined($v, $schema->items, $path, $k, $coerce);
-
-                    // Recheck with "additionalItems" if the first test fails
-                    if (count($initErrors) < count($this->getErrors()) && (isset($schema->additionalItems) && $schema->additionalItems !== false)) {
-                        $secondErrors = $this->getErrors();
-                        $this->checkUndefined($v, $schema->additionalItems, $path, $k);
-                    }
-
-                    // Reset errors if needed
-                    if (isset($secondErrors) && count($secondErrors) < count($this->getErrors())) {
-                        $this->errors = $secondErrors;
-                    } elseif (isset($secondErrors) && count($secondErrors) === count($this->getErrors())) {
-                        $this->errors = $initErrors;
-                    }
+                // Reset errors if needed
+                if (isset($secondErrors) && count($secondErrors) < count($this->getErrors())) {
+                    $this->errors = $secondErrors;
+                } else if (isset($secondErrors) && count($secondErrors) === count($this->getErrors())) {
+                    $this->errors = $initErrors;
                 }
             }
         } else {
             // Defined item type definitions
             foreach ($value as $k => $v) {
                 if (array_key_exists($k, $schema->items)) {
-                    $this->checkUndefined($v, $schema->items[$k], $path, $k, $coerce);
+                    $this->checkUndefined($v, $schema->items[$k], $path, $k);
                 } else {
                     // Additional items
                     if (property_exists($schema, 'additionalItems')) {
                         if ($schema->additionalItems !== false) {
-                            $this->checkUndefined($v, $schema->additionalItems, $path, $k, $coerce);
+                            $this->checkUndefined($v, $schema->additionalItems, $path, $k);
                         } else {
                             $this->addError(
                                 $path, 'The item ' . $i . '[' . $k . '] is not defined and the definition does not allow additional items', 'additionalItems', array('additionalItems' => $schema->additionalItems,));
                         }
                     } else {
                         // Should be valid against an empty schema
-                        $this->checkUndefined($v, new \stdClass(), $path, $k, $coerce);
+                        $this->checkUndefined($v, new \stdClass(), $path, $k);
                     }
                 }
             }
 
             // Treat when we have more schema definitions than values, not for empty arrays
-            if (count($value) > 0) {
+            if(count($value) > 0) {
                 for ($k = count($value); $k < count($schema->items); $k++) {
-                    $this->checkUndefined($this->factory->createInstanceFor('undefined'), $schema->items[$k], $path, $k, $coerce);
+                    $this->checkUndefined(new UndefinedConstraint(), $schema->items[$k], $path, $k);
                 }
             }
         }

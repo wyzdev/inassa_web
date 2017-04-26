@@ -29,7 +29,7 @@ use Cake\Utility\Inflector;
  * application development by writing fully functional skeleton controllers,
  * models, and templates. Going further, Bake can also write Unit Tests for you.
  *
- * @link http://book.cakephp.org/3.0/en/console-and-shells/code-generation-with-bake.html
+ * @link https://book.cakephp.org/3.0/en/bake/usage.html
  */
 class BakeShell extends Shell
 {
@@ -58,6 +58,9 @@ class BakeShell extends Shell
         if (isset($this->{$task}) && !in_array($task, ['Project'])) {
             if (isset($this->params['connection'])) {
                 $this->{$task}->connection = $this->params['connection'];
+            }
+            if (isset($this->params['tablePrefix'])) {
+                $this->{$task}->tablePrefix = $this->params['tablePrefix'];
             }
         }
         if (isset($this->params['connection'])) {
@@ -281,7 +284,7 @@ class BakeShell extends Shell
             }
         }
 
-        $parser->description(
+        $parser->setDescription(
             'The Bake script generates controllers, models and template files for your application.' .
             ' If run with no command line arguments, Bake guides the user through the class creation process.' .
             ' You can customize the generation process by telling Bake where different parts of your application' .
@@ -306,6 +309,9 @@ class BakeShell extends Shell
             'help' => 'Plugin to bake into.'
         ])->addOption('prefix', [
             'help' => 'Prefix to bake controllers and templates into.'
+        ])->addOption('tablePrefix', [
+            'help' => 'Table prefix to be used in models.',
+            'default' => null
         ])->addOption('theme', [
             'short' => 't',
             'help' => 'The theme to use when baking code.',
@@ -315,7 +321,7 @@ class BakeShell extends Shell
         foreach ($this->_taskMap as $task => $config) {
             $taskParser = $this->{$task}->getOptionParser();
             $parser->addSubcommand(Inflector::underscore($task), [
-                'help' => $taskParser->description(),
+                'help' => $taskParser->getDescription(),
                 'parser' => $taskParser
             ]);
         }

@@ -2,8 +2,6 @@
 
 namespace PhpParser;
 
-use PhpParser\Parser\Tokens;
-
 class LexerTest extends \PHPUnit_Framework_TestCase
 {
     /* To allow overwriting in parent class */
@@ -14,36 +12,28 @@ class LexerTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider provideTestError
      */
-    public function testError($code, $messages) {
+    public function testError($code, $message) {
         if (defined('HHVM_VERSION')) {
             $this->markTestSkipped('HHVM does not throw warnings from token_get_all()');
         }
 
-        $errorHandler = new ErrorHandler\Collecting();
-        $lexer = $this->getLexer(['usedAttributes' => [
-            'comments', 'startLine', 'endLine', 'startFilePos', 'endFilePos'
-        ]]);
-        $lexer->startLexing($code, $errorHandler);
-        $errors = $errorHandler->getErrors();
+        $lexer = $this->getLexer();
+        try {
+            $lexer->startLexing($code);
+        } catch (Error $e) {
+            $this->assertSame($message, $e->getMessage());
 
-        $this->assertSame(count($messages), count($errors));
-        for ($i = 0; $i < count($messages); $i++) {
-            $this->assertSame($messages[$i], $errors[$i]->getMessageWithColumnInfo($code));
+            return;
         }
+
+        $this->fail('Expected PhpParser\Error');
     }
 
     public function provideTestError() {
         return array(
-            array("<?php /*", array("Unterminated comment from 1:7 to 1:9")),
-            array("<?php \1", array("Unexpected character \"\1\" (ASCII 1) from 1:7 to 1:7")),
-            array("<?php \0", array("Unexpected null byte from 1:7 to 1:7")),
-            // Error with potentially emulated token
-            array("<?php ?? \0", array("Unexpected null byte from 1:10 to 1:10")),
-            array("<?php\n\0\1 foo /* bar", array(
-                "Unexpected null byte from 2:1 to 2:1",
-                "Unexpected character \"\1\" (ASCII 1) from 2:2 to 2:2",
-                "Unterminated comment from 2:8 to 2:14"
-            )),
+            array('<?php /*', 'Unterminated comment on line 1'),
+            array('<?php ' . "\1", 'Unexpected character "' . "\1" . '" (ASCII 1) on unknown line'),
+            array('<?php ' . "\0", 'Unexpected null byte on unknown line'),
         );
     }
 
@@ -71,7 +61,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                 array(),
                 array(
                     array(
-                        Tokens::T_STRING, 'tokens',
+                        Parser::T_STRING, 'tokens',
                         array('startLine' => 1), array('endLine' => 1)
                     ),
                     array(
@@ -79,9 +69,8 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                         array('startLine' => 1), array('endLine' => 1)
                     ),
                     array(
-                        Tokens::T_INLINE_HTML, 'plaintext',
-                        array('startLine' => 1, 'hasLeadingNewline' => false),
-                        array('endLine' => 1)
+                        Parser::T_INLINE_HTML, 'plaintext',
+                        array('startLine' => 1), array('endLine' => 1)
                     ),
                 )
             ),
@@ -95,16 +84,14 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                         array('startLine' => 2), array('endLine' => 2)
                     ),
                     array(
-                        Tokens::T_STRING, 'token',
+                        Parser::T_STRING, 'token',
                         array('startLine' => 2), array('endLine' => 2)
                     ),
                     array(
                         ord('$'), '$',
                         array(
                             'startLine' => 3,
-                            'comments' => array(
-                                new Comment\Doc('/** doc' . "\n" . 'comment */', 2, 14),
-                            )
+                            'comments' => array(new Comment\Doc('/** doc' . "\n" . 'comment */', 2))
                         ),
                         array('endLine' => 3)
                     ),
@@ -116,14 +103,14 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                 array(),
                 array(
                     array(
-                        Tokens::T_STRING, 'token',
+                        Parser::T_STRING, 'token',
                         array(
                             'startLine' => 2,
                             'comments' => array(
-                                new Comment('/* comment */', 1, 6),
-                                new Comment('// comment' . "\n", 1, 20),
-                                new Comment\Doc('/** docComment 1 */', 2, 31),
-                                new Comment\Doc('/** docComment 2 */', 2, 50),
+                                new Comment('/* comment */', 1),
+                                new Comment('// comment' . "\n", 1),
+                                new Comment\Doc('/** docComment 1 */', 2),
+                                new Comment\Doc('/** docComment 2 */', 2),
                             ),
                         ),
                         array('endLine' => 2)
@@ -136,7 +123,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                 array(),
                 array(
                     array(
-                        Tokens::T_CONSTANT_ENCAPSED_STRING, '"foo' . "\n" . 'bar"',
+                        Parser::T_CONSTANT_ENCAPSED_STRING, '"foo' . "\n" . 'bar"',
                         array('startLine' => 1), array('endLine' => 2)
                     ),
                 )
@@ -147,7 +134,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                 array('usedAttributes' => array('startFilePos', 'endFilePos')),
                 array(
                     array(
-                        Tokens::T_CONSTANT_ENCAPSED_STRING, '"a"',
+                        Parser::T_CONSTANT_ENCAPSED_STRING, '"a"',
                         array('startFilePos' => 6), array('endFilePos' => 8)
                     ),
                     array(
@@ -155,7 +142,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                         array('startFilePos' => 9), array('endFilePos' => 9)
                     ),
                     array(
-                        Tokens::T_CONSTANT_ENCAPSED_STRING, '"b"',
+                        Parser::T_CONSTANT_ENCAPSED_STRING, '"b"',
                         array('startFilePos' => 18), array('endFilePos' => 20)
                     ),
                     array(
@@ -170,7 +157,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                 array('usedAttributes' => array('startTokenPos', 'endTokenPos')),
                 array(
                     array(
-                        Tokens::T_CONSTANT_ENCAPSED_STRING, '"a"',
+                        Parser::T_CONSTANT_ENCAPSED_STRING, '"a"',
                         array('startTokenPos' => 1), array('endTokenPos' => 1)
                     ),
                     array(
@@ -178,7 +165,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                         array('startTokenPos' => 2), array('endTokenPos' => 2)
                     ),
                     array(
-                        Tokens::T_CONSTANT_ENCAPSED_STRING, '"b"',
+                        Parser::T_CONSTANT_ENCAPSED_STRING, '"b"',
                         array('startTokenPos' => 5), array('endTokenPos' => 5)
                     ),
                     array(
@@ -193,7 +180,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
                 array('usedAttributes' => array()),
                 array(
                     array(
-                        Tokens::T_VARIABLE, '$bar',
+                        Parser::T_VARIABLE, '$bar',
                         array(), array()
                     ),
                     array(
@@ -212,7 +199,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
         $lexer = $this->getLexer();
         $lexer->startLexing($code);
 
-        while (Tokens::T_HALT_COMPILER !== $lexer->getNextToken());
+        while (Parser::T_HALT_COMPILER !== $lexer->getNextToken());
 
         $this->assertSame($remaining, $lexer->handleHaltCompiler());
         $this->assertSame(0, $lexer->getNextToken());
@@ -236,7 +223,7 @@ class LexerTest extends \PHPUnit_Framework_TestCase
         $lexer = $this->getLexer();
         $lexer->startLexing('<?php ... __halt_compiler invalid ();');
 
-        while (Tokens::T_HALT_COMPILER !== $lexer->getNextToken());
+        while (Parser::T_HALT_COMPILER !== $lexer->getNextToken());
         $lexer->handleHaltCompiler();
     }
 

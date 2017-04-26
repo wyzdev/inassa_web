@@ -28,6 +28,15 @@ use Cake\Controller\Component\RequestHandlerComponent;
  */
 class AppController extends Controller
 {
+    public $TOKEN = "1E:DF:D8:32:09:92:72:AF:FA:32:12:71:D6:B5:E4:70:DB:F2:7F:48";
+
+    /**
+     * @return string
+     */
+    public function getTOKEN()
+    {
+        return $this->TOKEN;
+    }
     /**
      * Initialization hook method.
      *
@@ -77,6 +86,10 @@ class AppController extends Controller
         }
     }
 
+    /**
+     * @param Event $event
+     *
+     */
     public function beforeFilter(Event $event)
     {
         $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin']);

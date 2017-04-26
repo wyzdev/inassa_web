@@ -15,114 +15,29 @@ use Cake\Auth\DefaultPasswordHasher;
 class UsersController extends AppController
 {
     public $components = array('Email');
-    /**
-     * Index method
-     *
-     * @return \Cake\Network\Response|null
-     */
-    public function index()
-    {
-        $users = $this->paginate($this->Users);
-
-        $this->set(compact('users'));
-        $this->set('_serialize', ['users']);
-    }
 
     /**
-     * View method
      *
-     * @param string|null $id User id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
-        $user = $this->Users->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('user', $user);
-        $this->set('_serialize', ['user']);
-    }
-
-    /**
-     * Add method
-     *
-     * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
-     */
-    public function add()
-    {
-        $user = $this->Users->newEntity();
-        if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
-        }
-        $this->set(compact('user'));
-        $this->set('_serialize', ['user']);
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $user = $this->Users->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
-        }
-        $this->set(compact('user'));
-        $this->set('_serialize', ['user']);
-    }
-
-    /**
-     * Delete method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Network\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $user = $this->Users->get($id);
-        if ($this->Users->delete($user)) {
-            $this->Flash->success(__('The user has been deleted.'));
-        } else {
-            $this->Flash->error(__('The user could not be deleted. Please, try again.'));
-        }
-
-        return $this->redirect(['action' => 'index']);
-    }
-
     public function requestUser() {
-        $user = $this->Auth->identify();
-        $message = true;
-        if ($user)
-            $message = false;
+        $data = $this->request->data;
 
+        $message = true;
+        $user = '';
+        if (isset($data['token']) && $this->TOKEN == $data['token']){
+            $user = $this->Auth->identify();
+            if ($user)
+                $message = false;
+        }
         $this->set([
             'error' => $message,
             'user' => $user
         ]);
     }
 
+    /**
+     * @return mixed
+     */
     public function addusers()
     {
         if ($this->request->session()->read('Auth.User')['role'] != 'admin' or $this->request->session()->read('Auth.User')['first_login'])
@@ -131,6 +46,8 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $randomPassword = $this->randomPassword();
+            $user->last_name = strtoupper($user->last_name);
+            $user->first_name = ucwords($user->first_name);
             $user->password = $randomPassword;
             $user->status = 1;
             $user->first_login = 1;
@@ -149,6 +66,11 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
+    /**
+     * randomPassword method
+     *
+     * @return string
+     */
     function randomPassword() {
         $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
         $pass = array(); //remember to declare $pass as an array
@@ -160,6 +82,11 @@ class UsersController extends AppController
         return implode($pass); //turn the array into a string
     }
 
+    /**
+     * login method
+     *
+     * @return mixed
+     */
     public function login()
     {
         if ($this->request->session()->read('Auth.User'))
@@ -182,28 +109,54 @@ class UsersController extends AppController
         }
     }
 
+    /**
+     * forgotPassword method
+     *
+     * send an e-mail with a new password to a user
+     */
     public function forgotPassword() {
+        $data = $this->request->data;
+        $message = true;
+        $user = '';
+        if (isset($data['token']) && $this->TOKEN == $data['token']){
+            $user = $this->Users->newEntity();
+            $user = $this->Users->patchEntity($user, $this->request->getData());
 
-        $user = $this->Users->newEntity();
-        $user = $this->Users->patchEntity($user, $this->request->getData());
-
-        $result = $this->Users->findByUsername($user->username)->toArray();
-        if ($result){
-            $newPassword = $this->randomPassword();
-            $this->sendPassword($user->email, $newPassword);
-            $modif = $this->Users->get($result[0]['id']);
-            $modif->password = $newPassword;
-            $modif->first_login = true;
-            $modif->status = true;
-            $this->Users->save($modif);
+            $result = $this->Users->findByUsername($user->username)->toArray();
+            if ($result){
+                $newPassword = $this->randomPassword();
+                $this->sendPassword($user->email, $newPassword);
+                $modif = $this->Users->get($result[0]['id']);
+                $modif->password = $newPassword;
+                $modif->first_login = true;
+                $modif->status = true;
+                $this->Users->save($modif);
+            }
         }
+
+
+        $this->set([
+            'error' => $message,
+            'user' => $user
+        ]);
     }
 
+    /**
+     *
+     * logout method
+     *
+     * @return mixed
+     */
     public function logout()
     {
         return $this->redirect($this->Auth->logout());
     }
 
+    /**
+     * changePassword method
+     *
+     *
+     */
     public function changepassword()
     {
         $user = $this->Users->get($this->Auth->user('id'));
@@ -233,6 +186,12 @@ class UsersController extends AppController
         $this->set('user', $user);
     }
 
+    /**
+     * sendPassword method
+     *
+     * @param $usermail
+     * @param $userpassword
+     */
     private function sendPassword($usermail, $userpassword){
         $to = $usermail;
         $subject = 'Votre mot de passe';
@@ -242,20 +201,29 @@ class UsersController extends AppController
         $this->render(false);
     }
 
+    /**
+     * changePasswordMedecin method
+     *
+     *
+     */
     public function changePasswordMedecin(){
-        $post = $this->request->data;
+        $data = $this->request->data;
 
-        $result = $this->Users->findByUsername($post['username'])->toArray();
 
         $message = true;
-        $user = $this->Users->get($result[0]['id']);
-        if ($user){
-            $user->password = $post['password'];
-            $user->email = $post['email'];
-            $user->first_login = false;
-            $this->Users->save($user);
+        $user = '';
+        if (isset($data['token']) && $this->TOKEN == $data['token']) {
+            $result = $this->Users->findByUsername($data['username'])->toArray();
 
-            $message = false;
+            if ($result) {
+                $user = $this->Users->get($result[0]['id']);
+                $user->password = $data['password'];
+                $user->email = $data['email'];
+                $user->first_login = false;
+                $this->Users->save($user);
+
+                $message = false;
+            }
         }
         $this->set([
             'error' => $message,
@@ -263,6 +231,9 @@ class UsersController extends AppController
         ]);
     }
 
+    /**
+     *test method
+     */
     public function test() {
         // just to test out the sending email using SMTP is OK, create a method that will be able to access from public
 //        $to = 'hollyn.derisse@esih.edu';
@@ -284,7 +255,11 @@ class UsersController extends AppController
         die();
     }
 
-
+    /**
+     * updateAccess method
+     *
+     * change access of a user to the database
+     */
     public function updateAccess()
     {
         $usersTable = TableRegistry::get('Users');
@@ -304,6 +279,11 @@ class UsersController extends AppController
         }
     }
 
+    /**
+     * updateStatus method
+     *
+     * change status of a user
+     */
     public function updateStatus()
     {
         $usersTable = TableRegistry::get('Users');
@@ -323,6 +303,12 @@ class UsersController extends AppController
         }
     }
 
+    /**
+     * resetAccount method
+     *
+     * change the status, the access and the password in the database, and send the new password to
+     * the e-mail of this user
+     */
     public function resetAccount()
     {
         $usersTable = TableRegistry::get('Users');

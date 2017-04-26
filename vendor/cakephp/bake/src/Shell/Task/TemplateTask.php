@@ -288,11 +288,11 @@ class TemplateTask extends BakeTask
             ]);
         }
 
-        $primaryKey = (array)$modelObject->primaryKey();
-        $displayField = $modelObject->displayField();
+        $primaryKey = (array)$modelObject->getPrimaryKey();
+        $displayField = $modelObject->getDisplayField();
         $singularVar = $this->_singularName($this->controllerName);
         $singularHumanName = $this->_singularHumanName($this->controllerName);
-        $schema = $modelObject->schema();
+        $schema = $modelObject->getSchema();
         $fields = $schema->columns();
         $modelClass = $this->modelName;
         $associations = $this->_filteredAssociations($modelObject);
@@ -439,7 +439,7 @@ class TemplateTask extends BakeTask
     {
         $parser = parent::getOptionParser();
 
-        $parser->description(
+        $parser->setDescription(
             'Bake views for a controller, using built-in or custom templates. '
         )->addArgument('controller', [
             'help' => 'Name of the controller views to bake. You can use Plugin.name as a shortcut for plugin baking.'

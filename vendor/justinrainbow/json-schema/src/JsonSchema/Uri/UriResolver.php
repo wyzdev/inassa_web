@@ -10,14 +10,13 @@
 namespace JsonSchema\Uri;
 
 use JsonSchema\Exception\UriResolverException;
-use JsonSchema\UriResolverInterface;
 
 /**
  * Resolves JSON Schema URIs
  * 
  * @author Sander Coolen <sander@jibber.nl> 
  */
-class UriResolver implements UriResolverInterface
+class UriResolver
 {
     /**
      * Parses a URI into five main components
@@ -70,7 +69,11 @@ class UriResolver implements UriResolverInterface
     }
     
     /**
-     * {@inheritdoc}
+     * Resolves a URI
+     * 
+     * @param string $uri Absolute or relative
+     * @param string $baseUri Optional base URI
+     * @return string Absolute URI
      */
     public function resolve($uri, $baseUri = null)
     {

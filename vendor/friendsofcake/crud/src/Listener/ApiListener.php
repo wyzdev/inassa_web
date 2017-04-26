@@ -415,7 +415,7 @@ class ApiListener extends BaseListener
 
         foreach ($detectors as $name => $config) {
             $request->addDetector($name, function (Request $request) use ($config) {
-                if (isset($request->params['_ext']) && $request->params['_ext'] === $config['ext']) {
+                if ($config['ext'] !== false && $request->param('_ext') === $config['ext']) {
                     return true;
                 }
 

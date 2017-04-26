@@ -592,7 +592,7 @@ class Validation
      * - 1..N => Exactly that many number of decimal places. The '.' is required.
      *
      * @param float $check The value the test for decimal.
-     * @param int|null $places Decimal places.
+     * @param int|bool|null $places Decimal places.
      * @param string|null $regex If a custom regular expression is used, this is the only validation that will occur.
      * @return bool Success
      */
@@ -691,7 +691,9 @@ class Validation
     public static function extension($check, $extensions = ['gif', 'jpeg', 'png', 'jpg'])
     {
         if (is_array($check)) {
-            return static::extension(array_shift($check), $extensions);
+            $check = isset($check['name']) ? $check['name'] : array_shift($check);
+
+            return static::extension($check, $extensions);
         }
         $extension = strtolower(pathinfo($check, PATHINFO_EXTENSION));
         foreach ($extensions as $value) {

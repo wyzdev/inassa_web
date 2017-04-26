@@ -1,15 +1,19 @@
-JsonApi
-=======
+JSON API
+========
 
 Listener for building a Crud API following the
-`JSONAPI specification <http://jsonapi.org/>`_.
+`JSON API specification <http://jsonapi.org/>`_.
 
 Introduction
 ------------
-This listener brings you a full implementation of the JSON API specification version
+This listener brings you an implementation of the JSON API specification version
 v1.0 with support for data fetching, data posting, (validation) errors and a ton of
 configurable options to manipulate the generated json allowing you to benefit of instant
 compatibility with JSON API supporting tools and frameworks like Ember Data.
+
+Please note that some parts of the JSON API specification have not been implemented yet.
+Feel free to submit a PR for missing functionality and help work towards a full-featured
+implementation of the specification, the effort should be minimal.
 
 Requirements
 ------------
@@ -27,7 +31,7 @@ Setup
 Routing
 ^^^^^^^
 
-Only controllers explicitely mapped can be exposed as API resources so make sure
+Only controllers explicitly mapped can be exposed as API resources so make sure
 to configure your global routing scope in ``config/router.php`` similar to:
 
 .. code-block:: phpinline
@@ -42,8 +46,8 @@ to configure your global routing scope in ``config/router.php`` similar to:
         $routes->resources($apiResource, [
             'inflect' => 'dasherize'
         ]);
-	}
-  }
+    }
+  });
 
 Controller
 ^^^^^^^^^^
@@ -106,8 +110,37 @@ Exception handler
 -----------------
 
 The JsonApi listener overrides the ``Exception.renderer`` for ``jsonapi`` requests,
-so in case of an error, a standardized error in JSON API format will be returned
-for both errors/exceptions and validation errors.
+so in case of an error, a standardized error will be returned, in either
+``json`` or ``xml`` - according to the API request type.
+
+Create a custom exception renderer by extending the Crud's ``JsonApiExceptionRenderer``
+class and enabling it with the ``exceptionRenderer`` configuration option.
+
+.. code-block:: php
+
+  <?php
+  class AppController extends Controller {
+
+    public function initialize()
+    {
+      parent::initialize();
+      $this->Crud->config(['listeners.api.exceptionRenderer' => 'App\Error\JsonApiExceptionRenderer']);
+    }
+  }
+
+**Note:** However if you are using CakePHP 3.3+'s PSR7 middleware feature the ``exceptionRenderer``
+config won't be used and instead you will have to set the ``Error.exceptionRenderer``
+config in ``config/app.php`` to ``'Crud\Error\JsonApiExceptionRenderer'`` as following:
+
+.. code-block:: php
+
+    'Error' => [
+        'errorLevel' => E_ALL,
+        'exceptionRenderer' => 'Crud\Error\JsonApiExceptionRenderer',
+        'skipLog' => [],
+        'log' => true,
+        'trace' => true,
+    ],
 
 Errors/exceptions
 ^^^^^^^^^^^^^^^^^
@@ -138,19 +171,19 @@ Validation errors
 ^^^^^^^^^^^^^^^^^
 
 For (422) validation errors the listener produces will produce
-validation error reponses in the following JSON API format.
+validation error responses in the following JSON API format.
 
 .. code-block:: json
 
   {
     "errors": [
-	  {
-	    "title": "_required",
-	    "detail": "Primary data does not contain member 'type'",
-	    "source": {
-		  "pointer": "/data"
-	    }
-	  }
+      {
+        "title": "_required",
+        "detail": "Primary data does not contain member 'type'",
+        "source": {
+          "pointer": "/data"
+        }
+      }
     ]
   }
 
@@ -171,7 +204,7 @@ Requests to the ``index`` action **must** use:
 - the ``HTTP GET`` request type
 - an ``Accept`` header  set to ``application/vnd.api+json``
 
-A succesful request will respond with HTTP response code ``200``
+A successful request will respond with HTTP response code ``200``
 and response body similar to this output produced by
 ``http://example.com/countries``:
 
@@ -212,7 +245,7 @@ Requests to the ``view`` action **must** use:
 - the ``HTTP GET`` request type
 - an ``Accept`` header  set to ``application/vnd.api+json``
 
-A succesful request will respond with HTTP response code ``200``
+A successful request will respond with HTTP response code ``200``
 and response body similar to this output produced by
 ````http://example.com/countries/1``:
 
@@ -242,7 +275,7 @@ Requests to the ``add`` action **must** use:
 - a ``Content-Type`` header  set to ``application/vnd.api+json``
 - request data in valid JSON API document format
 
-A succesful request will respond with HTTP response code ``200``
+A successful request will respond with HTTP response code ``200``
 and response body containing the ``id`` of the newly created
 record. Request failing ORM validation will result in a (422) validation
 error response as described earlier.
@@ -320,7 +353,7 @@ All requests to the ``edit`` action **must** use:
 - request data in valid JSON API document format
 - request data containing the ``id`` of the resource to update
 
-A succesful request will respond with HTTP response code ``200``
+A successful request will respond with HTTP response code ``200``
 and response body similar to the one produced by the ``view`` action.
 
 A valid JSON API document structure for updating the ``name`` field
@@ -350,7 +383,7 @@ All requests to the ``delete`` action **must** use:
 - request data in valid JSON API document format
 - request data containing the ``id`` of the resource to delete
 
-A succesful request will return HTTP response code ``204`` (No Content)
+A successful request will return HTTP response code ``204`` (No Content)
 and empty response body. Failed requests will return HTTP response
 code ``400`` with empty response body.
 
@@ -383,7 +416,7 @@ and a ``hasMany`` relationship with Cultures:
   public function view()
   {
     $this->Crud->on('beforeFind', function (Event $event) {
-      $event->subject()->query->contain([
+      $event->getSubject()->query->contain([
         'Currencies',
         'Cultures',
       ]);
@@ -392,7 +425,7 @@ and a ``hasMany`` relationship with Cultures:
     return $this->Crud->execute();
   }
 
-Assuming a succesful find the listener would produce the
+Assuming a successful find the listener would produce the
 following JSON API response including all associated data:
 
 .. code-block:: json
@@ -470,6 +503,44 @@ following JSON API response including all associated data:
         }
       }
     ]
+  }
+
+The listener also supports the ``include`` parameter to allow clients to
+customize related resources. Using that same example as above, the client
+might request ``/countries/2?include=cultures,currencies`` to achieve the
+same response. If the include parameter is provided, then only requested
+relationships will be included in the ``included`` schema.
+
+It is possible blacklist, or whitelist what the client is allowed to include.
+This is done using the listener configuration:
+
+.. code-block:: php
+
+  public function view()
+  {
+    $this->Crud
+      ->listener('jsonApi')
+      ->config('queryParameters.include.whitelist', ['cultures', 'cities']);
+
+    return $this->Crud->execute();
+  }
+
+Whitelisting will prevent all non-whitelisted associations from being
+contained. Blacklisting will prevent any blacklisted associations from
+being included. Blacklisting takes precedence of whitelisting (i.e
+blacklisting and whitelisting the same association will prevent it from
+being included). If you wish to prevent any associations, set the ``blacklist``
+config option to ``true``:
+
+.. code-block:: php
+
+  public function view()
+  {
+    $this->Crud
+      ->listener('jsonApi')
+      ->config('queryParameters.include.blacklist', true);
+
+    return $this->Crud->execute();
   }
 
 .. note::
@@ -557,7 +628,7 @@ jsonOptions
 ^^^^^^^^^^^
 
 Pass this **array** option (default: empty) an array with
-`PHP Predefined JSON Constants http://php.net/manual/en/json.constants.php`_
+`PHP Predefined JSON Constants <http://php.net/manual/en/json.constants.php>`_
 to manipulate the generated json response. For example:
 
 .. code-block:: phpinline
@@ -566,9 +637,9 @@ to manipulate the generated json response. For example:
   {
     parent::initialize();
     $this->Crud->config('listeners.jsonApi.jsonOptions', [
-	  JSON_HEX_QUOT,
-	  JSON_UNESCAPED_UNICODE,
-	]);
+      JSON_HEX_QUOT,
+      JSON_UNESCAPED_UNICODE,
+    ]);
   }
 
 include
@@ -590,6 +661,11 @@ Please note that entity names:
     'cultures' // hasMany relationship and thus plural
   ]);
 
+.. note::
+
+The value of the ``include`` configuration will be overwritten if the
+the client uses the ``?include`` query parameter.
+
 fieldSets
 ^^^^^^^^^
 
@@ -603,9 +679,9 @@ generated json. For example:
     'countries' => [ // main record
       'name'
     ],
-	'currencies' => [ // associated data
-	  'code'
-	]
+    'currencies' => [ // associated data
+      'code'
+    ]
   ]);
 
 .. note::
@@ -643,11 +719,26 @@ by a missing ``type`` node in the posted data would be:
     ]
   }
 
+queryParameters
+^^^^^^^^^^^^^^^
+
+This **array** option allows you to specify query parameters to parse in your application.
+Currently this listener supports the official ``include`` parameter. You can easily add your own
+by specifying a callable.
+
+.. code-block:: phpinline
+
+  $this->Crud->listener('jsonApi')->config('queryParameter.parent', [
+    'callable' => function ($queryData, $subject) {
+      $subject->query->where('parent' => $queryData);
+    }
+  ]);
+
 Pagination
 ----------
 
 This listener fully supports the ``API Pagination`` listener and will,
-once enabled as `described here https://crud.readthedocs.io/en/latest/listeners/api-pagination.html#setup`_
+once enabled as `described here <https://crud.readthedocs.io/en/latest/listeners/api-pagination.html#setup>`_
 , add the ``meta`` and ``links`` nodes as per the JSON API specification.
 
 .. code-block:: json
@@ -671,7 +762,7 @@ Query Logs
 ----------
 
 This listener fully supports the ``API Query Log`` listener and will,
-once enabled as `described here <https://crud.readthedocs.io/en/latest/listeners/api-query-log.html#setup`_
+once enabled as `described here <https://crud.readthedocs.io/en/latest/listeners/api-query-log.html#setup>`_
 , add a top-level ``query`` node to every response when debug mode is enabled.
 
 Schemas
