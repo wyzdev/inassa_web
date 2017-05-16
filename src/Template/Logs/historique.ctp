@@ -20,6 +20,42 @@
 <?php //$this->Html->script('jquery.dataTables.min', array('inline' => false)); ?>
 <?php //$this->Html->script('dataTables.bootstrap.min', array('inline' => false)); ?>
 
+<!--Block contenant la recherche de l'historique d'un client-->
+
+
+<div class="container">
+    <div class="row">
+        <div id="" class="">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-inline" role="form" method="post" accept-charset="utf-8"
+                          action="/logs/historique">
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
+                        </div> <!-- form group [rows] -->
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <?= $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) ?>
+                        </div><!-- form group [search] -->
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    <input name="dob" id="dob" type="text" class="form-control  datepicker"
+                                           placeholder="Date de naissance">
+                                </div>
+                            </div>
+                        </div> <!-- form group [order by] -->
+                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <button type="submit" class="btn btn-default filter-col">
+                                <span class="glyphicon glyphicon-search"></span> Rechercher
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Block contenant un exemple de tableau -->
@@ -29,7 +65,7 @@
         <tr>
             <th>Nom</th>
             <th>Prénom</th>
-            <th>Localisation</th>
+            <th>Institution</th>
             <th>Date</th>
             <th>Status</th>
         </tr>
@@ -38,7 +74,7 @@
         <tr>
             <th>Nom</th>
             <th>Prénom</th>
-            <th>Localisation</th>
+            <th>Institution</th>
             <th>Date</th>
             <th>Status</th>
         </tr>

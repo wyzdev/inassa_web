@@ -64,7 +64,7 @@ $(function () {
         var balise = $(this);
         id = balise.attr("num");
 
-        document.getElementById('reset-user_modal-body').innerHTML = '<p>Est-ce que vous voulez vraiment réinitialiser le compte de <b>' + $(this).attr("firstname") + ' ' + $(this).attr("lastname") + '</b>?</p>' +
+        document.getElementById('reset-user_modal-body').innerHTML = '<p>Voulez-vous vraiment réinitialiser le compte de <b>' + $(this).attr("firstname") + ' ' + $(this).attr("lastname") + '</b>?</p>' +
             '<p class="text-warning"><small>Le mot de passe et le droit d\'accès seront remis à l\'état d\'origine.</small></p>';
 
 

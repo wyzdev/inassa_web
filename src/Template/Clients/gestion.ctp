@@ -1,37 +1,102 @@
 <?= $this->assign('title', 'INASSA - Accueil'); ?>
 
+<!--Block contenant le formulaire pour la recherche d'un client -->
 
-<div class="container" style="">
-    <div class="client" style="display: ;">
-        <p class="text-center">
-            Recherchez un client ...
-        </p>
-    </div>
-    <!--<div class="client" style="display: ;">
-        <div class="info_client container-fluid" style="">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="title_search margin-bottom-20">Recherche Active</h3>
-                    <p class="info-container">
-                        <span class="indicatif">Client</span>
-                        <span class="deux-point">:</span>
-                        <span class="result">John DOE</span>
-                        <br/>
-                        <span class="indicatif">Date de naissance</span>
-                        <span class="deux-point">:</span>
-                        <span class="result">07 / 04 / 1973</span>
-                    </p>
-                    <div class="status-carte center-horizontal margin-bottom-20">
-                        <span class="status">Carte Active</span>
-                    </div>
+
+<div class="container">
+    <div class="row">
+        <div id="" class="">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-inline" role="form" method="post" accept-charset="utf-8"
+                          action="/clients/gestion">
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
+                        </div> <!-- form group [rows] -->
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <?= $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) ?>
+                        </div><!-- form group [search] -->
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    <input name="dob" id="dob" type="text" class="form-control  datepicker"
+                                           placeholder="Date de naissance">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <button type="submit" type="reset" class="btn btn-default filter-col">
+                                <span class="glyphicon glyphicon-search"></span> Rechercher
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
-        </div>
-        <div class="center-horizontal container-fluid center-horizontal margin-10">
-            <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Voir l'historique de ce client</a>
-        </div>
-    </div>-->
+<div class="container" style="">
+    <?php
+        if (!isset($client)) {
+            ?>
+            <div class="client" style="display: ;">
+                <p class="text-center">
+                    Recherchez un client ...
+                </p>
+            </div>
+            <?php
+        }
+            ?>
+    <?php
+        if (isset($client)) {
+            if ($client['success']) {
+                $status = $client['status'] == true ? '<span class="status_active">Carte Active</span>' : '<span class="status_inactive">Carte Inactive</span>';
+                echo '<div class="client" style="display: ;">
+            <div class="info_client container-fluid" style="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="title_search margin-bottom-20">Recherche Active</h3>
+                        <p class="info-container">
+                            <span class="indicatif">Client</span>
+                            <span class="deux-point">:</span>
+                            <span class="result">' . $client["firstname"] . ' ' . $client["lastname"] . '</span>
+                            <br/>
+                            <span class="indicatif">Date de naissance</span>
+                            <span class="deux-point">:</span>
+                            <span class="result">' . $client["dob"] . '</span>
+                        </p>
+                        <div class="status-carte center-horizontal margin-bottom-20">
+                            '.$status.'
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="center-horizontal container-fluid center-horizontal margin-10">
+                <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Voir l\'historique de ce client</a>
+            </div>
+        </div>';
+            }
+            else{
+                echo '
+                    <div class="client" style="display: ;">
+                        <div class="info_client container-fluid" style="">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="status-carte center-horizontal margin-top-20 margin-bottom-20">
+                                        <span class="status_inactive">Les informations saisies ne correspondent a aucun client de la INASSA</span>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                ';
+            }
+        }
+    ?>
 </div>
 
 

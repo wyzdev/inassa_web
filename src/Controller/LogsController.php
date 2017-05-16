@@ -92,12 +92,17 @@ class LogsController extends AppController
                     'controller' => 'clients',
                     'action' => 'gestion'
                 ]);
-        }
-        else {
+        }/*
+        else if ($this->request->is('post')){
+
+        }*/
+        else{
             $logs = $this->paginate($this->Logs);
 
             $this->set(compact('logs'));
             $this->set('_serialize', ['logs']);
         }
+
+
     }
 }

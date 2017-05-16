@@ -101,44 +101,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </nav>
 
 
-<?php
-if ($this->request->action != 'addusers') {
-    $print_or_not = ($this->request->action == 'gestion') ? 'style = "display: block"' : '';
-    echo '
-    <div class="container">
-    <div class="row">
-        <div id="" class="">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form class="form-inline" role="form">
-                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">'
-        . $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) .
-        '</div> <!-- form group [rows] -->
-                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">'
-        . $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) .
-        '</div><!-- form group [search] -->
-                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">                       
-                            <div >
-                                <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                  <input name="dob" id="dob" type="text" class="form-control  datepicker" placeholder="Date de naissance">
-                                </div>
-                            </div>
-                        </div> <!-- form group [order by] -->
-                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <button type="submit" class="btn btn-default filter-col">
-                                <span class="glyphicon glyphicon-search"></span> Rechercher
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    ';
-
-} ?>
 
 
 <?= $this->Flash->render(); ?>
@@ -158,7 +120,12 @@ if ($this->request->action != 'addusers') {
 
 <?= $this->Html->script('jquery.min') ?>
 <?= $this->Html->script('bootstrap-datepicker.min') ?>
-<?= $this->Html->script('datepicker') ?>
+<?php
+    if ($this->request->action == 'gestion')
+        echo $this->Html->script('datepicker_format1');
+    else if ($this->request->action == 'historique')
+        echo $this->Html->script('datepicker_format2');
+?>
 <?= $this->Html->script('bootstrap-datepicker.fr.min') ?>
 <?= $this->Html->script('toggle_search_form') ?>
 <?= $this->Html->script('addusers') ?>

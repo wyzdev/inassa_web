@@ -31,13 +31,23 @@
 	text-align: center;
 }
 
-.status{
+.status_active{
+	font-size: 24px;
+	color: #2a8240;
+	font-weight: bold;
+}
+
+.status_inactive{
 	font-size: 24px;
 	color: #993434;
 	font-weight: bold;
 }
 
 .margin-bottom-20{
+	margin-bottom: 20px;
+}
+
+.margin-top-20{
 	margin-bottom: 20px;
 }
 
