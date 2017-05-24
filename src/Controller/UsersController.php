@@ -183,7 +183,7 @@ class UsersController extends AppController
                 $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
             }
         }
-        $this->set('user', $user);
+        //$this->set('user', $user);
     }
 
     /**

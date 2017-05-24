@@ -20,13 +20,12 @@
     <fieldset>
         <legend><?= __('Edit Log') ?></legend>
         <?php
-            echo $this->Form->input('global_number');
-            echo $this->Form->input('first_name');
-            echo $this->Form->input('last_name');
-            echo $this->Form->input('date');
-            echo $this->Form->input('status');
-            echo $this->Form->input('latitude');
-            echo $this->Form->input('longitude');
+            echo $this->Form->control('first_name');
+            echo $this->Form->control('last_name');
+            echo $this->Form->control('dob');
+            echo $this->Form->control('status');
+            echo $this->Form->control('institution');
+            echo $this->Form->control('date');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

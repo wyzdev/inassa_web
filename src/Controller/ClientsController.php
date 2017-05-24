@@ -189,5 +189,10 @@ class ClientsController extends AppController
 
         }
     }
+
+    public function checkApi(){
+        debub("Hello");
+        die();
+    }
 }
 

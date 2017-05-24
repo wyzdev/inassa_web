@@ -18,13 +18,12 @@ class LogsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'global_number' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'first_name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'last_name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'date' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'first_name' => ['type' => 'string', 'length' => 100, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'last_name' => ['type' => 'string', 'length' => 100, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'dob' => ['type' => 'date', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'status' => ['type' => 'boolean', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
-        'latitude' => ['type' => 'decimal', 'length' => 18, 'precision' => 15, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
-        'longitude' => ['type' => 'decimal', 'length' => 18, 'precision' => 15, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
+        'institution' => ['type' => 'string', 'length' => 100, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'date' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => 'CURRENT_TIMESTAMP', 'comment' => '', 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -43,13 +42,12 @@ class LogsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'global_number' => 'Lorem ipsum dolor sit amet',
             'first_name' => 'Lorem ipsum dolor sit amet',
             'last_name' => 'Lorem ipsum dolor sit amet',
-            'date' => '2017-03-13',
+            'dob' => '2017-05-22',
             'status' => 1,
-            'latitude' => 1.5,
-            'longitude' => 1.5
+            'institution' => 'Lorem ipsum dolor sit amet',
+            'date' => '2017-05-22 15:29:19'
         ],
     ];
 }

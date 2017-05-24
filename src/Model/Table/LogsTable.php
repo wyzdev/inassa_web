@@ -30,9 +30,9 @@ class LogsTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('logs');
-        $this->displayField('id');
-        $this->primaryKey('id');
+        $this->setTable('logs');
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
     }
 
     /**
@@ -48,10 +48,6 @@ class LogsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('global_number', 'create')
-            ->notEmpty('global_number');
-
-        $validator
             ->requirePresence('first_name', 'create')
             ->notEmpty('first_name');
 
@@ -60,9 +56,9 @@ class LogsTable extends Table
             ->notEmpty('last_name');
 
         $validator
-            ->date('datetime')
-            ->requirePresence('date', 'create')
-            ->notEmpty('date');
+            ->date('dob')
+            ->requirePresence('dob', 'create')
+            ->notEmpty('dob');
 
         $validator
             ->boolean('status')
@@ -70,47 +66,14 @@ class LogsTable extends Table
             ->notEmpty('status');
 
         $validator
-            ->decimal('latitude')
-            ->requirePresence('latitude', 'create')
-            ->notEmpty('latitude');
+            ->requirePresence('institution', 'create')
+            ->notEmpty('institution');
 
         $validator
-            ->decimal('longitude')
-            ->requirePresence('longitude', 'create')
-            ->notEmpty('longitude');
+            ->dateTime('date')
+            ->requirePresence('date', 'create')
+            ->notEmpty('date');
 
         return $validator;
     }
-    public function validationPassword(Validator $validator ) {
-        $validator
-            ->add(
-                'old_password',
-                'custom',
-                [
-                    'rule'=> function($value, $context){
-                    $user = $this->get($context['data']['id']);
-                        if ($user) {
-                            if ((new DefaultPasswordHasher)->check($value, $user->password)) {
-                                return true;
-                            }
-                        }
-                        return false;
-                }, 'message'=>'The old password does not match the current password!',
-                ]) ->notEmpty('old_password');
-        $validator
-            ->add(
-                'password1',
-                [
-                    'length' => [
-                        'rule' => ['minLength', 6],
-                        'message' => 'The password have to be at least 6 characters!',
-                    ]
-                ])
-            ->add(
-                'password1',
-                [
-                    'match'=>[
-                        'rule'=> ['compareWith','password2'],
-                        'message'=>'The passwords does not match!',
-                    ] ]) ->notEmpty('password1'); $validator ->add('password2', [ 'length' => [ 'rule' => ['minLength', 6], 'message' => 'The password have to be at least 6 characters!', ] ]) ->add('password2',[ 'match'=>[ 'rule'=> ['compareWith','password1'], 'message'=>'The passwords does not match!', ] ]) ->notEmpty('password2'); return $validator; }
 }

@@ -112,6 +112,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <div class="container">
         <p class="navbar-text pull-left">Copyright © INASSA 2017
         </p>
+        <p class="navbar-text pull-right"><button type="button" class="btn btn-default btn-circle" onclick="/clients/checkApi"><i class="glyphicon glyphicon-ok"></i></button>
+        </p>
     </div>
 </footer>
 

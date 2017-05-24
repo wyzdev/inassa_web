@@ -75,7 +75,7 @@
     
             </div>
             <div class="center-horizontal container-fluid center-horizontal margin-10">
-                <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10">Voir l\'historique de ce client</a>
+                <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10" style="cursor:pointer;">Voir l\'historique de ce client</a>
             </div>
         </div>';
             }

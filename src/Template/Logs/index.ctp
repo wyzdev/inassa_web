@@ -15,13 +15,12 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('global_number') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('date') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('dob') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('latitude') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('longitude') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('institution') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('date') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,13 +28,12 @@
             <?php foreach ($logs as $log): ?>
             <tr>
                 <td><?= $this->Number->format($log->id) ?></td>
-                <td><?= h($log->global_number) ?></td>
                 <td><?= h($log->first_name) ?></td>
                 <td><?= h($log->last_name) ?></td>
-                <td><?= h($log->date) ?></td>
+                <td><?= h($log->dob) ?></td>
                 <td><?= h($log->status) ?></td>
-                <td><?= $this->Number->format($log->latitude) ?></td>
-                <td><?= $this->Number->format($log->longitude) ?></td>
+                <td><?= h($log->institution) ?></td>
+                <td><?= h($log->date) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $log->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $log->id]) ?>

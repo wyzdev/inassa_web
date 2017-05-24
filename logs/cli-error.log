@@ -310,3 +310,27 @@ Stack Trace:
 #15 {main}
 
 
+2017-05-19 17:06:22 Error: [Cake\Console\Exception\MissingShellException] Shell class for "-H" could not be found. in /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => '-H',
+)
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('-H')
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
+2017-05-22 14:38:28 Error: [Cake\Console\Exception\MissingShellException] Shell class for "Sever" could not be found. in /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php on line 327
+Exception Attributes: array (
+  'class' => 'Sever',
+)
+Stack Trace:
+#0 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(226): Cake\Console\ShellDispatcher->findShell('Sever')
+#1 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 /opt/lampp/htdocs/inassa_web/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 /opt/lampp/htdocs/inassa_web/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+

@@ -7,13 +7,12 @@ use Cake\ORM\Entity;
  * Log Entity
  *
  * @property int $id
- * @property string $global_number
  * @property string $first_name
  * @property string $last_name
- * @property \Cake\I18n\Time $date
+ * @property \Cake\I18n\Time $dob
  * @property bool $status
- * @property float $latitude
- * @property float $longitude
+ * @property string $institution
+ * @property \Cake\I18n\Time $date
  */
 class Log extends Entity
 {

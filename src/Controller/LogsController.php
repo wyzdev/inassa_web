@@ -2,8 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use App\Model\Table\UsersTable;
-use Cake\ORM\TableRegistry;
 
 /**
  * Logs Controller
@@ -12,30 +10,42 @@ use Cake\ORM\TableRegistry;
  */
 class LogsController extends AppController
 {
-    public function initialize()
-    {
-        parent::initialize();
-        $this->loadComponent('RequestHandler');
-    }
 
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
     public function index()
     {
-        $logs = $this->Logs->find('all');
-        $this->set([
-            'logs' => $logs,
-            '_serialize' => ['logs']
-        ]);
+        $logs = $this->paginate($this->Logs);
+
+        $this->set(compact('logs'));
+        $this->set('_serialize', ['logs']);
     }
 
-    public function view($id)
+    /**
+     * View method
+     *
+     * @param string|null $id Log id.
+     * @return \Cake\Network\Response|null
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function view($id = null)
     {
-        $log = $this->Logs->get($id);
-        $this->set([
-            'log' => $log,
-            '_serialize' => ['log']
+        $log = $this->Logs->get($id, [
+            'contain' => []
         ]);
+
+        $this->set('log', $log);
+        $this->set('_serialize', ['log']);
     }
 
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
+     */
     public function add()
     {
         $data = $this->request->data;
@@ -48,61 +58,102 @@ class LogsController extends AppController
         }
         $this->set([
             'error' => $message,
-            'log' => $log,
-            '_serialize' => ['message', 'log']
+            'log' => $log
         ]);
-    }
 
-    public function edit($id)
-    {
-        $log = $this->Logs->get($id);
-        if ($this->request->is(['post', 'put'])) {
+       /* $log = $this->Logs->newEntity();
+        if ($this->request->is('post')) {
             $log = $this->Logs->patchEntity($log, $this->request->getData());
             if ($this->Logs->save($log)) {
-                $message = true;
-            } else {
-                $message = false;
+                $this->Flash->success(__('The log has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
             }
+            $this->Flash->error(__('The log could not be saved. Please, try again.'));
         }
-        $this->set([
-            'saved' => $message,
-            '_serialize' => ['message']
-        ]);
+        $this->set(compact('log'));
+        $this->set('_serialize', ['log']);*/
     }
 
-    public function delete($id)
+    /**
+     * Edit method
+     *
+     * @param string|null $id Log id.
+     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function edit($id = null)
     {
-        $log = $this->Logs->get($id);
-        $message = 'Deleted';
-        if (!$this->Logs->delete($log)) {
-            $message = 'Error';
-        }
-        $this->set([
-            'message' => $message,
-            '_serialize' => ['message']
+        $log = $this->Logs->get($id, [
+            'contain' => []
         ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $log = $this->Logs->patchEntity($log, $this->request->getData());
+            if ($this->Logs->save($log)) {
+                $this->Flash->success(__('The log has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The log could not be saved. Please, try again.'));
+        }
+        $this->set(compact('log'));
+        $this->set('_serialize', ['log']);
     }
+
+    /**
+     * Delete method
+     *
+     * @param string|null $id Log id.
+     * @return \Cake\Network\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $log = $this->Logs->get($id);
+        if ($this->Logs->delete($log)) {
+            $this->Flash->success(__('The log has been deleted.'));
+        } else {
+            $this->Flash->error(__('The log could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+
 
     public function historique()
     {
+            if ($this->request->session()->read('Auth.User')['first_login']) {
+                $this->redirect(
+                    [
+                        'controller' => 'clients',
+                        'action' => 'gestion'
+                    ]);
+            }
+            else if ($this->request->is('post')) {
+                $data = $this->request->data;
+                $client = $this->Logs->find('all', array(
+                    'conditions' => array(
+                        'Logs.first_name' => $data['first_name'],
+                        'Logs.last_name' => $data['last_name'],
+                        'Logs.dob' => $data['dob']
+                    )
+                ));
+                if ($client)
+                {
 
-        if ($this->request->session()->read('Auth.User')['first_login']){
-            $this->redirect(
-                [
-                    'controller' => 'clients',
-                    'action' => 'gestion'
-                ]);
-        }/*
-        else if ($this->request->is('post')){
-
-        }*/
-        else{
-            $logs = $this->paginate($this->Logs);
-
-            $this->set(compact('logs'));
-            $this->set('_serialize', ['logs']);
-        }
-
-
+                    $logs = $this->paginate($client);
+                    $this->set(compact('logs'));
+                    $this->set('_serialize', ['logs']);
+                }
+                else
+                {
+                }
+            }
+            else {
+                $logs = $this->paginate($this->Logs);
+                $this->set(compact('logs'));
+                $this->set('_serialize', ['logs']);
+            }
     }
 }

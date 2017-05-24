@@ -16,10 +16,6 @@
     <h3><?= h($log->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Global Number') ?></th>
-            <td><?= h($log->global_number) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('First Name') ?></th>
             <td><?= h($log->first_name) ?></td>
         </tr>
@@ -28,16 +24,16 @@
             <td><?= h($log->last_name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Institution') ?></th>
+            <td><?= h($log->institution) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($log->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Latitude') ?></th>
-            <td><?= $this->Number->format($log->latitude) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Longitude') ?></th>
-            <td><?= $this->Number->format($log->longitude) ?></td>
+            <th scope="row"><?= __('Dob') ?></th>
+            <td><?= h($log->dob) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Date') ?></th>
