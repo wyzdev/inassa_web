@@ -118,6 +118,16 @@ class LogsController extends AppController
                     $logs = $this->paginate($this->Logs);
                     $this->set(compact('logs'));
                     $this->set('_serialize', ['logs']);
+
+
+                    ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                    $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                        .' '.
+                        $this->request->session()->read('Auth.User')['last_name'],
+                        $this->request->session()->read('Auth.User')['role'],
+                        $this->request->session()->read('Auth.User')['institution'],
+                        " est allé dana HISTORIQUE",
+                        ""."\n");
                 }
             }
     }
@@ -140,6 +150,8 @@ class LogsController extends AppController
         $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
         file_put_contents($my_file, "");// erase the content of the file
         fclose($handle);
+
+        $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
         die();
     }
 }

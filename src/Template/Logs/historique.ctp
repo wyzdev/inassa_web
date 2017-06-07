@@ -98,3 +98,8 @@
         </tbody>
     </table>
 </div>
+
+<!--/////////////////////////////// LOADER /////////////////////////////////////////-->
+<div id="content_loader" style="background: #fff; height: 100vh;  top:0px; left: 0px; right: 0px; position: absolute; z-index: 2;">
+    <div id="loader"></div>
+</div>

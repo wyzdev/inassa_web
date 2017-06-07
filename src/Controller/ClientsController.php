@@ -82,7 +82,7 @@ class ClientsController extends AppController
                     $this->request->session()->read('Auth.User')['role'],
                     $this->request->session()->read('Auth.User')['institution'],
                     "a recherché le client",
-                    $firstname.' '.$lastname."\n");
+                    strtoupper($firstname).' '.strtoupper($lastname)."\n");
             }
             else
                 $this->set('client', array('success' => false));

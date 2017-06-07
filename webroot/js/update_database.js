@@ -17,6 +17,9 @@ $(function () {
                     else
                         $("#" + balise.attr("id")).prop('checked', true);
                 }
+                else{
+                    $( "#dialog" ).dialog();
+                }
 
             },
             error: function () {
@@ -85,6 +88,8 @@ $(function () {
                     // alert("entrer et admin : admin"+id+" et status : status"+id);
                     $("#" + "admin" + id).prop('checked', false);
                     $("#" + "actif" + id).prop('checked', true);
+
+                    $( "#dialog" ).dialog();
                 }
 
             },

@@ -21,6 +21,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('authentification_page') ?>
     <?= $this->Html->css('bootstrap/bootstrap') ?>
     <?= $this->Html->css('bootstrap/bootstrap-theme') ?>
+  <?= $this->Html->css('loader'); ?>
     <?php //$this->Html->css('vertical_center') ?>
     <?= $this->Html->css('login_form') ?>
 
@@ -35,8 +36,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->Html->link('INASSA', ['controller' => 'users', 'action' => 'login'], ['class' => 'navbar-brand']);?>
     </div>
   </nav>
-
-    <?= $this->Flash->render() ?>
 
     <!-- Contenu de la page "AUTHENTIFICATION " -->
     <div style="margin-bottom: 75px;">
@@ -56,4 +55,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <?= $this->Html->script('jquery.dataTables.min')?>
 <?= $this->Html->script('dataTables.bootstrap.min')?>
 
+<script>
+  window.onload = function () { $('#content_loader').hide(200, function () {
+
+  })};
+</script>
 </html>

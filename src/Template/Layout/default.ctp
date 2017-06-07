@@ -19,12 +19,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon'); ?>
 
     <?= $this->Html->css('bootstrap/bootstrap'); ?>
+    <?= $this->Html->css('font-awesome/font-awesome/css/font-awesome.min'); ?>
     <?= $this->Html->css('bootstrap/bootstrap-theme'); ?>
     <?= $this->Html->css('login_form') ?>
     <?= $this->Html->css('search_form') ?>
     <?= $this->Html->css('bootstrap-datepicker.min') ?>
     <?= $this->Html->css('navbar'); ?>
     <?= $this->Html->css('accueil'); ?>
+    <?= $this->Html->css('loader'); ?>
+    <?= $this->Html->css('jquery-ui/jquery-ui'); ?>
     <?= $this->Html->css('default_page')?>
     <?= $this->fetch('meta'); ?>
     <?= $this->fetch('css'); ?>
@@ -49,14 +52,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li class='active'>";
             else
                 echo "<li>"; ?>
-            <?= $this->Html->link(' Accueil', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'glyphicon glyphicon-home']); ?></li>
+            <?= $this->Html->link(' Accueil', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'fa fa-home']); ?></li>
 
             <?php if ($this->request->action == 'historique')
                 echo "<li class='active'>";
             else
                 echo "<li>"; ?>
 
-            <?= $this->Html->link(' Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
+            <?= $this->Html->link(' Historique', ['controller' => 'logs', 'action' => 'historique'], ['class' => 'fa fa-history', 'aria-hidden' => 'true']); ?></li>
 
             <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                 <?php
@@ -65,17 +68,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 else
                     echo "<li>";
                 ?>
-                <?= $this->Html->link(' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown glyphicon glyphicon-cog']); ?></li>
+                <?= $this->Html->link(' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown fa fa-cog']); ?></li>
                 <?php
                 if ($this->request->action == 'readlogs')
                 echo "<li class='active'>";
                     else
                     echo "<li>";
                     ?>
-                    <?= $this->Html->link(' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown']); ?></li>
+                    <?= $this->Html->link(' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown fa fa-file-archive-o']); ?></li>
             <?php } ?>
             <li class="divider"></li>
-            <li><?= $this->Html->link(' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown glyphicon glyphicon-log-out']); ?></li>
+            <li><?= $this->Html->link(' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown fa fa-sign-out']); ?></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -92,7 +95,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         else
                             echo "<li>";
                         ?>
-                        <?= $this->Html->link(' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'glyphicon glyphicon-cog']); ?></li>
+                        <?= $this->Html->link(' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'fa fa-cog']); ?></li>
                         <li class="divider"></li>
                         <?php
                         if ($this->request->action == 'readlogs')
@@ -100,10 +103,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         else
                             echo "<li>";
                         ?>
-                        <?= $this->Html->link(' Logs', ['controller' => 'logs', 'action' => 'readlogs']); ?></li>
+                        <?= $this->Html->link(' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'fa fa-file-archive-o']); ?></li>
                         <li class="divider"></li>
                     <?php } ?>
-                    <li><?= $this->Html->link(' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'glyphicon glyphicon-log-out']); ?></li>
+                    <li><?= $this->Html->link(' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'fa fa-sign-out']); ?></li>
                 </ul>
             </li>
 
@@ -150,5 +153,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <?= $this->Html->script('data_table/jquery.dataTables.min'); ?>
 <?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>
 <?= $this->Html->script('script_datatable'); ?>
+<?= $this->Html->script('jquery-ui/jquery-ui'); ?>
+
+<script>
+    $( function() {
+        //$( "#dialog" ).dialog();
+    } );
+</script>
+<script>
+    window.onload = function () { $('#content_loader').hide(200, function () {
+
+    })};
+</script>
 </html>
 
