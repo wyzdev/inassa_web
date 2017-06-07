@@ -57,7 +57,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li>"; ?>
 
             <?= $this->Html->link('Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
-            <!--<li><?/*= $this->Html->link('Test', ['controller' => 'users', 'action' => 'test']); */?></li>-->
 
             <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                 <?php
@@ -67,6 +66,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     echo "<li>";
                 ?>
                 <?= $this->Html->link('Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown']); ?></li>
+                <?php
+                if ($this->request->action == 'readlogs')
+                echo "<li class='active'>";
+                    else
+                    echo "<li>";
+                    ?>
+                    <?= $this->Html->link('Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown']); ?></li>
             <?php } ?>
             <li class="divider"></li>
             <li><?= $this->Html->link('Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown']); ?></li>
@@ -87,6 +93,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             echo "<li>";
                         ?>
                         <?= $this->Html->link('Paramètres', ['controller' => 'users', 'action' => 'addusers']); ?></li>
+                        <li class="divider"></li>
+                        <?php
+                        if ($this->request->action == 'readlogs')
+                            echo "<li class='active'>";
+                        else
+                            echo "<li>";
+                        ?>
+                        <?= $this->Html->link('Logs', ['controller' => 'logs', 'action' => 'readlogs']); ?></li>
                         <li class="divider"></li>
                     <?php } ?>
                     <li><?= $this->Html->link('Déconnexion', ['controller' => 'users', 'action' => 'logout']); ?></li>

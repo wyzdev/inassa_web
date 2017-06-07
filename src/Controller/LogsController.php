@@ -176,4 +176,25 @@ class LogsController extends AppController
                 }
             }
     }
+
+    public function readlogs()
+    {
+        $myfile = fopen("inassa.log", "r") or die("Unable to open file!");
+        $content_logs = '';
+        while(! feof($myfile))
+        {
+            $content_logs = $content_logs . fgets($myfile). "<br />";
+        }
+        fclose($myfile);
+
+        $this->set('log', $content_logs);
+    }
+
+    public function eraselogs(){
+        $my_file = 'inassa.log';
+        $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+        file_put_contents($my_file, "");// erase the content of the file
+        fclose($handle);
+        die();
+    }
 }

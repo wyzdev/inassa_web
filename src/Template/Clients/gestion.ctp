@@ -98,7 +98,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="status-carte center-horizontal margin-top-20 margin-bottom-20">
-                                        <span class="status_inactive">Les informations saisies ne correspondent a aucun client de la INASSA</span>
+                                        <span class="status_inactive">Les informations saisies ne correspondent à aucun client de la INASSA</span>
                                     </div>
                                 </div>
                             </div>

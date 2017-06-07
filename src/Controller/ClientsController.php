@@ -107,30 +107,6 @@ class ClientsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function gestion1(){
-        //$user = $this->Users->get($this->Auth->user('id'));
-        $user = $this->request->session()->read('Auth.User')['id'];
-        if (!empty($this->request->data)) {
-            $user = $this->Users->patchEntity(
-                $user,
-                [
-                    'old_password' => $this->request->data['old_password'],
-                    'password' => $this->request->data['password1'],
-                    'password1' => $this->request->data['password1'],
-                    'password2' => $this->request->data['password2']
-                ],
-                ['validate' => 'password'] );
-            if ($this->Users->save($user)) {
-                $this->Flash->success('The password is successfully changed');
-                $this->redirect('/index');
-            }
-            else {
-                $this->Flash->error('There was an error during the save!');
-            }
-        }
-        $this->set('user',$user);
-    }
-
     public function gestion(){
         if ($this->request->is('post')) {
             $data = $this->request->data;
@@ -199,6 +175,16 @@ class ClientsController extends AppController
             else
                 $this->set('client', array('success' => false));
         }
+        else{
+            $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                .' '.
+                $this->request->session()->read('Auth.User')['last_name'],
+                $this->request->session()->read('Auth.User')['role'],
+                $this->request->session()->read('Auth.User')['institution'],
+                "est allé dans ACCUEIL",
+                ""."\n");
+        }
+
     }
 
     public function checkApi(){

@@ -94,4 +94,14 @@ class AppController extends Controller
     {
         $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search']);
     }
+
+    public function writeinlogs($user, $role, $from, $action, $client){
+        date_default_timezone_set('America/New_York');
+        $date = date('d/m/Y h:i:s a', time());
+        $my_file = 'inassa.log';
+        $handle = fopen($my_file, 'a+') or die('Cannot open file:  '.$my_file);
+        $data = '['.$date.'] '. $user. ' '.'('.$role.')'.' de '.$from.' '.$action.' '.$client;
+        fwrite($handle, $data); // write a line in the file
+        fclose($handle);
+    }
 }
