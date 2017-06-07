@@ -232,30 +232,6 @@ class UsersController extends AppController
     }
 
     /**
-     *test method
-     */
-    public function test() {
-        // just to test out the sending email using SMTP is OK, create a method that will be able to access from public
-//        $to = 'hollyn.derisse@esih.edu';
-//        $subject = 'Hi buddy, i got a message for you.';
-//        $message = 'Nothing much. Just test out my Email Component using PHPMailer.';
-//        $mail = $this->Email->send($to, $subject, $message);
-//        $this->set('mail',$mail);
-//        $this->render(false);
-//        $usersTable = TableRegistry::get('Users');
-//        $hasher = new DefaultPasswordHasher();
-//        debug($this->request->session()->read('Auth.User'));
-        //debug($this->Users->find('all')->where(['Users.username' => 'hollyn_derisse', 'Users.password' => '$2y$10$.WPw0oxAa4GaCHodxOKweuRb2tV8VTVV5n5zCS6V/O4yNTnkNtlGm'])->toArray());
-//        $usersTable->find('all')
-//            ->where(['Users.username' => 'hollyn_derisse']));
-            //->contain(['Comments', 'Authors']));
-        $result = $this->Users->findByUsername('hollyn_derisse')->toArray();
-//        $result = $this->Users->get(1)->toArray();
-        debug($result[0]['username']);
-        die();
-    }
-
-    /**
      * updateAccess method
      *
      * change access of a user to the database

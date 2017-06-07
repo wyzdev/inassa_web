@@ -8,7 +8,7 @@ $(function () {
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
-            url: "/users/updateAccess/",
+            url: "http://localhost/inassa_web/users/updateAccess/",
             success: function (data) {
                 if (data == 'no') {
                     alert("Vous ne pouvez pas changer votre droit d'accès");// will alert "ok"
@@ -37,7 +37,7 @@ $(function () {
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
-            url: "/users/updateStatus/",
+            url: "http://localhost/inassa_web/users/updateStatus/",
             success: function (data) {
                 if (data == 'no') {
                     alert("Vous ne pouvez pas changer votre status");// will alert "ok"
@@ -76,7 +76,7 @@ $(function () {
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
-            url: "/users/resetAccount/",
+            url: "http://localhost/inassa_web/users/resetAccount/",
             success: function (data) {
                 if (data == 'no') {
                     alert("Vous ne pouvez pas réinitialiser votre compte");

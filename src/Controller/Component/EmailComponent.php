@@ -8,7 +8,7 @@ require_once(ROOT . DS . 'vendor' . DS  . 'phpmailer' . DS . 'class.phpmailer.ph
 class EmailComponent extends Component {
 
     public function send($to, $subject, $message) {
-        $sender = "hollynderisse93@gmail.com"; // this will be overwritten by GMail
+        $sender = "inassa62@gmail.com"; // this will be overwritten by GMail
 
         $header = "X-Mailer: PHP/".phpversion() . "Return-Path: $sender";
 
@@ -22,8 +22,8 @@ class EmailComponent extends Component {
         $mail->SMTPSecure = "ssl";
         $mail->Port = 465;
         $mail->SMTPDebug  = 2; // turn it off in production
-        $mail->Username   = "hollynderisse93@gmail.com";
-        $mail->Password   = "HDR2013#";
+        $mail->Username   = "inassa62@gmail.com";
+        $mail->Password   = "inassa_application";
 
         $mail->From = $sender;
         $mail->FromName = "INASSA";

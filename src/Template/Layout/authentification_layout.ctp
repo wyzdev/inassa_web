@@ -39,7 +39,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Flash->render() ?>
 
     <!-- Contenu de la page "AUTHENTIFICATION " -->
-    <?= $this->fetch('content') ?>
+    <div style="margin-bottom: 75px;">
+        <?= $this->fetch('content') ?>
+    </div>
 
     <footer class="navbar navbar-default navbar-fixed-bottom" style="margin-bottom: 0;">
       <div class="container">

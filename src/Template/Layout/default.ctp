@@ -105,14 +105,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 <?= $this->Flash->render(); ?>
 
-<!-- Cette Helper permet d'afficher le contenu de la page actuelle -->
-<?= $this->fetch('content'); ?>
+<!-- Contenu de la page "AUTHENTIFICATION " -->
+<div style="margin-bottom: 75px;">
+    <?= $this->fetch('content') ?>
+</div>
 
-<footer class="navbar navbar-default navbar-bottom">
+<footer class="navbar navbar-default navbar-fixed-bottom" style="margin-bottom: 0;">
     <div class="container">
         <p class="navbar-text pull-left">Copyright © INASSA 2017
-        </p>
-        <p class="navbar-text pull-right"><button type="button" class="btn btn-default btn-circle" onclick="/clients/checkApi"><i class="glyphicon glyphicon-ok"></i></button>
         </p>
     </div>
 </footer>

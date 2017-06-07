@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <form class="form-inline" role="form" method="post" accept-charset="utf-8"
-                          action="/clients/gestion">
+                          action="gestion">
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
                             <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
                         </div> <!-- form group [rows] -->
@@ -74,9 +74,21 @@
                 </div>
     
             </div>
-            <div class="center-horizontal container-fluid center-horizontal margin-10">
-                <a class=" col-xs-12 col-md-4  col-md-offset-4 margin-10 padding-10" style="cursor:pointer;">Voir l\'historique de ce client</a>
-            </div>
+            <div class="center-horizontal container-fluid center-horizontal margin-10">'.
+
+                    $this->Html->link('Voir l\'historique de ce client', [
+                        'controller' => 'logs',
+                        'action' => 'historique',
+                        '?' =>
+                            [
+                                "first_name" => $client["field_firstname"],
+                                "last_name" => $client["field_lastname"],
+                                "dob" => substr($client["field_dob"], 0, 10)
+                            ]
+                    ])
+
+
+                    .'</div>
         </div>';
             }
             else{

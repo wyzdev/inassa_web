@@ -179,14 +179,25 @@ class ClientsController extends AppController
                 $response_dob = $response->clients[0]->dob;
                 $response_success = $response->success;
 
-                $this->set('client', array('firstname' => $response_firstname, 'lastname' => $response_lastname, 'status' => $response_status, 'dob' => $response_dob, 'success' => $response_success));
+
+                $old_date_timestamp = strtotime($dob);
+                $new_date = date('Y-m-d H:i:s', $old_date_timestamp);
+
+                $this->set('client',
+                    array(
+                        'firstname' => $response_firstname,
+                        'lastname' => $response_lastname,
+                        'status' => $response_status,
+                        'dob' => $response_dob,
+                        'success' => $response_success,
+                        'field_firstname' => $firstname,
+                        'field_lastname' => $lastname,
+                        'field_dob' => $new_date,
+                    ));
 
             }
             else
                 $this->set('client', array('success' => false));
-
-
-
         }
     }
 

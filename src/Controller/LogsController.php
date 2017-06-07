@@ -151,9 +151,29 @@ class LogsController extends AppController
                 }
             }
             else {
-                $logs = $this->paginate($this->Logs);
-                $this->set(compact('logs'));
-                $this->set('_serialize', ['logs']);
+                if($this->request->getQueryParams()){
+                    $data = $this->request->getQueryParams();
+
+                    $client = $this->Logs->find('all', array(
+                        'conditions' => array(
+                            'Logs.first_name' => $data['first_name'],
+                            'Logs.last_name' => $data['last_name'],
+                            'Logs.dob' => $data['dob']
+                        )
+                    ));
+                    if ($client)
+                    {
+
+                        $logs = $this->paginate($client);
+                        $this->set(compact('logs'));
+                        $this->set('_serialize', ['logs']);
+                    }
+
+                }else {
+                    $logs = $this->paginate($this->Logs);
+                    $this->set(compact('logs'));
+                    $this->set('_serialize', ['logs']);
+                }
             }
     }
 }
