@@ -54,16 +54,37 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->sendPassword($user->email, $randomPassword);
                 $this->Flash->success(__("L'utilisateur a été sauvegardé."));
+
+
+                ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                    .' '.
+                    $this->request->session()->read('Auth.User')['last_name'],
+                    $this->request->session()->read('Auth.User')['role'],
+                    $this->request->session()->read('Auth.User')['institution'],
+                    "a enregistré l'utilisateur ",
+                    ucwords($user->first_name).' '.strtoupper($user->last_name)."\n");
+
                 return $this->redirect(['action' => 'addusers']);
             }
             $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
+        }else{
+
+            ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+            $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                .' '.
+                $this->request->session()->read('Auth.User')['last_name'],
+                $this->request->session()->read('Auth.User')['role'],
+                $this->request->session()->read('Auth.User')['institution'],
+                " a alleé dans PARAMETRES ",
+                ""."\n");
+
+
+            $this->set('user', $user);
+            $users = $this->paginate($this->Users);
+            $this->set(compact('users'));
+            $this->set('_serialize', ['users']);
         }
-        $this->set('user', $user);
-
-        $users = $this->paginate($this->Users);
-
-        $this->set(compact('users'));
-        $this->set('_serialize', ['users']);
     }
 
     /**
@@ -101,6 +122,16 @@ class UsersController extends AppController
             if ($user) {
                 if ($user['status']) {
                     $this->Auth->setUser($user);
+
+                    ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                    $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                        .' '.
+                        $this->request->session()->read('Auth.User')['last_name'],
+                        $this->request->session()->read('Auth.User')['role'],
+                        $this->request->session()->read('Auth.User')['institution'],
+                        " s'est connecté  ",
+                        ""."\n");
+
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
                 } else
                     $this->Flash->error(__('Vous n\'etes pas actif dans la base de donnees'));
@@ -149,6 +180,14 @@ class UsersController extends AppController
      */
     public function logout()
     {
+        ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+        $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+            .' '.
+            $this->request->session()->read('Auth.User')['last_name'],
+            $this->request->session()->read('Auth.User')['role'],
+            $this->request->session()->read('Auth.User')['institution'],
+            " s'est déconnecté ",
+            ""."\n");
         return $this->redirect($this->Auth->logout());
     }
 
@@ -178,6 +217,15 @@ class UsersController extends AppController
                         'controller' => 'clients',
                         'action' => 'gestion'
                     ]);
+
+                ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                    .' '.
+                    $this->request->session()->read('Auth.User')['last_name'],
+                    $this->request->session()->read('Auth.User')['role'],
+                    $this->request->session()->read('Auth.User')['institution'],
+                    " a changé son mot de passe ",
+                    ""."\n");
             } else {
                 $this->Flash->error('There was an error during the save!');
                 $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
@@ -248,7 +296,16 @@ class UsersController extends AppController
                 else
                     $user->role = 'admin';
 
-                $usersTable->save($user);
+                if ($usersTable->save($user)){
+                    ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                    $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                        .' '.
+                        $this->request->session()->read('Auth.User')['last_name'],
+                        $this->request->session()->read('Auth.User')['role'],
+                        $this->request->session()->read('Auth.User')['institution'],
+                        " a changé le <b>role</b> de l'utilisateur ",
+                        $user->first_name.' '.$user->last_name."\n");
+                }
             } else
                 echo 'no';
             die();
@@ -272,7 +329,17 @@ class UsersController extends AppController
                 else
                     $user->status = true;
 
-                $usersTable->save($user);
+                if ($usersTable->save($user)){
+
+                    ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                    $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                        .' '.
+                        $this->request->session()->read('Auth.User')['last_name'],
+                        $this->request->session()->read('Auth.User')['role'],
+                        $this->request->session()->read('Auth.User')['institution'],
+                        " a changé le <b>status</b> de l'utilisateur ",
+                        $user->first_name.' '.$user->last_name."\n");
+                }
             } else
                 echo 'no';
             die();
@@ -300,8 +367,18 @@ class UsersController extends AppController
                 $user->first_login = true;
                 $user->password = $newPassword;
 
-                if ($usersTable->save($user))
+                if ($usersTable->save($user)) {
                     $this->sendPassword($user->email, $newPassword);
+
+                    ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                    $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                        .' '.
+                        $this->request->session()->read('Auth.User')['last_name'],
+                        $this->request->session()->read('Auth.User')['role'],
+                        $this->request->session()->read('Auth.User')['institution'],
+                        " a réinitialisé le compte de l'utilisateur ",
+                        $user->first_name.' '.$user->last_name."\n");
+                }
             } else
                 echo 'no';
             die();

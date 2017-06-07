@@ -12,36 +12,6 @@ class LogsController extends AppController
 {
 
     /**
-     * Index method
-     *
-     * @return \Cake\Network\Response|null
-     */
-    public function index()
-    {
-        $logs = $this->paginate($this->Logs);
-
-        $this->set(compact('logs'));
-        $this->set('_serialize', ['logs']);
-    }
-
-    /**
-     * View method
-     *
-     * @param string|null $id Log id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $log = $this->Logs->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('log', $log);
-        $this->set('_serialize', ['log']);
-    }
-
-    /**
      * Add method
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
@@ -75,50 +45,6 @@ class LogsController extends AppController
         $this->set('_serialize', ['log']);*/
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Log id.
-     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $log = $this->Logs->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $log = $this->Logs->patchEntity($log, $this->request->getData());
-            if ($this->Logs->save($log)) {
-                $this->Flash->success(__('The log has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The log could not be saved. Please, try again.'));
-        }
-        $this->set(compact('log'));
-        $this->set('_serialize', ['log']);
-    }
-
-    /**
-     * Delete method
-     *
-     * @param string|null $id Log id.
-     * @return \Cake\Network\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $log = $this->Logs->get($id);
-        if ($this->Logs->delete($log)) {
-            $this->Flash->success(__('The log has been deleted.'));
-        } else {
-            $this->Flash->error(__('The log could not be deleted. Please, try again.'));
-        }
-
-        return $this->redirect(['action' => 'index']);
-    }
 
 
     public function historique()
@@ -145,6 +71,15 @@ class LogsController extends AppController
                     $logs = $this->paginate($client);
                     $this->set(compact('logs'));
                     $this->set('_serialize', ['logs']);
+
+                    ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                    $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                        .' '.
+                        $this->request->session()->read('Auth.User')['last_name'],
+                        $this->request->session()->read('Auth.User')['role'],
+                        $this->request->session()->read('Auth.User')['institution'],
+                        "a vérifié l'historique du client",
+                        strtoupper($data['first_name']).' '.strtoupper($data['last_name'])."\n");
                 }
                 else
                 {
@@ -167,6 +102,16 @@ class LogsController extends AppController
                         $logs = $this->paginate($client);
                         $this->set(compact('logs'));
                         $this->set('_serialize', ['logs']);
+
+
+                        ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                        $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                            .' '.
+                            $this->request->session()->read('Auth.User')['last_name'],
+                            $this->request->session()->read('Auth.User')['role'],
+                            $this->request->session()->read('Auth.User')['institution'],
+                            "a vérifié l'historique du client",
+                            strtoupper($data['first_name']).' '.strtoupper($data['last_name'])."\n");
                     }
 
                 }else {

@@ -49,14 +49,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li class='active'>";
             else
                 echo "<li>"; ?>
-            <?= $this->Html->link('Accueil', ['controller' => 'clients', 'action' => 'gestion']); ?></li>
+            <?= $this->Html->link(' Accueil', ['controller' => 'clients', 'action' => 'gestion'], ['class' => 'glyphicon glyphicon-home']); ?></li>
 
             <?php if ($this->request->action == 'historique')
                 echo "<li class='active'>";
             else
                 echo "<li>"; ?>
 
-            <?= $this->Html->link('Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
+            <?= $this->Html->link(' Historique', ['controller' => 'logs', 'action' => 'historique']); ?></li>
 
             <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                 <?php
@@ -65,17 +65,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 else
                     echo "<li>";
                 ?>
-                <?= $this->Html->link('Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown']); ?></li>
+                <?= $this->Html->link(' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown glyphicon glyphicon-cog']); ?></li>
                 <?php
                 if ($this->request->action == 'readlogs')
                 echo "<li class='active'>";
                     else
                     echo "<li>";
                     ?>
-                    <?= $this->Html->link('Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown']); ?></li>
+                    <?= $this->Html->link(' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown']); ?></li>
             <?php } ?>
             <li class="divider"></li>
-            <li><?= $this->Html->link('Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown']); ?></li>
+            <li><?= $this->Html->link(' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown glyphicon glyphicon-log-out']); ?></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -92,7 +92,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         else
                             echo "<li>";
                         ?>
-                        <?= $this->Html->link('Paramètres', ['controller' => 'users', 'action' => 'addusers']); ?></li>
+                        <?= $this->Html->link(' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'glyphicon glyphicon-cog']); ?></li>
                         <li class="divider"></li>
                         <?php
                         if ($this->request->action == 'readlogs')
@@ -100,10 +100,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         else
                             echo "<li>";
                         ?>
-                        <?= $this->Html->link('Logs', ['controller' => 'logs', 'action' => 'readlogs']); ?></li>
+                        <?= $this->Html->link(' Logs', ['controller' => 'logs', 'action' => 'readlogs']); ?></li>
                         <li class="divider"></li>
                     <?php } ?>
-                    <li><?= $this->Html->link('Déconnexion', ['controller' => 'users', 'action' => 'logout']); ?></li>
+                    <li><?= $this->Html->link(' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'glyphicon glyphicon-log-out']); ?></li>
                 </ul>
             </li>
 
