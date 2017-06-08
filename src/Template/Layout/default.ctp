@@ -154,12 +154,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>
 <?= $this->Html->script('script_datatable'); ?>
 <?= $this->Html->script('jquery-ui/jquery-ui'); ?>
+<?= $this->Html->script('clear_logs'); ?>
 
-<script>
-    $( function() {
-        //$( "#dialog" ).dialog();
-    } );
-</script>
 <script>
     window.onload = function () { $('#content_loader').hide(200, function () {
 

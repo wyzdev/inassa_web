@@ -11,14 +11,22 @@ $(function () {
             url: "http://localhost/inassa_web/users/updateAccess/",
             success: function (data) {
                 if (data == 'no') {
-                    alert("Vous ne pouvez pas changer votre droit d'accès");// will alert "ok"
+
+                    interdit("Vous ne pouvez pas changer votredroit d\'accès");
+
                     if ($("#" + balise.attr("id")).is(':checked'))
                         $("#" + balise.attr("id")).prop('checked', false);
                     else
                         $("#" + balise.attr("id")).prop('checked', true);
                 }
                 else{
-                    $( "#dialog" ).dialog();
+                    var acces = "";
+                    if ($("#" + balise.attr("id")).is(':checked'))
+                        acces = 'admin';
+                    else
+                        acces = 'simple utilisateur';
+
+                    changement('#admin'+id, acces)
                 }
 
             },
@@ -43,11 +51,22 @@ $(function () {
             url: "http://localhost/inassa_web/users/updateStatus/",
             success: function (data) {
                 if (data == 'no') {
-                    alert("Vous ne pouvez pas changer votre status");// will alert "ok"
+
+                    interdit("Vous ne pouvez pas changer votre status");
+
                     if ($("#" + balise.attr("id")).is(':checked'))
                         $("#" + balise.attr("id")).prop('checked', false);
                     else
                         $("#" + balise.attr("id")).prop('checked', true);
+                }
+                else{
+
+                    var status = "";
+                    if ($("#" + balise.attr("id")).is(':checked'))
+                        status = 'actif';
+                    else
+                        status = 'inactif';
+                    changement('#actif'+id, status);
                 }
 
             },
@@ -82,14 +101,26 @@ $(function () {
             url: "http://localhost/inassa_web/users/resetAccount/",
             success: function (data) {
                 if (data == 'no') {
-                    alert("Vous ne pouvez pas réinitialiser votre compte");
+                    interdit("Vous ne pouvez pas réinitialiser votre compte");
                 }
                 else {
-                    // alert("entrer et admin : admin"+id+" et status : status"+id);
+
+                    document.getElementById('dialog-message').innerHTML = '<p><center>Le compte de l\'utilisateur <b>' + $('#admin'+id).attr("firstname") + ' ' + $('#admin'+id).attr("lastname") + '</b> a été <b>réinitialisé</b>.</center></p>';
+
+
+                    $( function() {
+                        $( "#dialog-message" ).dialog({
+                            modal: true,
+                            buttons: {
+                                Ok: function() {
+                                    $( this ).dialog( "close" );
+                                }
+                            }
+                        });
+                    } );
+
                     $("#" + "admin" + id).prop('checked', false);
                     $("#" + "actif" + id).prop('checked', true);
-
-                    $( "#dialog" ).dialog();
                 }
 
             },
@@ -104,3 +135,34 @@ $(function () {
 
     });
 });
+
+function changement (id, value) {
+    document.getElementById('dialog-message').innerHTML = '<p><center>L\'utilisateur <b>' + $(id).attr("firstname") + ' ' + $('#admin'+id).attr("lastname") + '</b> est maintenant <b>'+ value +'</b>.</center></p>';
+
+
+    $( function() {
+        $( "#dialog-message" ).dialog({
+            modal: true,
+            buttons: {
+                Ok: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+    } );
+}
+
+
+function interdit(value){
+    document.getElementById('dialog-message').innerHTML = '<center><p class="text-danger"><b>'+ value +'.</b></p></center>';
+    $( function() {
+        $( "#dialog-message" ).dialog({
+            modal: true,
+            buttons: {
+                Ok: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+    } );
+}

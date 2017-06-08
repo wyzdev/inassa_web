@@ -16,7 +16,7 @@
                         <?= $this->Form->input('username', array('class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"Nom d'utilisateur")) ?>
                         <?= $this->Form->input('email', array('type' => 'email', 'class' => 'form-control margin-10', 'label'=>false, "placeholder"=>"E-mail")) ?>
 
-                        <?= $this->Form->select('role', ['medecin' => 'Médecin', 'admin' => 'Admin', 'user' => 'Simple utilisateur'], ['empty' => true, 'class' => 'form-control', 'id' => 'role']) ?>
+                        <?= $this->Form->select('role', ['medecin' => 'Médecin', 'admin' => 'Admin', 'user' => 'Simple utilisateur'], ['empty' => true, 'class' => 'form-control', 'id' => 'role', 'default'=>'']) ?>
                         <?= $this->Form->input('institution', array('class' => 'form-control margin-10', 'label' => false, "placeholder" => "Hopital", "id" => "hospital_field")) ?>
                         <?= $this->Form->button('Enregistrer', ['class' => 'margin-top-20 btn btn-lg btn-primary btn-block']) ?>
                         <?= $this->Form->end(); ?>
@@ -79,7 +79,9 @@
                                                 'name' => 'admin',
                                                 'value' => 'value-admin',
                                                 'checked' => $checked_admin,
-                                                'class' => 'access'
+                                                'class' => 'access',
+                                                'firstname' => $user->first_name,
+                                                'lastname' => $user->last_name
                                             ]); ?>
                                     <?= $this->Form->end() ?>
                                 <?php }else
@@ -97,7 +99,9 @@
                                             'name' => 'actif',
                                             'value' => 'value-actif',
                                             'checked' => $checked_status,
-                                            'class' => 'status'
+                                            'class' => 'status',
+                                            'firstname' => $user->first_name,
+                                            'lastname' => $user->last_name
                                         ]); ?>
                                 <?= $this->Form->end() ?>
                             </td>
@@ -131,15 +135,14 @@
         </div>
     </div>
 </div>
+<!--//////////////////////////////// DIALOG MESSAGE //////////////////////////////////////////////////-->
+<div id="dialog-message" title="Changement">
 
-<div id="dialog" title="Basic dialog">
-    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
 </div>
 
 
 
-
 <!--/////////////////////////////// LOADER /////////////////////////////////////////-->
-<div id="content_loader" style="background: #fff; height: 100vh;  top:0px; left: 0px; right: 0px; position: absolute; z-index: 2;">
+<div id="content_loader" style="background: #fff; top:0px; left: 0px; right: 0px; bottom: 0px; position: absolute; z-index: 2;">
     <div id="loader"></div>
 </div>

@@ -67,7 +67,10 @@ class UsersController extends AppController
 
                 return $this->redirect(['action' => 'addusers']);
             }
-            $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
+            $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));$this->set('user', $user);
+            $users = $this->paginate($this->Users);
+            $this->set(compact('users'));
+            $this->set('_serialize', ['users']);
         }else{
 
             ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
@@ -120,7 +123,7 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
-                if ($user['status']) {
+                if ($user['status'] and $user['role'] != "medecin") {
                     $this->Auth->setUser($user);
 
                     ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
@@ -133,10 +136,10 @@ class UsersController extends AppController
                         ""."\n");
 
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
-                } else
-                    $this->Flash->error(__('Vous n\'etes pas actif dans la base de donnees'));
+                }else
+                    $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayez encore'));
             }
-            $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayez encore'));
+            $this->set('id_incorrect', true);
         }
     }
 
@@ -303,7 +306,7 @@ class UsersController extends AppController
                         $this->request->session()->read('Auth.User')['last_name'],
                         $this->request->session()->read('Auth.User')['role'],
                         $this->request->session()->read('Auth.User')['institution'],
-                        " a changé le <b>role</b> de l'utilisateur ",
+                        " a changé le <b>rôle</b> de l'utilisateur ",
                         $user->first_name.' '.$user->last_name."\n");
                 }
             } else
