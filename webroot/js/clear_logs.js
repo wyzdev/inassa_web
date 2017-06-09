@@ -1,9 +1,10 @@
 $(function () {
     $('.confirmation_clear').click('click', function () {
+        //alert(location.pathname.split('/')[1]);
         $.ajax({
             type: "POST",
             data: {value_to_send: ""},
-            url: "http://localhost/inassa_web/logs/clearlogs/",
+            url: window.location.protocol+"//"+window.location.host + "/" + location.pathname.split('/')[1] + "/logs/clearlogs/",
             success: function (data) {
                 location.reload(true);
             },

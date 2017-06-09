@@ -52,7 +52,7 @@ class UsersController extends AppController
             $user->status = 1;
             $user->first_login = 1;
             if ($this->Users->save($user)) {
-                $this->sendPassword($user->email, $randomPassword);
+                $this->sendPassword($user->username, $user->email, $randomPassword);
                 $this->Flash->success(__("L'utilisateur a été sauvegardé."));
 
 
@@ -156,10 +156,10 @@ class UsersController extends AppController
             $user = $this->Users->newEntity();
             $user = $this->Users->patchEntity($user, $this->request->getData());
 
-            $result = $this->Users->findByUsername($user->username)->toArray();
+            $result = $this->Users->findByEmail($user->email)->toArray();
             if ($result){
                 $newPassword = $this->randomPassword();
-                $this->sendPassword($user->email, $newPassword);
+                $this->sendPassword($user->username, $user->email, $newPassword);
                 $modif = $this->Users->get($result[0]['id']);
                 $modif->password = $newPassword;
                 $modif->first_login = true;
@@ -243,10 +243,10 @@ class UsersController extends AppController
      * @param $usermail
      * @param $userpassword
      */
-    private function sendPassword($usermail, $userpassword){
+    private function sendPassword($username, $usermail, $userpassword){
         $to = $usermail;
         $subject = 'Votre mot de passe';
-        $message = 'Votre mot de passe est : '.$userpassword;
+        $message = 'Votre nom d\'utilisateur est : '.$username."\n".'Votre mot de passe est : '.$userpassword;
         $mail = $this->Email->send($to, $subject, $message);
         $this->set('mail',$mail);
         $this->render(false);
@@ -269,7 +269,6 @@ class UsersController extends AppController
             if ($result) {
                 $user = $this->Users->get($result[0]['id']);
                 $user->password = $data['password'];
-                $user->email = $data['email'];
                 $user->first_login = false;
                 $this->Users->save($user);
 
@@ -371,7 +370,7 @@ class UsersController extends AppController
                 $user->password = $newPassword;
 
                 if ($usersTable->save($user)) {
-                    $this->sendPassword($user->email, $newPassword);
+                    $this->sendPassword($user->username, $user->email, $newPassword);
 
                     ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
                     $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']

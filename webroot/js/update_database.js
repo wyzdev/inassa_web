@@ -8,7 +8,7 @@ $(function () {
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
-            url: "http://localhost/inassa_web/users/updateAccess/",
+            url: window.location.protocol+"//"+window.location.host + "/" + location.pathname.split('/')[1] + "/users/updateAccess/",
             success: function (data) {
                 if (data == 'no') {
 
@@ -48,7 +48,7 @@ $(function () {
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
-            url: "http://localhost/inassa_web/users/updateStatus/",
+            url: window.location.protocol+"//"+window.location.host + "/" + location.pathname.split('/')[1] + "/users/updateStatus/",
             success: function (data) {
                 if (data == 'no') {
 
@@ -98,7 +98,7 @@ $(function () {
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
-            url: "http://localhost/inassa_web/users/resetAccount/",
+            url: window.location.protocol+"//"+window.location.host + "/" + location.pathname.split('/')[1] + "/users/resetAccount/",
             success: function (data) {
                 if (data == 'no') {
                     interdit("Vous ne pouvez pas réinitialiser votre compte");
@@ -137,7 +137,7 @@ $(function () {
 });
 
 function changement (id, value) {
-    document.getElementById('dialog-message').innerHTML = '<p><center>L\'utilisateur <b>' + $(id).attr("firstname") + ' ' + $('#admin'+id).attr("lastname") + '</b> est maintenant <b>'+ value +'</b>.</center></p>';
+    document.getElementById('dialog-message').innerHTML = '<p><center>L\'utilisateur <b>' + $(id).attr("firstname") + ' ' + $(id).attr("lastname") + '</b> est maintenant <b>'+ value +'</b>.</center></p>';
 
 
     $( function() {

@@ -28,8 +28,8 @@
             <table id="example" class="table table-striped table-hover table-condensed" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
+                    <th>Nom complet</th>
+                    <th>E-mail</th>
                     <th>Nom d'utilisateur</th>
                     <th>Établissement</th>
                     <th>Accès</th>
@@ -39,8 +39,8 @@
                 </thead>
                 <tfoot>
                 <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
+                    <th>Nom complet</th>
+                    <th>E-mail</th>
                     <th>Nom d'utilisateur</th>
                     <th>Établissement</th>
                     <th>Accès</th>
@@ -52,8 +52,8 @@
 
                     <?php foreach ($users as $user): ?>
                         <tr>
-                            <td><?= $user->last_name ?></td>
-                            <td><?= $user->first_name ?></td>
+                            <td><?php echo $user->first_name .' '. $user->last_name?></td>
+                            <td><?= $user->email ?></td>
                             <td><?= $user->username ?></td>
                             <td><?= $user->institution ?></td>
                             <td>

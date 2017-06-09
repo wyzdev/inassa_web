@@ -17,12 +17,10 @@
                             <?= $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) ?>
                         </div><!-- form group [search] -->
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                    <input name="dob" id="dob" type="text" class="form-control  datepicker"
-                                           placeholder="Date de naissance">
-                                </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <input name="dob" id="dob" type="text" class="form-control  datepicker"
+                                       placeholder="Date de naissance">
                             </div>
                         </div>
                         <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
@@ -52,7 +50,7 @@
     <?php
         if (isset($client)) {
             if ($client['success']) {
-                $status = $client['status'] == true ? '<span class="status_active">Carte Active</span>' : '<span class="status_inactive">Carte Inactive</span>';
+                $status = $client['status'] == true ? '<span class="status_active">Clien Actif</span>' : '<span class="status_inactive">Carte Inactive</span>';
                 echo '<div class="client" style="display: ;">
             <div class="info_client container-fluid" style="">
                 <div class="row">
