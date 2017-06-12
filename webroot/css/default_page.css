@@ -4,11 +4,7 @@
 }
 
 p, h1, h2, h3, h4, h5, h6, a, button, table, ul, ol, li, label, a, input{
-    font-family: 'FontAwesome1';
-}
-
-.menu_with_ic{
-    font-family: 'helvetica-neue';
+    font-family: '';
 }
 
 div.message {

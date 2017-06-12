@@ -43,6 +43,7 @@ class UsersController extends AppController
         if ($this->request->session()->read('Auth.User')['role'] != 'admin' or $this->request->session()->read('Auth.User')['first_login'])
             $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
         $user = $this->Users->newEntity();
+        $registering = false;
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $randomPassword = $this->randomPassword();
@@ -55,7 +56,8 @@ class UsersController extends AppController
                 $this->sendPassword($user->username, $user->email, $randomPassword);
                 $this->Flash->success(__("L'utilisateur a été sauvegardé."));
 
-
+                $role = ($user->role == "admin") ? "Admin" : (($user->role == "medecin") ? "Médecin" : "Simple utilisateur");
+                $status = ($user->status == true) ? "Actif" : "Inactif";
                 ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
                 $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
                     .' '.
@@ -66,8 +68,8 @@ class UsersController extends AppController
                     ucwords($user->first_name).' '.strtoupper($user->last_name).' / '
                     .$user->username.' / '
                     .$user->email.' / '
-                    .$user->role.' / '
-                    .$user->status
+                    .$role.' / '
+                    .$status
                     ."\n");
 
                 return $this->redirect(['action' => 'addusers']);
@@ -77,15 +79,16 @@ class UsersController extends AppController
             $this->set(compact('users'));
             $this->set('_serialize', ['users']);
         }else{
-
-            ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
-            $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
-                .' '.
-                $this->request->session()->read('Auth.User')['last_name'],
-                $this->request->session()->read('Auth.User')['role'],
-                $this->request->session()->read('Auth.User')['institution'],
-                " a alleé dans PARAMETRES ",
-                ""."\n");
+            //if (!$registering) {
+                ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                    . ' ' .
+                    $this->request->session()->read('Auth.User')['last_name'],
+                    $this->request->session()->read('Auth.User')['role'],
+                    $this->request->session()->read('Auth.User')['institution'],
+                    " est allé dans PARAMETRES ",
+                    "" . "\n");
+            //}
 
 
             $this->set('user', $user);
