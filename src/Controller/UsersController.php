@@ -136,8 +136,7 @@ class UsersController extends AppController
                         ""."\n");
 
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
-                }else
-                    $this->Flash->error(__('Nom d\'utilisateur ou mot de passe invalide, essayez encore'));
+                }
             }
             $this->set('id_incorrect', true);
         }
@@ -212,7 +211,7 @@ class UsersController extends AppController
             );
             $user->first_login = false;
             if ($this->Users->save($user)) {
-                $this->Flash->success('The password is successfully changed');
+                $this->Flash->success('Votre mot de passe a été change avec succès');
 
                 $this->Auth->setUser($user);
                 $this->redirect(
@@ -230,7 +229,7 @@ class UsersController extends AppController
                     " a changé son mot de passe ",
                     ""."\n");
             } else {
-                $this->Flash->error('There was an error during the save!');
+                //$this->Flash->error('There was an error during the save!');
                 $this->redirect(['controller' => 'clients', 'action' => 'gestion']);
             }
         }

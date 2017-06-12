@@ -36,7 +36,7 @@
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
                             <?= $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) ?>
                         </div><!-- form group [search] -->
-                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1" style="margin-top: 5px;">
                             <div>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>

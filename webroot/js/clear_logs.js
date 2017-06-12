@@ -26,7 +26,7 @@ $(function () {
         id = balise.attr("num");
 
         document.getElementById('reset-user_modal-body').innerHTML = '<p>Voulez-vous vraiment effacer les logs <b></p>' +
-            '<p class="text-danger"><small>Les données effacées seront perdu à jamais.</small></p>';
+            '<p class="text-danger"><small>Les données effacées seront perdues.</small></p>';
 
 
     });
