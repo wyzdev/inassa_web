@@ -100,7 +100,7 @@ class AppController extends Controller
         $date = date('d/m/Y h:i:s a', time());
         $my_file = 'inassa.log';
         $handle = fopen($my_file, 'a+') or die('Cannot open file:  '.$my_file);
-        $data = '['.$date.'] '. $user. ' '.'('.$role.')'.' de '.$from.' '.$action.' '.$client;
+        $data = '[<b>'.$date.'</b>] '. $user. ' '.'('.$role.')'.' de '.$from.' '.$action.' '.$client;
         fwrite($handle, $data); // write a line in the file
         fclose($handle);
     }

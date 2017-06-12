@@ -54,6 +54,7 @@ Router::connect('/utilisateurs/parametres', ['controller' => 'users', 'action' =
 Router::connect('/login', ['controller' => 'users', 'action' => 'login']);
 Router::connect('/test', ['controller' => 'users', 'action' => 'test']);
 Router::connect('/historiques', ['controller' => 'logs', 'action' => 'historique']);
+Router::connect('/logs', ['controller' => 'logs', 'action' => 'readlogs']);
 
 Router::scope('/clients',
     ['controller' => 'Clients'],

@@ -63,7 +63,12 @@ class UsersController extends AppController
                     $this->request->session()->read('Auth.User')['role'],
                     $this->request->session()->read('Auth.User')['institution'],
                     "a enregistré l'utilisateur ",
-                    ucwords($user->first_name).' '.strtoupper($user->last_name)."\n");
+                    ucwords($user->first_name).' '.strtoupper($user->last_name).' / '
+                    .$user->username.' / '
+                    .$user->email.' / '
+                    .$user->role.' / '
+                    .$user->status
+                    ."\n");
 
                 return $this->redirect(['action' => 'addusers']);
             }
@@ -304,7 +309,7 @@ class UsersController extends AppController
                         $this->request->session()->read('Auth.User')['last_name'],
                         $this->request->session()->read('Auth.User')['role'],
                         $this->request->session()->read('Auth.User')['institution'],
-                        " a changé le <b>rôle</b> de l'utilisateur ",
+                        " a changé le rôle de l'utilisateur ",
                         $user->first_name.' '.$user->last_name."\n");
                 }
             } else
@@ -338,7 +343,7 @@ class UsersController extends AppController
                         $this->request->session()->read('Auth.User')['last_name'],
                         $this->request->session()->read('Auth.User')['role'],
                         $this->request->session()->read('Auth.User')['institution'],
-                        " a changé le <b>status</b> de l'utilisateur ",
+                        " a changé le status de l'utilisateur ",
                         $user->first_name.' '.$user->last_name."\n");
                 }
             } else
