@@ -43,8 +43,3 @@
     from{ bottom:-100px; opacity:0 }
     to{ bottom:0; opacity:1 }
 }
-
-#myDiv {
-    display: none;
-    text-align: center;
-}

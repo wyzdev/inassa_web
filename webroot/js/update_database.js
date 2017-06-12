@@ -3,6 +3,7 @@ var id;
 
 $(function () {
     $('.access').click('click', function () {
+        $('#content_loader2').show(); //display the loader
         var balise = $(this);
         id = balise.attr("num");
         $.ajax({
@@ -11,6 +12,7 @@ $(function () {
             url: window.location.protocol+"//"+window.location.host + "/" + location.pathname.split('/')[1] + "/users/updateAccess/",
             success: function (data) {
                 if (data == 'no') {
+                    $('#content_loader2').hide(); // hide the loader
 
                     interdit("Vous ne pouvez pas changer votredroit d\'accès");
 
@@ -20,6 +22,9 @@ $(function () {
                         $("#" + balise.attr("id")).prop('checked', true);
                 }
                 else{
+
+                    $('#content_loader2').hide(); // hide the loader
+
                     var acces = "";
                     if ($("#" + balise.attr("id")).is(':checked'))
                         acces = 'admin';
@@ -43,6 +48,7 @@ $(function () {
 
 $(function () {
     $('.status').click('click', function () {
+        $('#content_loader2').show(); //display the loader
         var balise = $(this);
         id = balise.attr("num");
         $.ajax({
@@ -51,6 +57,7 @@ $(function () {
             url: window.location.protocol+"//"+window.location.host + "/" + location.pathname.split('/')[1] + "/users/updateStatus/",
             success: function (data) {
                 if (data == 'no') {
+                    $('#content_loader2').hide(); // hide the loader
 
                     interdit("Vous ne pouvez pas changer votre status");
 
@@ -60,6 +67,7 @@ $(function () {
                         $("#" + balise.attr("id")).prop('checked', true);
                 }
                 else{
+                    $('#content_loader2').hide(); //hide the loader
 
                     var status = "";
                     if ($("#" + balise.attr("id")).is(':checked'))
@@ -95,15 +103,18 @@ $(function () {
 
 $(function () {
     $('.confirmation_reset').click('click', function () {
+        $('#content_loader2').show(); //display the loader
         $.ajax({
             type: "POST",
             data: {value_to_send: id},
             url: window.location.protocol+"//"+window.location.host + "/" + location.pathname.split('/')[1] + "/users/resetAccount/",
             success: function (data) {
                 if (data == 'no') {
+                    $('#content_loader2').hide(); // hide the loader
                     interdit("Vous ne pouvez pas réinitialiser votre compte");
                 }
                 else {
+                    $('#content_loader2').hide(); //hide the loader
 
                     document.getElementById('dialog-message').innerHTML = '<p><center>Le compte de l\'utilisateur <b>' + $('#admin'+id).attr("firstname") + ' ' + $('#admin'+id).attr("lastname") + '</b> a été <b>réinitialisé</b>.</center></p>';
 

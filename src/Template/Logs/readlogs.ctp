@@ -1,16 +1,24 @@
 
-<p style="display: inline-block; padding: 20px; float:right;">
-    [<u>
-        <a href="#myModal_confirmation" data-toggle="modal" style="cursor: pointer;" id="clear_logs" style="cursor:pointer;">Effacer les logs</a>
-    </u>]
-</p>
+<div class="container-fluid">
 
-<center><h3 style="display: inline-block;">LOGS</h3></center>
+    <div class="row">
+        <div class="">
+            <p class="text-right">
+                [<u>
+                    <a href="#myModal_confirmation" data-toggle="modal" style="cursor: pointer;" id="clear_logs">Effacer les logs</a>
+                </u>]
+            </p>
+        </div>
+    </div>
+
+    <center><h3 style="display: inline-block;">LOGS</h3></center>
 
 
 
 
-<p id="content_logs" style="
+
+
+    <p id="content_logs" style="
     margin: auto;
     padding: 25px;
     width: 70%;
@@ -18,10 +26,11 @@
     border: 1px solid grey;
     border-radius: 5px;
     line-height: 1.8;">
-    <?php
-    echo $log;
-    ?>
-</p>
+        <?php
+        echo $log;
+        ?>
+    </p>
+</div>
 
 
 <!--/////////////////////////////// LOADER /////////////////////////////////////////-->
