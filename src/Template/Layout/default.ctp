@@ -19,7 +19,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon'); ?>
 
     <?= $this->Html->css('bootstrap/bootstrap'); ?>
-    <?= $this->Html->css('font-awesome/font-awesome/css/font-awesome.min'); ?>
+    <?= $this->Html->css('font-awesome/font-awesome/css/font-awesome'); ?>
     <?= $this->Html->css('bootstrap/bootstrap-theme'); ?>
     <?= $this->Html->css('login_form') ?>
     <?= $this->Html->css('search_form') ?>

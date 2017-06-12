@@ -3,8 +3,8 @@
     src: url('../fonts/helveticaNeueLTStd.otf');
 }
 
-p, h1, h2, h3, h4, h5, h6, a, button, table, ul, ol, li, label, a{
-    font-family: 'helvetica-neue';
+p, h1, h2, h3, h4, h5, h6, a, button, table, ul, ol, li, label, a, input{
+    font-family: 'FontAwesome1';
 }
 
 .menu_with_ic{
