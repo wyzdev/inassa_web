@@ -84,8 +84,15 @@
             <tr>
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
-                <td><?= $log->institution ?></td>
-                <td><?= $log->date ?></td>
+                <td><?= $log->institution ?></td><!-- 
+                ////////////////////////////////////////////////// -->
+                <?php
+
+                $timestamp = strtotime($log->date);
+                setlocale (LC_TIME, 'fr_FR.utf8','fra');
+                ?><!--
+                ///////////////////////////////////////////////// -->
+                <td><?= strftime( "%d %B %Y, %H:%M", $timestamp ) ; ?></td>
                 <td>
                     <?php
                     if ($log->status)
