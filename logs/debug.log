@@ -10756,3 +10756,1221 @@ Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
 
 
 
+2017-06-12 15:07:56 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://localhost/inassa_web/utilisateurs/parametres
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 15:52:40 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login?redirect=%2Fusers%2Flogout
+Referer URL: http://localhost/inassa_web/clients/gestion
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 15:54:45 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.30
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 15:55:25 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.22
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:02:52 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.46
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:07:00 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.46
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:07:25 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://localhost/inassa_web/clients/gestion
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:08:59 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://localhost/inassa_web/clients/gestion
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:11:03 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.46
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:11:18 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://192.168.1.100/inassa_web/clients/gestion
+Client IP: 192.168.1.46
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:11:44 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.17
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 16:29:42 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://192.168.1.100/inassa_web/utilisateurs/parametres
+Client IP: 192.168.1.17
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 17:00:33 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.25
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 17:01:35 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://192.168.1.100/inassa_web/logs/historique
+Client IP: 192.168.1.17
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 17:02:18 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Client IP: 192.168.1.17
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 17:44:46 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login?redirect=%2Fhistoriques
+Referer URL: http://192.168.1.100/inassa_web/historiques
+Client IP: 192.168.1.25
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 17:59:19 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login?redirect=%2Flogs%2Fhistorique
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 19:57:24 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login?redirect=%2Futilisateurs%2Fparametres
+Referer URL: http://localhost/inassa_web/clients/gestion
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-12 20:02:29 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 05:45:40 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 05:46:03 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:56:02 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:56:02 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:56:24 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:56:24 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:57:01 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:57:01 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:57:24 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:57:24 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:58:37 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 01:58:37 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:00:07 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:00:07 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:00:54 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:00:54 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:01:32 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:01:32 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:02:06 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:02:06 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:02:47 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:02:47 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:03:26 Notice: Notice (8): Undefined variable: menuitem in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 02:03:26 Notice: Notice (8): Trying to get property of non-object in [/opt/lampp/htdocs/inassa_web/src/Template/Layout/default.ctp, line 53]
+Request URL: /clients/gestion
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Layout/default.ctp, line 53
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 643
+Cake\View\View::render() - CORE/src/View/View.php, line 601
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 06:39:50 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://localhost/inassa_web/clients/gestion
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 06:40:04 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://localhost/inassa_web/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2017-06-13 06:43:07 Notice: Notice (8): Undefined variable: id_incorrect in [/opt/lampp/htdocs/inassa_web/src/Template/Users/login.ctp, line 24]
+Request URL: /users/login
+Referer URL: http://localhost/inassa_web/clients/gestion
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+include - APP/Template/Users/login.ctp, line 24
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1011
+Cake\View\View::_render() - CORE/src/View/View.php, line 972
+Cake\View\View::render() - CORE/src/View/View.php, line 596
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 80
+[main] - ROOT/webroot/index.php, line 37
+
+
+

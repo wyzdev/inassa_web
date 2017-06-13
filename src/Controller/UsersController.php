@@ -219,8 +219,7 @@ class UsersController extends AppController
             );
             $user->first_login = false;
             if ($this->Users->save($user)) {
-                $this->Flash->success('Votre mot de passe a été change avec succès');
-
+                $this->Flash->success('Votre mot de passe a été changé avec succès');
                 $this->Auth->setUser($user);
                 $this->redirect(
                     [

@@ -3,12 +3,12 @@
 <?= $this->Html->css('add_user'); ?>
 <?= $this->Html->css('login_form'); ?>
 
-<div class="row margin-top-20">
+
+<div class="container-fluid"><div class="row margin-top-20">
     <p class="text-right" style="margin-right: 15px;">
         [ <u><a href="#myModal_change_password" data-toggle="modal" style="cursor: pointer;">Changer de mot de passe</a></u> ]
     </p>
 </div>
-<div class="container-fluid">
     <div class="row">
         <div class=" col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 vertical-center">
             <div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1">

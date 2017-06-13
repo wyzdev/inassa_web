@@ -4,7 +4,7 @@
 }
 
 p, h1, h2, h3, h4, h5, h6, a, button, table, ul, ol, li, label, a, input{
-    font-family: '';
+    font-family: 'helvetica-neue'!important;
 }
 
 div.message {
