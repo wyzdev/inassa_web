@@ -24,6 +24,7 @@ class ClientsController extends AppController
 
             // set some cURL options
             curl_setopt($curl_host, CURLOPT_URL, "http://200.113.219.221:8180/RequestQuote/RequestLogin");
+            // curl_setopt($curl_host, CURLOPT_URL, "http://192.168.5.8:8180/RequestQuote/RequestLogin");
             curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl_host, CURLOPT_POST, 1);
             curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"Login":{"username":"jotest@test.com","password":"P@$$w0rd"}}');
@@ -44,6 +45,7 @@ class ClientsController extends AppController
             $curl_host = curl_init();
 
             curl_setopt($curl_host, CURLOPT_URL, "http://200.113.219.221:8180/RequestQuote/epic_mwClientSearch");
+            // curl_setopt($curl_host, CURLOPT_URL, "http://192.168.5.8:8180/RequestQuote/epic_mwClientSearch");
             curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl_host, CURLOPT_POST, 1);
             curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"resquestkey":{"key":"' . $key . '"},"first_name":"' . strtoupper($firstname) . '","last_name":"' . strtoupper($lastname) . '","dob":"' . $dob . '"}');

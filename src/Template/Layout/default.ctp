@@ -78,6 +78,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <?= $this->Html->link('<i class="fa fa-file-archive-o"></i>' . ' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown', 'escape' => false]); ?></li>
             <?php } ?>
             <li class="divider"></li>
+            <li><a href="#modal_change_password" data-toggle="modal" class="list-dropdown"><i class="fa fa-lock"></i> Changer de mot de passe</a></li>
+            <li class="divider"></li>
             <li><?= $this->Html->link('<i class="fa fa-sign-out"></i>' . ' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['class' => 'list-dropdown', 'escape' => false]); ?></li>
 
         </ul>
@@ -106,6 +108,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         <?= $this->Html->link('<i class="fa fa-file-archive-o"></i>' . ' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['escape' => false]); ?></li>
                         <li class="divider"></li>
                     <?php } ?>
+                    <li><a href="#modal_change_password" data-toggle="modal"><i class="fa fa-lock"></i> Changer de mot de passe</a></li>
+                        <li class="divider"></li>
                     <li><?= $this->Html->link('<i class="fa fa-sign-out"></i>' . ' Déconnexion', ['controller' => 'users', 'action' => 'logout'], ['escape' => false]); ?></li>
                 </ul>
             </li>
@@ -122,7 +126,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 <?= $this->Flash->render(); ?>
 
-<!-- Contenu de la page "AUTHENTIFICATION " -->
+<!-- Contenu de la page -->
+<div style=" position: fixed; height: 100%; width: 100%; opacity:0.2; z-index: -1;text-align:center">
+    <?=$this->Html->image('inassa2.jpeg', array("style" => "width:47%;height:auto;margin:auto;margin-top:50px")); ?>
+</div>
 <div style="margin-bottom: 75px;">
     <?= $this->fetch('content') ?>
 </div>
@@ -133,6 +140,48 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </p>
     </div>
 </footer>
+
+
+<!-- Modal change password HTML -->
+<div id="modal_change_password" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Saisissez votre nouveau mot de passe</h3>
+            </div>
+
+            <div class="modal-body">
+
+                <?= $this->Form->create(null,
+                    [
+                        'url' =>
+                            [
+                                'controller' => 'users',
+                                'action' => 'changepassword'
+                            ]
+                    ]) ?>
+                <?= $this->Form->input('password1',
+                    array('type' => 'password',
+                        'class' => 'margin-10 form-control col-md-4',
+                        'label' => false,
+                        "placeholder" => "Nouveau mot de passe",
+
+                    )) ?>
+
+                <?= $this->Form->input('password2',
+                    array(
+                        'type' => 'password',
+                        'class' => 'margin-10 form-control',
+                        'label' => false,
+                        "placeholder" => "Confirmer le mot de passe"
+                    )) ?>
+                <?= $this->Form->button('Enregistrer', ['class' => 'margin-top-20 btn btn-lg btn-primary btn-block']) ?>
+                <?= $this->Form->end() ?>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?= $this->fetch('script'); ?>
 </body>

@@ -28,8 +28,9 @@
         <div id="" class="">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form class="form-inline" role="form" method="post" accept-charset="utf-8"
-                          action="historique">
+                    <?= $this->Form->create("Logs", array('class' => "form-inline", "action" => "/historique")) ?>
+                    <!--<form class="form-inline" role="form" method="post" accept-charset="utf-8"
+                          action="/inassa_web/logs/historique">-->
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
                             <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
                         </div> <!-- form group [rows] -->
@@ -50,7 +51,8 @@
                                 <span class="glyphicon glyphicon-search"></span> Rechercher
                             </button>
                         </div>
-                    </form>
+                   <!-- </form>-->
+                    <?= $this->Form->end()?>
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@
     <?php
         if (isset($client)) {
             if ($client['success']) {
-                $status = $client['status'] == true ? '<span class="status_active">Clien Actif</span>' : '<span class="status_inactive">Carte Inactive</span>';
+                $status = $client['status'] == true ? '<span class="status_active">Client Actif</span>' : '<span class="status_inactive">Client inactif</span>';
                 echo '<div class="client" style="display: ;">
             <div class="info_client container-fluid" style="">
                 <div class="row">
@@ -114,7 +114,7 @@
 $loguser = $this->request->session()->read('Auth.User');
 if ($loguser['first_login']) { ?>
     <style>
-        .modal {
+        #modal {
             display: block;
         }
     </style>
@@ -123,7 +123,7 @@ if ($loguser['first_login']) { ?>
     </div>
 <?php } ?>
 
-<div class="modal fade in" id="myModal" tabindex="-1" role="dialog"
+<div class="modal fade in" id="modal" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel">
     <div class="modal-dialog  modal-sm">
         <div class="modal-content">

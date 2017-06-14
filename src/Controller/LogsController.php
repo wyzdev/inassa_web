@@ -30,19 +30,6 @@ class LogsController extends AppController
             'error' => $message,
             'log' => $log
         ]);
-
-       /* $log = $this->Logs->newEntity();
-        if ($this->request->is('post')) {
-            $log = $this->Logs->patchEntity($log, $this->request->getData());
-            if ($this->Logs->save($log)) {
-                $this->Flash->success(__('The log has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The log could not be saved. Please, try again.'));
-        }
-        $this->set(compact('log'));
-        $this->set('_serialize', ['log']);*/
     }
 
 

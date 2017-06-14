@@ -4,11 +4,7 @@
 <?= $this->Html->css('login_form'); ?>
 
 
-<div class="container-fluid"><div class="row margin-top-20">
-    <p class="text-right" style="margin-right: 15px;">
-        [ <u><a href="#myModal_change_password" data-toggle="modal" style="cursor: pointer;">Changer de mot de passe</a></u> ]
-    </p>
-</div>
+<div class="container-fluid">
     <div class="row">
         <div class=" col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 vertical-center">
             <div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1">
@@ -120,11 +116,11 @@
         </div>
     </div>
 </div>
-
+</div>
 
 <!-- Modal HTML -->
 <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -136,46 +132,6 @@
             <div class="modal-footer" id="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">NON</button>
                 <button type="button" class="btn btn-warning confirmation_reset" data-dismiss="modal">OUI</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal change password HTML -->
-<div id="myModal_change_password" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title">Saisissez votre nouveau mot de passe</h3>
-            </div>
-
-            <div class="modal-body">
-
-                <?= $this->Form->create(null,
-                    [
-                        'url' =>
-                            [
-                                'controller' => 'users',
-                                'action' => 'changepassword'
-                            ]
-                    ]) ?>
-                <?= $this->Form->input('password1',
-                    array('type' => 'password',
-                        'class' => 'margin-10 form-control col-md-4',
-                        'label' => false,
-                        "placeholder" => "Nouveau mot de passe",
-
-                    )) ?>
-
-                <?= $this->Form->input('password2',
-                    array(
-                        'type' => 'password',
-                        'class' => 'margin-10 form-control',
-                        'label' => false,
-                        "placeholder" => "Confirmer le mot de passe"
-                    )) ?>
-                <?= $this->Form->button('Enregistrer', ['class' => 'margin-top-20 btn btn-lg btn-primary btn-block']) ?>
-                <?= $this->Form->end() ?>
             </div>
         </div>
     </div>
@@ -192,7 +148,7 @@
     <div id="loader"></div>
 </div>
 
-<!--/////////////////////////////// LOADER /////////////////////////////////////////-->
+<!--/////////////////////////////// LOADER 2 /////////////////////////////////////////-->
 <div id="content_loader2" style="display: none;background: rgba(0,0,0,0.2);; top:0px; left: 0px; right: 0px; bottom: 0px; position: absolute; z-index: 2;">
     <div id="loader"></div>
 </div>

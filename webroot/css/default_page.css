@@ -24,3 +24,7 @@ div.message {
     line-height: 2.5em;
     box-radius: 5px;
 }
+table.table{
+    background:white;
+    opacity:0.7;
+}

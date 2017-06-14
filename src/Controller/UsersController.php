@@ -174,8 +174,6 @@ class UsersController extends AppController
                 $this->Users->save($modif);
             }
         }
-
-
         $this->set([
             'error' => $message,
             'user' => $user
