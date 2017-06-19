@@ -1,0 +1,5 @@
+[13-Jun-2017 12:52:48] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: Invalid curl configuration option in /home2/nassagro/public_html/app/index.php on line 9
+[13-Jun-2017 12:54:23] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: Invalid curl configuration option in /home2/nassagro/public_html/app/index.php on line 9
+[13-Jun-2017 12:58:01] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: Invalid curl configuration option in /home2/nassagro/public_html/app/index.php on line 9
+[13-Jun-2017 12:58:15] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: Invalid curl configuration option in /home2/nassagro/public_html/app/index.php on line 9
+[13-Jun-2017 13:00:31] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: Invalid curl configuration option in /home2/nassagro/public_html/app/index.php on line 9

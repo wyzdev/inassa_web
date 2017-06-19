@@ -5,22 +5,10 @@
 
 <?= $this->end(); ?>
 
-<?php //$this->Html->css('nom_du_fichier_css', null, array('inline' => false)); ?>
-<?php //$this->Html->script('nom_du_fichier_js', array('inline' => false)); ?>
 
 
 <?= $this->Html->css('historique'); ?>
 <?= $this->Html->css('dataTablesbootstrap.min'); ?>
-
-
-<!-- fichier javaScript qui vont permettre au datatable de fonctionner correctement -->
-
-<?php //$this->Html->script('jquery.min', array('inline' => false)); ?>
-<?php //$this->Html->script('bootstrap', array('inline' => false)); ?>
-<?php //$this->Html->script('jquery.dataTables.min', array('inline' => false)); ?>
-<?php //$this->Html->script('dataTables.bootstrap.min', array('inline' => false)); ?>
-
-<!--Block contenant la recherche de l'historique d'un client-->
 
 
 <div class="container">
@@ -68,6 +56,7 @@
             <th>Nom</th>
             <th>Prénom</th>
             <th>Institution</th>
+            <th>Médecin</th>
             <th>Date</th>
             <th>Status</th>
         </tr>
@@ -77,6 +66,7 @@
             <th>Nom</th>
             <th>Prénom</th>
             <th>Institution</th>
+            <th>Médecin</th>
             <th>Date</th>
             <th>Status</th>
         </tr>
@@ -86,7 +76,8 @@
             <tr>
                 <td><?= $log->last_name ?></td>
                 <td><?= $log->first_name ?></td>
-                <td><?= $log->institution ?></td><!-- 
+                <td><?= $log->institution ?></td>
+                <td><?= $log->doctor_name ?></td><!--
                 ////////////////////////////////////////////////// -->
                 <?php
 

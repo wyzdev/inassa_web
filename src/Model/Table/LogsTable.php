@@ -66,6 +66,10 @@ class LogsTable extends Table
             ->notEmpty('status');
 
         $validator
+            ->requirePresence('doctor_name', 'create')
+            ->notEmpty('doctor_name');
+
+        $validator
             ->requirePresence('institution', 'create')
             ->notEmpty('institution');
 

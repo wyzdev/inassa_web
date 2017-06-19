@@ -24,6 +24,10 @@
             <td><?= h($log->last_name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Doctor Name') ?></th>
+            <td><?= h($log->doctor_name) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Institution') ?></th>
             <td><?= h($log->institution) ?></td>
         </tr>

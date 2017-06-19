@@ -18,6 +18,7 @@
             echo $this->Form->control('last_name');
             echo $this->Form->control('dob');
             echo $this->Form->control('status');
+            echo $this->Form->control('doctor_name');
             echo $this->Form->control('institution');
             echo $this->Form->control('date');
         ?>

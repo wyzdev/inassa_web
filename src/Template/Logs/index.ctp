@@ -19,6 +19,7 @@
                 <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('dob') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('doctor_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('institution') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -32,6 +33,7 @@
                 <td><?= h($log->last_name) ?></td>
                 <td><?= h($log->dob) ?></td>
                 <td><?= h($log->status) ?></td>
+                <td><?= h($log->doctor_name) ?></td>
                 <td><?= h($log->institution) ?></td>
                 <td><?= h($log->date) ?></td>
                 <td class="actions">

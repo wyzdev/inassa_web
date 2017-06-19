@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property string $last_name
  * @property \Cake\I18n\Time $dob
  * @property bool $status
+ * @property string $doctor_name
  * @property string $institution
  * @property \Cake\I18n\Time $date
  */

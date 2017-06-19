@@ -36,15 +36,48 @@ class LogsController extends AppController
 
     public function historique()
     {
-            if ($this->request->session()->read('Auth.User')['first_login']) {
-                $this->redirect(
-                    [
-                        'controller' => 'clients',
-                        'action' => 'gestion'
-                    ]);
+        echo $this->Logs;
+
+        if ($this->request->session()->read('Auth.User')['first_login']) {
+            $this->redirect(
+                [
+                    'controller' => 'clients',
+                    'action' => 'gestion'
+                ]);
+        }
+        else if ($this->request->is('post')) {
+            $data = $this->request->data;
+            $client = $this->Logs->find('all', array(
+                'conditions' => array(
+                    'Logs.first_name' => $data['first_name'],
+                    'Logs.last_name' => $data['last_name'],
+                    'Logs.dob' => $data['dob']
+                )
+            ));
+            if ($client)
+            {
+
+                $logs = $this->paginate($client);
+                $this->set(compact('logs'));
+                $this->set('_serialize', ['logs']);
+
+                ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                    .' '.
+                    $this->request->session()->read('Auth.User')['last_name'],
+                    $this->request->session()->read('Auth.User')['role'],
+                    $this->request->session()->read('Auth.User')['institution'],
+                    "a vérifié l'historique du client",
+                    strtoupper($data['first_name']).' '.strtoupper($data['last_name'])."\n");
             }
-            else if ($this->request->is('post')) {
-                $data = $this->request->data;
+            else
+            {
+            }
+        }
+        else {
+            if($this->request->getQueryParams()){
+                $data = $this->request->getQueryParams();
+
                 $client = $this->Logs->find('all', array(
                     'conditions' => array(
                         'Logs.first_name' => $data['first_name'],
@@ -59,6 +92,7 @@ class LogsController extends AppController
                     $this->set(compact('logs'));
                     $this->set('_serialize', ['logs']);
 
+
                     ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
                     $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
                         .' '.
@@ -68,55 +102,23 @@ class LogsController extends AppController
                         "a vérifié l'historique du client",
                         strtoupper($data['first_name']).' '.strtoupper($data['last_name'])."\n");
                 }
-                else
-                {
-                }
+
+            }else {
+                $logs = $this->paginate($this->Logs);
+                $this->set(compact('logs'));
+                $this->set('_serialize', ['logs']);
+
+
+                ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
+                $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
+                    .' '.
+                    $this->request->session()->read('Auth.User')['last_name'],
+                    $this->request->session()->read('Auth.User')['role'],
+                    $this->request->session()->read('Auth.User')['institution'],
+                    " est allé dana HISTORIQUE",
+                    ""."\n");
             }
-            else {
-                if($this->request->getQueryParams()){
-                    $data = $this->request->getQueryParams();
-
-                    $client = $this->Logs->find('all', array(
-                        'conditions' => array(
-                            'Logs.first_name' => $data['first_name'],
-                            'Logs.last_name' => $data['last_name'],
-                            'Logs.dob' => $data['dob']
-                        )
-                    ));
-                    if ($client)
-                    {
-
-                        $logs = $this->paginate($client);
-                        $this->set(compact('logs'));
-                        $this->set('_serialize', ['logs']);
-
-
-                        ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
-                        $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
-                            .' '.
-                            $this->request->session()->read('Auth.User')['last_name'],
-                            $this->request->session()->read('Auth.User')['role'],
-                            $this->request->session()->read('Auth.User')['institution'],
-                            "a vérifié l'historique du client",
-                            strtoupper($data['first_name']).' '.strtoupper($data['last_name'])."\n");
-                    }
-
-                }else {
-                    $logs = $this->paginate($this->Logs);
-                    $this->set(compact('logs'));
-                    $this->set('_serialize', ['logs']);
-
-
-                    ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
-                    $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
-                        .' '.
-                        $this->request->session()->read('Auth.User')['last_name'],
-                        $this->request->session()->read('Auth.User')['role'],
-                        $this->request->session()->read('Auth.User')['institution'],
-                        " est allé dana HISTORIQUE",
-                        ""."\n");
-                }
-            }
+        }
     }
 
     public function readlogs()

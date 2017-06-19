@@ -25,7 +25,9 @@
     text-align: left;
     border: 1px solid grey;
     border-radius: 5px;
-    line-height: 1.8;">
+    line-height: 1.8;
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 0.7;">
         <?php
         echo $log;
         ?>
