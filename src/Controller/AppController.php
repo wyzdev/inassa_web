@@ -99,6 +99,7 @@ class AppController extends Controller
         date_default_timezone_set('America/New_York');
         $date = date('d/m/Y h:i:s a', time());
 
+        // save in current log
         $file = 'inassa.log';
         $oldContents = file_get_contents($file);
 
@@ -107,6 +108,14 @@ class AppController extends Controller
 
         $newmsg = $data . $oldContents;
         fwrite($handle, $newmsg); // write a line in the file
+        fclose($handle);
+
+        // save in daily log
+        $my_file = "Logs/" . date("Y_m_d") . '.log';
+        $handle = fopen($my_file, 'a+') or die('Cannot open file:  '.$my_file);
+
+        $data = '[<b>'.$date.'</b>] '. $user. ' '.'('.$role.')'.' de '.$from.' '.$action.' '.$client;
+        fwrite($handle, $data); // write a line in the file
         fclose($handle);
     }
 }
