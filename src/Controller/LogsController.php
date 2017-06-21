@@ -12,9 +12,7 @@ class LogsController extends AppController
 {
 
     /**
-     * Add method
-     *
-     * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
+     * Function that adds the client history in database
      */
     public function add()
     {
@@ -32,8 +30,9 @@ class LogsController extends AppController
         ]);
     }
 
-
-
+    /**
+     * Function that displays the history
+     */
     public function historique()
     {
         echo $this->Logs;
@@ -121,6 +120,9 @@ class LogsController extends AppController
         }
     }
 
+    /**
+     * Function that reads log files
+     */
     public function readlogs()
     {
         $myfile = fopen("inassa.log", "r") or die("Unable to open file!");
@@ -134,6 +136,9 @@ class LogsController extends AppController
         $this->set('log', $content_logs);
     }
 
+    /**
+     * Function that clear log file
+     */
     public function clearlogs(){
         if ($this->request->is('ajax')) {
             $my_file = 'inassa.log';

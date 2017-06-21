@@ -17,7 +17,7 @@ class UsersController extends AppController
     public $components = array('Email');
 
     /**
-     *
+     * Function that authenticates the user that uses the android application
      */
     public function requestUser() {
         $data = $this->request->data;
@@ -36,6 +36,8 @@ class UsersController extends AppController
     }
 
     /**
+     * Function that registers users
+     *
      * @return mixed
      */
     public function addusers()
@@ -99,7 +101,7 @@ class UsersController extends AppController
     }
 
     /**
-     * randomPassword method
+     * Function that generates random password
      *
      * @return string
      */
@@ -115,7 +117,7 @@ class UsersController extends AppController
     }
 
     /**
-     * login method
+     * Function that login user that uses the web app
      *
      * @return mixed
      */
@@ -151,9 +153,9 @@ class UsersController extends AppController
     }
 
     /**
-     * forgotPassword method
+     * Function that generates a new password for the user.
      *
-     * send an e-mail with a new password to a user
+     * Password will be sent to the user via an e-mail.
      */
     public function forgotPassword() {
         $data = $this->request->data;
@@ -182,7 +184,7 @@ class UsersController extends AppController
 
     /**
      *
-     * logout method
+     * Function that logs out the user
      *
      * @return mixed
      */
@@ -200,7 +202,7 @@ class UsersController extends AppController
     }
 
     /**
-     * changePassword method
+     * Function that change the user's password
      *
      *
      */
@@ -242,7 +244,7 @@ class UsersController extends AppController
     }
 
     /**
-     * sendPassword method
+     * Function that sends password to the user
      *
      * @param $usermail
      * @param $userpassword
@@ -257,7 +259,7 @@ class UsersController extends AppController
     }
 
     /**
-     * changePasswordMedecin method
+     * Function that changes the doctors password in database
      *
      *
      */
@@ -286,9 +288,7 @@ class UsersController extends AppController
     }
 
     /**
-     * updateAccess method
-     *
-     * change access of a user to the database
+     * Function that changes the user's role in database.
      */
     public function updateAccess()
     {
@@ -319,9 +319,7 @@ class UsersController extends AppController
     }
 
     /**
-     * updateStatus method
-     *
-     * change status of a user
+     * Function that changes the user's status in database.
      */
     public function updateStatus()
     {
@@ -355,8 +353,9 @@ class UsersController extends AppController
     /**
      * resetAccount method
      *
-     * change the status, the access and the password in the database, and send the new password to
-     * the e-mail of this user
+     * Function that changes the user's status, access and password in the database,
+     * and send the new password to
+     * the user's e-mail.
      */
     public function resetAccount()
     {

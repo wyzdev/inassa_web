@@ -1,16 +1,10 @@
 <?php
+
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) INASSA
  *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link      http://cakephp.org CakePHP(tm) Project
- * @since     0.2.9
- * @license   http://www.opensource.org/licenses/mit-license.php MIT License
+ * @copyright     Copyright (c) INASSA 2017
+ * @link          http://nassagroup.com
  */
 namespace App\Controller;
 
@@ -30,13 +24,6 @@ class AppController extends Controller
 {
     public $TOKEN = "1E:DF:D8:32:09:92:72:AF:FA:32:12:71:D6:B5:E4:70:DB:F2:7F:48";
 
-    /**
-     * @return string
-     */
-    public function getTOKEN()
-    {
-        return $this->TOKEN;
-    }
     /**
      * Initialization hook method.
      *
@@ -62,20 +49,11 @@ class AppController extends Controller
                 'action' => 'login'
             ]
         ]);
-
-        /*
-         * Enable the following components for recommended CakePHP security settings.
-         * see http://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
-        //$this->loadComponent('Csrf');
     }
 
     /**
-     * Before render callback.
-     *
-     * @param \Cake\Event\Event $event The beforeRender event.
-     * @return \Cake\Network\Response|null|void
+     * Function that executes before render
+     * @param Event $event
      */
     public function beforeRender(Event $event)
     {
@@ -87,6 +65,7 @@ class AppController extends Controller
     }
 
     /**
+     * Function that allows some funcionalities without login
      * @param Event $event
      *
      */
@@ -95,6 +74,15 @@ class AppController extends Controller
         $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search']);
     }
 
+    /**
+     * Function that writes in log files
+     *
+     * @param $user
+     * @param $role
+     * @param $from
+     * @param $action
+     * @param $client
+     */
     public function writeinlogs($user, $role, $from, $action, $client){
         date_default_timezone_set('America/New_York');
         $date = date('d/m/Y h:i:s a', time());

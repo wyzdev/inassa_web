@@ -1,9 +1,7 @@
 <?php
 /**
  * @copyright     Copyright (c) (Inassa 2017))
- * @link          ''
- * @since         0.10.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @link          nassagroup.com
  */
 
 $cakeDescription = 'CakePHP: the rapid development php framework';
