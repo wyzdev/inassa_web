@@ -25,8 +25,8 @@ class Application extends BaseApplication
     /**
      * Setup the middleware your application will use.
      *
-     * @param \Cake\Http\MiddlewareQueue $middleware The middleware queue to setup.
-     * @return \Cake\Http\MiddlewareQueue The updated middleware.
+     * @param $middleware
+     * @return mixed
      */
     public function middleware($middleware)
     {
