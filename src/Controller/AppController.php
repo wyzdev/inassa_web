@@ -22,6 +22,10 @@ use Cake\Controller\Component\RequestHandlerComponent;
  */
 class AppController extends Controller
 {
+    /**
+     * Constants that used to check the requests of the android application
+     * @var string
+     */
     public $TOKEN = "1E:DF:D8:32:09:92:72:AF:FA:32:12:71:D6:B5:E4:70:DB:F2:7F:48";
 
     /**

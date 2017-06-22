@@ -1,4 +1,10 @@
 <?php
+/**
+ * Copyright (c) INASSA
+ *
+ * @copyright     Copyright (c) INASSA 2017
+ * @link          http://nassagroup.com
+ */
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -71,6 +77,14 @@ class ClientsController extends AppController
 
     }
 
+    /**
+     * Function that gets the client's information from the API of INASSA
+     *
+     * @param $firstname
+     * @param $lastname
+     * @param $dob
+     * @return mixed
+     */
     public function getClient($firstname, $lastname, $dob){
 
         // init curl

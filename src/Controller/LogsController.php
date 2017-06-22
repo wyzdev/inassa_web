@@ -1,4 +1,10 @@
 <?php
+/**
+ * Copyright (c) INASSA
+ *
+ * @copyright     Copyright (c) INASSA 2017
+ * @link          http://nassagroup.com
+ */
 namespace App\Controller;
 
 use App\Controller\AppController;
