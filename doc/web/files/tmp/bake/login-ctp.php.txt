@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright (c) INASSA
+ *
+ * @copyright     Copyright (c) INASSA 2017
+ * @link          http://nassagroup.com
+ */
+?>
+<CakePHPBakeOpenTagphp
+/**
+  * @var \<?= $namespace ?>\View\AppView $this
+  */
+CakePHPBakeCloseTag>
+<div class="<?= $pluralVar ?> form">
+<CakePHPBakeOpenTag= $this->Flash->render('auth') CakePHPBakeCloseTag>
+    <CakePHPBakeOpenTag= $this->Form->create() CakePHPBakeCloseTag>
+    <fieldset>
+        <legend><CakePHPBakeOpenTag= __('Please enter your username and password') CakePHPBakeCloseTag></legend>
+        <CakePHPBakeOpenTag= $this->Form->input('username') CakePHPBakeCloseTag>
+        <CakePHPBakeOpenTag= $this->Form->input('password') CakePHPBakeCloseTag>
+    </fieldset>
+    <CakePHPBakeOpenTag= $this->Form->button(__('Login')); CakePHPBakeCloseTag>
+    <CakePHPBakeOpenTag= $this->Form->end() CakePHPBakeCloseTag>
+</div>
+

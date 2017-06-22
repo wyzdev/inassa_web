@@ -65,7 +65,7 @@ class AppController extends Controller
     }
 
     /**
-     * Function that allows some funcionalities without login
+     * Function that allows some functionalities without login
      * @param Event $event
      *
      */
