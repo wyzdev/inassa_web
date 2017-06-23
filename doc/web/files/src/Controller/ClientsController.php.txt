@@ -17,7 +17,7 @@ use App\Controller\AppController;
 class ClientsController extends AppController
 {
     /**
-     * Function that allows the user to search client
+     * Function that allows the user to search client.
      */
     public function gestion(){
         if ($this->request->is('post')) {

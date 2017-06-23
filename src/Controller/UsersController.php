@@ -20,10 +20,13 @@ use Cake\Auth\DefaultPasswordHasher;
  */
 class UsersController extends AppController
 {
+    /**
+     * @var array Array that contains the e-mail of INASSA.
+     */
     public $components = array('Email');
 
     /**
-     * Function that authenticates the user that uses the android application
+     * Function that authenticates the user that uses the android application.
      */
     public function requestUser() {
         $data = $this->request->data;
@@ -42,7 +45,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Function that registers users
+     * Function that registers new users.
      *
      * @return mixed
      */
@@ -107,7 +110,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Function that generates random password
+     * Function that generates random password.
      *
      * @return string
      */
@@ -123,7 +126,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Function that login user that uses the web app
+     * Function that authenticates user that uses the web app
      *
      * @return mixed
      */
@@ -190,7 +193,7 @@ class UsersController extends AppController
 
     /**
      *
-     * Function that logs out the user
+     * Function that logs the user out.
      *
      * @return mixed
      */
@@ -208,7 +211,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Function that change the user's password
+     * Function that changes the user's password.
      *
      *
      */
@@ -250,7 +253,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Function that sends password to the user
+     * Function that sends password to the user's e-mail.
      *
      * @param $username
      * @param $usermail
@@ -266,9 +269,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Function that changes the doctors password in database
-     *
-     *
+     * Function that changes the doctor's password in database.
      */
     public function changePasswordMedecin(){
         $data = $this->request->data;
@@ -358,8 +359,6 @@ class UsersController extends AppController
     }
 
     /**
-     * resetAccount method
-     *
      * Function that changes the user's status, access and password in the database,
      * and send the new password to
      * the user's e-mail.

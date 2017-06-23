@@ -18,7 +18,7 @@ class LogsController extends AppController
 {
 
     /**
-     * Function that adds the client history in database
+     * Function that adds the client's history in database.
      */
     public function add()
     {
@@ -37,7 +37,7 @@ class LogsController extends AppController
     }
 
     /**
-     * Function that displays the history
+     * Function that displays the global history.
      */
     public function historique()
     {
@@ -63,7 +63,7 @@ class LogsController extends AppController
     }
 
     /**
-     * Function that gets client's history via get request and displays it
+     * Function that gets client's history via GET request and displays it.
      */
     public function getClientHistoryViaGet(){
         $data = $this->request->getQueryParams();
@@ -96,7 +96,7 @@ class LogsController extends AppController
     }
 
     /**
-     * Function that gets the client's history and displays it
+     * Function that gets the client's history via POST and displays it.
      */
     public function getClientHistory(){
         $data = $this->request->data;
@@ -129,7 +129,7 @@ class LogsController extends AppController
     }
 
     /**
-     * Function that get the global history and displays it
+     * Function that gets the global history and displays it.
      */
     public function getGlobalHistory(){
         $logs = $this->paginate($this->Logs);
@@ -148,7 +148,7 @@ class LogsController extends AppController
     }
 
     /**
-     * Function that reads log files
+     * Function that reads in log files.
      */
     public function readlogs()
     {
@@ -164,7 +164,7 @@ class LogsController extends AppController
     }
 
     /**
-     * Function that clear log file
+     * Function that clears log files.
      */
     public function clearlogs(){
         if ($this->request->is('ajax')) {
@@ -182,7 +182,7 @@ class LogsController extends AppController
     }
 
     /**
-     * Function that saves the user's name who deleted the logs
+     * Function that saves the user's name who deleted the logs.
      *
      * @param $user_full_name
      */

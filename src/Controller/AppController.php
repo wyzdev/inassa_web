@@ -14,11 +14,6 @@ use Cake\Controller\Component\RequestHandlerComponent;
 
 /**
  * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller
 {
@@ -56,7 +51,7 @@ class AppController extends Controller
     }
 
     /**
-     * Function that executes before render
+     * Function that allows to make some action before the render of the web application.
      * @param Event $event
      */
     public function beforeRender(Event $event)
@@ -69,7 +64,7 @@ class AppController extends Controller
     }
 
     /**
-     * Function that allows some functionalities without login
+     * Function that allows some action to execute without the user's authentication.
      * @param Event $event
      *
      */
@@ -79,7 +74,7 @@ class AppController extends Controller
     }
 
     /**
-     * Function that writes in log files
+     * Function that writes in log files.
      *
      * @param $user
      * @param $role
