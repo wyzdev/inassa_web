@@ -58,6 +58,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li>"; ?>
 
             <?= $this->Html->link('<i class="fa fa-history"></i>' . ' Historique', ['controller' => 'logs', 'action' => 'historique'], ['escape' => false]); ?></li>
+            <li>
+                <a href="#" class="test_api"><i class="fa fa-check-square-o"></i> Test API</a></li>
 
             <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                 <?php
@@ -139,6 +141,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </div>
 </footer>
 
+<!--/////////////////////////////// LOADER 2 /////////////////////////////////////////-->
+<div id="content_loader3" style="display: none;background: rgba(0,0,0,0.2);; top:0px; left: 0px; right: 0px; bottom: 0px; position: absolute; z-index: 2;">
+    <div id="loader"></div>
+</div>
 
 <!-- Modal change password HTML -->
 <div id="modal_change_password" class="modal fade">
@@ -201,6 +207,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>
 <?= $this->Html->script('script_datatable'); ?>
 <?= $this->Html->script('jquery-ui/jquery-ui'); ?>
+<?= $this->Html->script('test_api'); ?>
 <?= $this->Html->script('clear_logs'); ?>
 
 <script>
