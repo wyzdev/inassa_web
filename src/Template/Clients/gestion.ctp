@@ -40,7 +40,15 @@
         if (!isset($client)) {
             ?>
             <div class="client" style="display: ;">
-                <p class="text-center">
+                <p class="text-center" style="    
+                background: rgba(0,0,0,0.2);
+                color: white;
+                width: 25%;
+                margin: auto;
+                border-radius: 3px;
+                padding: 5px;
+                font-weight: bold;
+                font-size: 15px;">
                     Recherchez un client ...
                 </p>
             </div>
@@ -72,7 +80,9 @@
                 </div>
     
             </div>
-            <div class="center-horizontal container-fluid center-horizontal margin-10">'.
+            <center>
+            <div class="center-horizontal container-fluid center-horizontal margin-10" style="
+                background: rgba(255,255,255,0.7); margin: auto; display: inline-block;">'.
 
                     $this->Html->link('Voir l\'historique de ce client', [
                         'controller' => 'logs',
@@ -87,6 +97,7 @@
 
 
                     .'</div>
+                    </center>
         </div>';
             }
             else{

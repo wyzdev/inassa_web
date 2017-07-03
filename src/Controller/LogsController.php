@@ -143,7 +143,7 @@ class LogsController extends AppController
             $this->request->session()->read('Auth.User')['last_name'],
             $this->request->session()->read('Auth.User')['role'],
             $this->request->session()->read('Auth.User')['institution'],
-            " est allé dana HISTORIQUE",
+            " est allé dans HISTORIQUE",
             ""."\n");
     }
 
