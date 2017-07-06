@@ -106,7 +106,7 @@ class UsersTable extends Table
             ->add('password1',[
                 'match'=>[
                     'rule'=> ['compareWith','password2'],
-                    'message'=>'The passwords does not match!',
+                    'message'=>'Les mot de passe ne correspondent!',
                 ]
             ])
             ->notEmpty('password1');
@@ -114,13 +114,13 @@ class UsersTable extends Table
             ->add('password2', [
                 'length' => [
                     'rule' => ['minLength', 6],
-                    'message' => 'The password have to be at least 6 characters!',
+                    'message' => 'Le mot de passe doit avoir au moins 6 caractères!',
                 ]
             ])
             ->add('password2',[
                 'match'=>[
                     'rule'=> ['compareWith','password1'],
-                    'message'=>'The passwords does not match!',
+                    'message'=>'Les mot de passe ne correspondent pas!',
                 ]
             ])
             ->notEmpty('password2');
@@ -136,7 +136,7 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['username'], "Ce nom d'utilisateur existe déjà"));
+        $rules->add($rules->isUnique(['username'], "Ce nom d'utilisateur est déjà pris"));
         $rules->add($rules->isUnique(['email'], "Ce e-mail existe déjà"));
 
         return $rules;

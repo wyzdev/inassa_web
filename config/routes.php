@@ -47,6 +47,8 @@ Router::connect('/login', ['controller' => 'users', 'action' => 'login']);
 Router::connect('/test', ['controller' => 'users', 'action' => 'test']);
 Router::connect('/historiques', ['controller' => 'logs', 'action' => 'historique']);
 Router::connect('/logs', ['controller' => 'logs', 'action' => 'readlogs']);
+Router::connect('/manuel', ['controller' => 'users', 'action' => 'manuel']);
+Router::connect('/mot_de_passe_oublie', ['controller' => 'users', 'action' => 'forgotpass']);
 Router::connect('/', ['controller' => 'users', 'action' => 'login']);
 
 Router::scope('/clients',

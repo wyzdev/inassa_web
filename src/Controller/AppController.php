@@ -70,7 +70,7 @@ class AppController extends Controller
      */
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search']);
+        $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search', 'forgotpass', 'manuel', 'login']);
     }
 
     /**
@@ -104,5 +104,9 @@ class AppController extends Controller
         $data = '[<b>'.$date.'</b>] '. $user. ' '.'('.$role.')'.' de '.$from.' '.$action.' '.$client;
         fwrite($handle, $data); // write a line in the file
         fclose($handle);
+    }
+
+    public function manuel(){
+        
     }
 }

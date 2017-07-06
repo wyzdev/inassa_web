@@ -161,6 +161,34 @@ class UsersController extends AppController
         }
     }
 
+
+    public function forgotpass()
+    {
+
+        $this->viewBuilder()->setLayout('authentification_layout');
+        if ($this->request->is('post')){
+            $data = $this->request->data;
+            $user = $this->Users->newEntity();
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            $result = $this->Users->findByEmail($user->email)->toArray();
+            if ($result){
+                $newPassword = $this->randomPassword();
+                $this->sendPassword($result[0]['username'], $user->email, $newPassword);
+                $modif = $this->Users->get($result[0]['id']);
+                $modif->password = $newPassword;
+                $modif->first_login = true;
+                $modif->status = true;
+                if ($this->Users->save($modif)){
+                    $this->Flash->success('Votre nouveau mot de passe a été envoyé à votre adresse e-mail');
+                    return $this->redirect($this->Auth->logout());
+                }
+            }else{
+                $this->set('email_incorrect', true); 
+            }
+        }
+    }
+
     /**
      * Function that generates a new password for the user.
      *
@@ -177,7 +205,8 @@ class UsersController extends AppController
             $result = $this->Users->findByEmail($user->email)->toArray();
             if ($result){
                 $newPassword = $this->randomPassword();
-                $this->sendPassword($user->username, $user->email, $newPassword);
+                $this->sendPassword($result[0]['username']
+                    , $user->email, $newPassword);
                 $modif = $this->Users->get($result[0]['id']);
                 $modif->password = $newPassword;
                 $modif->first_login = true;
@@ -394,5 +423,9 @@ class UsersController extends AppController
                 echo 'no';
             die();
         }
+    }
+
+    public function manuel(){
+       // $this->viewBuilder()->setLayout('authentification_layout');        
     }
 }

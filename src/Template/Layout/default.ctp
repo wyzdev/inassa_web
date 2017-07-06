@@ -4,7 +4,7 @@
  * @link          nassagroup.com
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'INASSA: Compagnie d\'assurance';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,6 +17,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon'); ?>
 
     <?= $this->Html->css('bootstrap/bootstrap'); ?>
+    <?= $this->Html->css('sidebar'); ?>
+    <?= $this->Html->css('authentification_page') ?>
     <?= $this->Html->css('font-awesome/font-awesome/css/font-awesome'); ?>
     <?= $this->Html->css('bootstrap/bootstrap-theme'); ?>
     <?= $this->Html->css('login_form') ?>
@@ -58,8 +60,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo "<li>"; ?>
 
             <?= $this->Html->link('<i class="fa fa-history"></i>' . ' Historique', ['controller' => 'logs', 'action' => 'historique'], ['escape' => false]); ?></li>
-            <li>
-                <a href="#" class="test_api"><i class="fa fa-check-square-o"></i> Test API</a></li>
+           <!--  <li>
+                <a href="#" class="test_api"><i class="fa fa-check-square-o"></i> Test API</a></li> -->
 
             <?php if ($this->request->session()->read('Auth.User')['role'] == 'admin') { ?>
                 <?php
@@ -71,11 +73,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <?= $this->Html->link('<i class="fa fa-cog"></i>' . ' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown', 'escape' => false]); ?></li>
                 <?php
                 if ($this->request->action == 'readlogs')
-                echo "<li class='active'>";
+                    echo "<li class='active'>";
                     else
+                        echo "<li>";
+                    ?>
+                    <?= $this->Html->link('<i class="fa fa-file-archive-o"></i>' . ' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown', 'escape' => false]); ?></li> <?php
+                if ($this->request->action == 'manuel')
+                    echo "<li class='active'>";
+                else
                     echo "<li>";
                     ?>
-                    <?= $this->Html->link('<i class="fa fa-file-archive-o"></i>' . ' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['class' => 'list-dropdown', 'escape' => false]); ?></li>
+                <?= $this->Html->link('<i class="fa fa-book"></i>' . ' Manuel d\'utilisation', ['controller' => 'users', 'action' => 'manuel'], ['class' => 'list-dropdown', 'escape' => false]); ?></li>
             <?php } ?>
             <li class="divider"></li>
             <li><a href="#modal_change_password" data-toggle="modal" class="list-dropdown"><i class="fa fa-lock"></i> Changer de mot de passe</a></li>
@@ -106,6 +114,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             echo "<li>";
                         ?>
                         <?= $this->Html->link('<i class="fa fa-file-archive-o"></i>' . ' Logs', ['controller' => 'logs', 'action' => 'readlogs'], ['escape' => false]); ?></li>
+                        <li class="divider"></li>
+                        <?php
+                        if ($this->request->action == 'manuel')
+                            echo "<li class='active'>";
+                        else
+                            echo "<li>";
+                        ?>
+                        <?= $this->Html->link('<i class="fa fa-book"></i>' . ' Manuel d\'utilisation', ['controller' => 'users', 'action' => 'manuel'], ['escape' => false]); ?></li>
                         <li class="divider"></li>
                     <?php } ?>
                     <li><a href="#modal_change_password" data-toggle="modal"><i class="fa fa-lock"></i> Changer de mot de passe</a></li>
@@ -209,6 +225,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <?= $this->Html->script('jquery-ui/jquery-ui'); ?>
 <?= $this->Html->script('test_api'); ?>
 <?= $this->Html->script('clear_logs'); ?>
+<?= $this->Html->script('sidebar'); ?>
 
 <script>
     window.onload = function () { $('#content_loader').hide(200, function () {

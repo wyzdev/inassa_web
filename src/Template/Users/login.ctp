@@ -15,12 +15,14 @@
                             <?= $this->Form->button('Connexion', ['class' => 'margin-top-20 btn btn-lg btn-primary btn-block']) ?>
                         <?= $this->Form->end(); ?>
                     </div>
+                    <center>
+                        <?= $this->Html->link('Mot de passe oublié?', ['controller' => 'users', 'action' => 'forgotpass'], ['class' => 'margin-top-20']); ?>
+                    </center>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <?php if ($id_incorrect) {?>
 <center><p class="text-danger" style="margin-top: 10px;">Nom d'utilisateur ou mot de passe incorrect</p></center>
 <?php }?>

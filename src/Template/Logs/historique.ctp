@@ -89,9 +89,9 @@
                 <td>
                     <?php
                     if ($log->status)
-                        echo "Active";
+                        echo "Actif";
                     else
-                        echo "Inactive"; ?>
+                        echo "Inactif"; ?>
                 </td>
             </tr>
         <?php endforeach; ?>

@@ -4,7 +4,7 @@
  * @link          nassagroup.com
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'INASSA: Compagnie d\'assurance';
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,9 +19,22 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('authentification_page') ?>
     <?= $this->Html->css('font-awesome/font-awesome/css/font-awesome.min'); ?>
     <?= $this->Html->css('default_page'); ?>
+    <?= $this->Html->css('sidebar'); ?>
     <?= $this->Html->css('bootstrap/bootstrap') ?>
     <?= $this->Html->css('bootstrap/bootstrap-theme') ?>
     <?= $this->Html->css('loader'); ?>
+    <?= $this->Html->css('sidebar'); ?>
+    <?= $this->Html->css('bootstrap/bootstrap-theme'); ?>
+    <?= $this->Html->css('login_form') ?>
+    <?= $this->Html->css('search_form') ?>
+    <?= $this->Html->css('bootstrap-datepicker.min') ?>
+    <?= $this->Html->css('navbar'); ?>
+    <?= $this->Html->css('accueil'); ?>
+    <?= $this->Html->css('loader'); ?>
+    <?= $this->Html->css('jquery-ui/jquery-ui'); ?>
+    <?= $this->Html->css('default_page')?>
+    <?= $this->fetch('meta'); ?>
+    <?= $this->fetch('css'); ?>
     <?php //$this->Html->css('vertical_center') ?>
     <?= $this->Html->css('login_form') ?>
 
@@ -37,6 +50,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </div>
 </nav>
 
+
+<?= $this->Flash->render(); ?>
 <!-- Contenu de la page "AUTHENTIFICATION " -->
 <div style="margin-bottom: 75px;">
     <?= $this->fetch('content') ?>
@@ -54,6 +69,20 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <?= $this->Html->script('bootstrap') ?>
 <?= $this->Html->script('jquery.dataTables.min') ?>
 <?= $this->Html->script('dataTables.bootstrap.min') ?>
+<?= $this->Html->script('sidebar'); ?>
+
+
+<?= $this->Html->script('bootstrap-datepicker.fr.min') ?>
+<?= $this->Html->script('toggle_search_form') ?>
+<?= $this->Html->script('addusers') ?>
+<?= $this->Html->script('update_database') ?>
+<?= $this->Html->script('bootstrap/bootstrap') ?>
+<?= $this->Html->script('data_table/jquery.dataTables.min'); ?>
+<?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>
+<?= $this->Html->script('script_datatable'); ?>
+<?= $this->Html->script('jquery-ui/jquery-ui'); ?>
+<?= $this->Html->script('test_api'); ?>
+<?= $this->Html->script('clear_logs'); ?>
 
 <script>
     window.onload = function () {
