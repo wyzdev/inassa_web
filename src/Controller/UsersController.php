@@ -64,7 +64,7 @@ class UsersController extends AppController
             $user->status = 1;
             $user->first_login = 1;
             if ($this->Users->save($user)) {
-                $this->sendPassword($user->username, $user->email, $randomPassword);
+                $this->sendPassword($user->username, $user->email, $randomPassword, $user->role);
                 $this->Flash->success(__("L'utilisateur a été sauvegardé."));
 
                 $role = ($user->role == "admin") ? "Admin" : (($user->role == "medecin") ? "Médecin" : "Simple utilisateur");
@@ -174,7 +174,7 @@ class UsersController extends AppController
             $result = $this->Users->findByEmail($user->email)->toArray();
             if ($result){
                 $newPassword = $this->randomPassword();
-                $this->sendPassword($result[0]['username'], $user->email, $newPassword);
+                $this->sendPassword($result[0]['username'], $user->email, $newPassword, $result[0]['role']);
                 $modif = $this->Users->get($result[0]['id']);
                 $modif->password = $newPassword;
                 $modif->first_login = true;
@@ -206,7 +206,7 @@ class UsersController extends AppController
             if ($result){
                 $newPassword = $this->randomPassword();
                 $this->sendPassword($result[0]['username']
-                    , $user->email, $newPassword);
+                    , $user->email, $newPassword, $result[0]['role']);
                 $modif = $this->Users->get($result[0]['id']);
                 $modif->password = $newPassword;
                 $modif->first_login = true;
@@ -281,6 +281,101 @@ class UsersController extends AppController
         //$this->set('user', $user);
     }
 
+    private function messageToSend($username, $userpassword, $role){
+        $message = '';
+        if ($role == 'medecin'){
+            $message = 'Rendez-vous sur l\'application Android pour commencer.';
+        }else{
+            $message = 'Rendez-vous sur l\'application <a href="http://www.nassagroup.com/app/" target="_blank">ici.</a>';
+        }
+        return '<!DOCTYPE html>
+                <html>
+                    <head>
+                        <title></title>
+                        <style type="text/css">
+
+                            .container{
+                                font-family: \'calibri\';
+                                display: inline-block;
+                                background: rgba(100, 100, 100, .2);
+                                padding: 20px 40px;
+                                border-radius: 5px;
+                            }
+
+                            .semi-top-blue{
+                                width: 400px;
+                                background: rgb(6, 93, 170);
+                                height: 300px;
+                                border-radius: 15px 15px 0 0;
+                            }
+
+                            .semi-bottom-white{
+                                width: 400px;
+                                background: #fff;
+                                height: 300px;
+                                border-radius: 0 0 15px 15px;
+                            }
+
+                            .img-container{
+                                padding-top: 45px;
+                                display: inline-block;
+                            }
+
+                            .card-container{
+                                text-align: center;
+                            }
+                            .card{
+                                margin-top: 30px;
+                                z-index: 99999;
+                                border: 1px solid #000;
+                                background: #fff;
+                                border-radius: 5px;
+                                display: inline-block;
+                                padding: 10px 50px 40px 50px;
+                                text-align: left;
+                                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+                            }
+                            
+                            .redirect{
+                                display: inline-block;
+                                margin-top: 220px;
+                                margin-left: 15px;
+                            }
+
+                            .card-libele{
+                                display: inline-block;
+                                width: 115px;
+                            }
+                        </style>
+                    </head>
+
+                    <body>
+                        <center>
+                            <div class="container">
+                                <div class="semi-top-blue">
+                                    <div class="card-container">
+                                        <div class="img-container">
+                                            <img src="http://nassagroup.com/app/img/logo_inassa_mail.png" height="150px">
+                                        </div>
+                                        <div class="card">
+                                            <center><h3>Information du compte</h3></center>
+                                            <span class="card-libele">Nom d\'utilisateur </span>: <strong>' . $username . '</strong>
+                                            <br />
+                                            <span class="card-libele">Mot de passe </span>: <strong>' . $userpassword . '</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="semi-bottom-white">
+                                    <div class="redirect">
+                                        <span>' . $message . '</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+                    </body>
+                </html>';
+    }
+
     /**
      * Function that sends password to the user's e-mail.
      *
@@ -288,12 +383,13 @@ class UsersController extends AppController
      * @param $usermail
      * @param $userpassword
      */
-    private function sendPassword($username, $usermail, $userpassword){
+    private function sendPassword($username, $usermail, $userpassword, $role){
         $to = $usermail;
         $subject = 'Votre mot de passe';
-        $message = 'Votre nom d\'utilisateur est : '.$username."\n".'Votre mot de passe est : '.$userpassword;
+        $message = $this->messageToSend($username, $userpassword, $role);
         $mail = $this->Email->send($to, $subject, $message);
         $this->set('mail',$mail);
+        $this->viewBuilder()->setLayout(false);
         $this->render(false);
     }
 
@@ -408,7 +504,7 @@ class UsersController extends AppController
                 $user->password = $newPassword;
 
                 if ($usersTable->save($user)) {
-                    $this->sendPassword($user->username, $user->email, $newPassword);
+                    $this->sendPassword($user->username, $user->email, $newPassword, $user->role);
 
                     ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
                     $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
@@ -427,5 +523,23 @@ class UsersController extends AppController
 
     public function manuel(){
        // $this->viewBuilder()->setLayout('authentification_layout');        
+    }
+
+    public function delete($username)
+    {
+        
+        $result = $this->Users->findByUsername($username)->toArray();
+        $user = $this->Users->get($result[0]['id']);
+
+        //$user = $this->Users->getUserByUsername($username);
+        $message = 'Deleted';
+        if (!$this->Users->delete($user)) {
+            $message = 'Error';
+        }
+        $this->set([
+            'message' => $message,
+            '_serialize' => ['message']
+        ]);
+        return $this->redirect(['controller' => 'users', 'action' => 'addusers']);
     }
 }

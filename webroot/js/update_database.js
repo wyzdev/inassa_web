@@ -116,7 +116,7 @@ $(function () {
                 else {
                     $('#content_loader2').hide(); //hide the loader
 
-                    document.getElementById('dialog-message').innerHTML = '<p><center>Le compte de l\'utilisateur <b>' + $('#admin'+id).attr("firstname") + ' ' + $('#admin'+id).attr("lastname") + '</b> a été <b>réinitialisé</b>.</center></p>';
+                    document.getElementById('dialog-message').innerHTML = '<p><center>Le compte de l\'utilisateur a été <b>réinitialisé</b>.</center></p>';
 
 
                     $( function() {

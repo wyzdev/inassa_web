@@ -62,7 +62,11 @@ class ClientsController extends AppController
                     strtoupper($firstname).' '.strtoupper($lastname)."\n");
             }
             else
-                $this->set('client', array('success' => false));
+                $this->set('client', 
+                    array(
+                        'success' => false,
+                        'dob' => $dob
+                        ));
         }
         else{
 ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
@@ -125,49 +129,22 @@ class ClientsController extends AppController
 
     public function testApi(){
 
-        if ($this->request->is('ajax')){
+        $curl_host = curl_init();
 
-            // init curl
-            $curl_host = curl_init();
+        // set some cURL options
+        curl_setopt($curl_host, CURLOPT_URL, "www.google.com");
+        curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl_host, CURLOPT_POST, 1);
+        curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
 
-            // set some cURL options
-            curl_setopt($curl_host, CURLOPT_URL, "http://200.113.219.221:8180/RequestQuote/RequestLogin");
-            curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($curl_host, CURLOPT_POST, 1);
-            curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"Login":{"username":"jotest@test.com","password":"P@$$w0rd"}}');
-            curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
+        curl_setopt($curl_host, CURLOPT_SSL_VERIFYPEER, false);
 
-            //result from the API of INASSA
-            $result = curl_exec($curl_host);
-
-            // decode the result in JSON
-            $response = json_decode($result);
-
-            // if the Auth is 'true' then get the key
-            if (json_encode($response[0]->Response[0]->success)) {
-                // remove the quotes that surround the 'key'
-                $key = str_replace('"', "", json_encode($response[0]->Response[0]->key));
-            }
-
-            $curl_host = curl_init();
-
-            curl_setopt($curl_host, CURLOPT_URL, "http://200.113.219.221:8180/RequestQuote/epic_mwClientSearch");
-            curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($curl_host, CURLOPT_POST, 1);
-            curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"resquestkey":{"key":"' . $key . '"},"first_name":"' . strtoupper("sebastien") . '","last_name":"' . strtoupper("merove-pierre") . '","dob":"09/18/1988"}');
-            curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
-
-            $result = curl_exec($curl_host);
-
-            // decode the result in JSON
-            $response = json_decode($result);
-
-            // if the Auth is 'true' then get the key
-            if (json_encode($response->success)) {
-                echo true;
-            }
-        }
-        echo false;
+        //result from the API of INASSA
+        $result = curl_exec($curl_host);
+        print_r(curl_getinfo($curl_host));
+        echo "--------------------------------------------------------";
+        print curl_error($curl_host);
+        die();
     }
 }
 

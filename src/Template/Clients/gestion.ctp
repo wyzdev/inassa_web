@@ -19,12 +19,15 @@
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1" style="margin-top: 5px;">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                <input name="dob" id="dob" type="text" class="form-control  datepicker"
-                                       placeholder="Date de naissance">
+                                <?php 
+                                    echo '<input name="dob" id="dob" type="text" class="form-control  datepicker"
+                                       placeholder="Date de naissance" value="'. $client["dob"] .'">';
+
+                                 ?>
                             </div>
                         </div>
-                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <button type="submit" type="reset" class="btn btn-default filter-col">
+                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1" title="Cette fonctionnalité n'est pas encore disponible">
+                            <button type="submit" type="reset" class="btn btn-desabled filter-col">
                                 <span class="glyphicon glyphicon-search"></span> Rechercher
                             </button>
                         </div>
@@ -67,7 +70,7 @@
                         <p class="info-container">
                             <span class="indicatif">Client</span>
                             <span class="deux-point">:</span>
-                            <span class="result">' . $client["firstname"] . ' ' . $client["lastname"] . '</span>
+                            <span class="result">' . utf8_encode( $client["firstname"] ) . ' ' . utf8_encode($client["lastname"]) . '</span>
                             <br/>
                             <span class="indicatif">Date de naissance</span>
                             <span class="deux-point">:</span>

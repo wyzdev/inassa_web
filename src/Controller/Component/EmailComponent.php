@@ -8,22 +8,21 @@ require_once(ROOT . DS . 'vendor' . DS  . 'phpmailer' . DS . 'class.phpmailer.ph
 class EmailComponent extends Component {
 
     public function send($to, $subject, $message) {
-        $sender = "inassa62@gmail.com"; // this will be overwritten by GMail
+        $sender = "info@nassagroup.com"; // this will be overwritten by GMail
 
         $header = "X-Mailer: PHP/".phpversion() . "Return-Path: $sender";
 
-        $mail = new \PHPMailer();
+        $mail = new \PHPMailer(true);
 
         $mail->IsSMTP();
-        $mail->SMTPDebug = 2;
+        // $mail->SMTPDebug = 2;
         $mail->Debugoutput = 'html';
-        $mail->Host = "smtp.gmail.com";
+        $mail->Host = "box1074.bluehost.com";
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "ssl";
         $mail->Port = 465;
-        $mail->SMTPDebug  = 2; // turn it off in production
-        $mail->Username   = "inassa62@gmail.com";
-        $mail->Password   = "inassa_application";
+        $mail->Username   = "info@nassagroup.com";
+        $mail->Password   = "info1234!";
 
         $mail->From = $sender;
         $mail->FromName = "INASSA";
@@ -34,8 +33,14 @@ class EmailComponent extends Component {
         $mail->CreateHeader($header);
 
         $mail->Subject = $subject;
-        $mail->Body    = nl2br($message);
-        $mail->AltBody = nl2br($message);
+        $mail->MsgHTML($message);
+
+      /*  $mail->Body    = nl2br($message);
+        $mail->AltBody = nl2br($message);*/
+
+
+        //set_time_limit(3600);
+        // $mail->Timeout = 3600;
 
         // return an array with two keys: error & message
         if(!$mail->Send()) {
