@@ -24,9 +24,11 @@
     
 </div>
 
-<?php if ($email_incorrect) {?>
+<?php 
+if (isset($email_incorrect)){
+if ($email_incorrect) {?>
 <center><p class="text-danger" style="margin-top: 10px;">E-mail incorrect</p></center>
-<?php }?>
+<?php }}?>
 
 <!--/////////////////////////////// LOADER /////////////////////////////////////////-->
 <div id="content_loader" style="background: #fff; height: 100vh;  top:0px; left: 0px; right: 0px; position: absolute; z-index: 2;">

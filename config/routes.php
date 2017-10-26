@@ -50,6 +50,7 @@ Router::connect('/logs', ['controller' => 'logs', 'action' => 'readlogs']);
 Router::connect('/manuel', ['controller' => 'users', 'action' => 'manuel']);
 Router::connect('/mot_de_passe_oublie', ['controller' => 'users', 'action' => 'forgotpass']);
 Router::connect('/', ['controller' => 'users', 'action' => 'login']);
+Router::extensions(['pdf']);
 
 Router::scope('/clients',
     ['controller' => 'Clients'],

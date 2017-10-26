@@ -10,27 +10,28 @@
 <?= $this->Html->css('historique'); ?>
 <?= $this->Html->css('dataTablesbootstrap.min'); ?>
 
+<?php 
 
+$dob_input = (isset($dob)) ? $dob : '';
+?>
 <div class="container">
     <div class="row">
         <div id="" class="">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <?= $this->Form->create("Logs", array('class' => "form-inline", "action" => "/historique")) ?>
-                    <!--<form class="form-inline" role="form" method="post" accept-charset="utf-8"
-                          action="/inassa_web/logs/historique">-->
-                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
-                        </div> <!-- form group [rows] -->
+                        <?= $this->Form->create("Logs", array('class' => "form-inline")) ?>
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
                             <?= $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) ?>
-                        </div><!-- form group [search] -->
+                        </div>
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
+                        </div>
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1" style="margin-top: 5px;">
                             <div>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                     <input name="dob" id="dob" type="text" class="form-control  datepicker"
-                                           placeholder="Date de naissance">
+                                           placeholder="Date de naissance" value="<?= $dob_input ?>">
                                 </div>
                             </div>
                         </div> <!-- form group [order by] -->
@@ -56,8 +57,8 @@
             <th>Nom</th>
             <th>Prénom</th>
             <th>Institution</th>
-            <th>Médecin</th>
-            <th>Date</th>
+            <th>Source</th>
+            <th>Date (jj/mm/aaaa, hh:mn)</th>
             <th>Status</th>
         </tr>
         </thead>
@@ -66,8 +67,8 @@
             <th>Nom</th>
             <th>Prénom</th>
             <th>Institution</th>
-            <th>Médecin</th>
-            <th>Date</th>
+            <th>Source</th>
+            <th>Date (jj/mm/aaaa, hh:mn)</th>
             <th>Status</th>
         </tr>
         </tfoot>
@@ -85,7 +86,7 @@
                 setlocale (LC_TIME, 'fr_FR.utf8','fra');
                 ?><!--
                 ///////////////////////////////////////////////// -->
-                <td><?= strftime( "%d %B %Y, %H:%M", $timestamp ) ; ?></td>
+                <td><?= strftime( "%d/%m/%Y, %H:%M", $timestamp ) ; ?></td>
                 <td>
                     <?php
                     if ($log->status)

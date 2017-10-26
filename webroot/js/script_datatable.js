@@ -6,7 +6,7 @@
               "zeroRecords": "Rien n'a été trouvé - désolé",
               "info": "Page _PAGE_ sur _PAGES_",
               "infoEmpty": "Aucune correspondance n'a été trouvé ",
-              "infoFiltered": "(filtre parmi _MAX_ éléments)",
+              "infoFiltered": "(filtré parmi _MAX_ éléments)",
               "paginate": {
                   "previous": "Page précédente",
                   "next": "Page suivante"

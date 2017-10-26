@@ -13,11 +13,14 @@ use App\Model\Table\UsersTable;
 use Cake\ORM\TableRegistry;
 use Cake\Auth\DefaultPasswordHasher;
 
+use Dompdf\Dompdf;
+
 /**
  * Users Controller
  *
  * @property \App\Model\Table\UsersTable $Users
  */
+
 class UsersController extends AppController
 {
     /**
@@ -142,7 +145,7 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
-                if ($user['status'] and $user['role'] != "medecin") {
+                if ($user['status']) {
                     $this->Auth->setUser($user);
 
                     ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
@@ -155,9 +158,12 @@ class UsersController extends AppController
                         ""."\n");
 
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
+                } else{
+                    $this->logout();
+                    $this->set('id_incorrect', 2);
                 }
             }
-            $this->set('id_incorrect', true);
+            $this->set('id_incorrect', 1);
         }
     }
 
@@ -541,5 +547,29 @@ class UsersController extends AppController
             '_serialize' => ['message']
         ]);
         return $this->redirect(['controller' => 'users', 'action' => 'addusers']);
+    }
+
+    public function hello(){
+
+        $html =
+            '<html><body>'.
+            '<p>Put your html here, or generate it with your favourite '.
+            'templating system.</p>'.
+            '</body></html>';
+
+        $dompdf = new DOMPDF();
+        $dompdf->load_html($html);
+        $dompdf->render();
+        $output = $dompdf->output();
+        file_put_contents('Brochure.pdf', $output);
+
+       /* $to = 'Hollyn';
+        $subject = 'Votre pdf';
+//        $message = $this->messageToSend($username, $userpassword, $role);
+        $mail = $this->Email->send('hollyn.derisse@esih.edu', $subject, 'message', WWW_ROOT . DS . "Brochure.pdf");
+        $this->set('mail',$mail);*/
+
+
+
     }
 }

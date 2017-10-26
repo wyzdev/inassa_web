@@ -40,8 +40,8 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'loginRedirect' => [
-                'controller' => 'clients',
-                'action' => 'gestion'
+                'controller' => 'users',
+                'action' => 'login'
             ],
             'logoutRedirect' => [
                 'controller' => 'users',
@@ -71,6 +71,8 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {
         $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search', 'forgotpass', 'login']);
+        $this->Auth->authError = __('Vous devez vous connecter pour pouvoir accéder à cette fonctionnalité.');
+        // $this->Auth->loginError = __('Invalid Username or Password entered, please try again.');
     }
 
     /**

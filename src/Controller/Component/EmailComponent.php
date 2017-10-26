@@ -7,7 +7,7 @@ require_once(ROOT . DS . 'vendor' . DS  . 'phpmailer' . DS . 'class.phpmailer.ph
 
 class EmailComponent extends Component {
 
-    public function send($to, $subject, $message) {
+    public function send($to, $subject, $message, $attachment = null) {
         $sender = "info@nassagroup.com"; // this will be overwritten by GMail
 
         $header = "X-Mailer: PHP/".phpversion() . "Return-Path: $sender";
@@ -26,6 +26,10 @@ class EmailComponent extends Component {
 
         $mail->From = $sender;
         $mail->FromName = "INASSA";
+
+        if ($attachment != null) {
+            $mail->addAttachment($attachment);
+        }
 
         $mail->AddAddress($to);
 

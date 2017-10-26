@@ -30,6 +30,7 @@ class ClientsController extends AppController
 
             // decode the result in JSON
             $response = json_decode($this->getClient($firstname, $lastname, $dob));
+
             if ($response->success and !empty($response->clients)) {
                 $response_firstname = $response->clients[0]->first_name;
                 $response_lastname = $response->clients[0]->last_name;
@@ -37,21 +38,35 @@ class ClientsController extends AppController
                 $response_dob = $response->clients[0]->dob;
                 $response_success = $response->success;
 
+                $array_response = (array)$response->clients;
+                $array_clients = array(array());
 
+                $obj_array = array();
+                $i = 0;
+                foreach($array_response as $response_array){
+                    $obj_array[$i ++] = (array)$response_array;
+                }
+                //print_r($hello);
+
+
+                $i = 0;
+                foreach($obj_array as $client){
+                    $array_clients[$i ++] =  array(
+                        'lastname' => $client['last_name'],
+                        'firstname' => $client['first_name'],
+                        'dob' => $client['dob'],
+                        'address' => $client['address'],
+                        'policy_number' => $client['policy_number'],
+                        'company' => $client['company'],
+                        'status' => $client['status']
+                         );
+                }
+                
                 $old_date_timestamp = strtotime($dob);
                 $new_date = date('Y-m-d H:i:s', $old_date_timestamp);
 
-                $this->set('client',
-                    array(
-                        'firstname' => $response_firstname,
-                        'lastname' => $response_lastname,
-                        'status' => $response_status,
-                        'dob' => $response_dob,
-                        'success' => $response_success,
-                        'field_firstname' => $firstname,
-                        'field_lastname' => $lastname,
-                        'field_dob' => $new_date,
-                    ));
+
+                $this->set(array('clients' => $array_clients, 'client_dob'=> $dob, 'client_search_dob' => $new_date));
 ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
                 $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
                     .' '.
@@ -61,12 +76,11 @@ class ClientsController extends AppController
                     "a recherché le client",
                     strtoupper($firstname).' '.strtoupper($lastname)."\n");
             }
-            else
-                $this->set('client', 
-                    array(
-                        'success' => false,
-                        'dob' => $dob
-                        ));
+            else{
+                
+                $array_response = (array)$response->clients;
+                $this->set(array('clients' => $array_response, 'client_dob'=> $dob));
+                    }
         }
         else{
 ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////

@@ -41,7 +41,6 @@ class LogsController extends AppController
      */
     public function historique()
     {
-        echo $this->Logs;
 
         if ($this->request->session()->read('Auth.User')['first_login']) {
             $this->redirect(
@@ -132,7 +131,7 @@ class LogsController extends AppController
      * Function that gets the global history and displays it.
      */
     public function getGlobalHistory(){
-        $logs = $this->paginate($this->Logs);
+        $logs = $this->Logs->find();
         $this->set(compact('logs'));
         $this->set('_serialize', ['logs']);
 

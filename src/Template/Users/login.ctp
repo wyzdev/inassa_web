@@ -23,9 +23,19 @@
         </div>
     </div>
 </div>
-<?php if ($id_incorrect) {?>
-<center><p class="text-danger" style="margin-top: 10px;">Nom d'utilisateur ou mot de passe incorrect</p></center>
-<?php }?>
+<?php 
+if (isset($id_incorrect)){
+    if ($id_incorrect == 1) {
+    ?>
+        <center><p class="text-danger" style="margin-top: 10px;">Nom d'utilisateur ou mot de passe incorrect.</p></center>
+<?php 
+    }else if($id_incorrect == 2){
+?>
+        <center><p class="text-danger" style="margin-top: 10px;">Compte inactif. Contactez la INASSA.</p></center>
+<?php
+
+    }
+}?>
 
 <!--/////////////////////////////// LOADER /////////////////////////////////////////-->
 <div id="content_loader" style="background: #fff; height: 100vh;  top:0px; left: 0px; right: 0px; position: absolute; z-index: 2;">

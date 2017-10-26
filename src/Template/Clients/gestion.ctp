@@ -1,8 +1,12 @@
 <?= $this->assign('title', 'INASSA - Accueil'); ?>
 
+<?= $this->Html->css('Card')?>
+<?= $this->Html->css('gestion')?>
 <!--Block contenant le formulaire pour la recherche d'un client -->
+<?php 
 
-
+$dob_input = (isset($client_dob)) ? $client_dob : '';
+?>
 <div class="container">
     <div class="row">
         <div id="" class="">
@@ -11,22 +15,22 @@
                     <form class="form-inline" role="form" method="post" accept-charset="utf-8"
                           action="gestion">
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
-                        </div> <!-- form group [rows] -->
-                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
                             <?= $this->Form->input("last_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "NOM")) ?>
-                        </div><!-- form group [search] -->
+                        </div>
+                        <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <?= $this->Form->input("first_name", array("class" => "form-control margin-10", "label" => false, "placeholder" => "Prénom")) ?>
+                        </div> 
                         <div class="form-group col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1" style="margin-top: 5px;">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                 <?php 
                                     echo '<input name="dob" id="dob" type="text" class="form-control  datepicker"
-                                       placeholder="Date de naissance" value="'. $client["dob"] .'">';
+                                       placeholder="Date de naissance" value="'. $dob_input .'">';
 
                                  ?>
                             </div>
                         </div>
-                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1" title="Cette fonctionnalité n'est pas encore disponible">
+                        <div class="form-group  col-md-2 col-md-offset-1 col-xs-10 col-xs-offset-1">
                             <button type="submit" type="reset" class="btn btn-desabled filter-col">
                                 <span class="glyphicon glyphicon-search"></span> Rechercher
                             </button>
@@ -36,94 +40,132 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="container" style="">
-    <?php
-        if (!isset($client)) {
-            ?>
-            <div class="client" style="display: ;">
-                <p class="text-center" style="    
-                background: rgba(0,0,0,0.2);
-                color: white;
-                width: 25%;
-                margin: auto;
-                border-radius: 3px;
-                padding: 5px;
-                font-weight: bold;
-                font-size: 15px;">
-                    Recherchez un client ...
-                </p>
+
+<?php
+if (!isset($clients)) {
+?>
+    <div class="container" id="search_text" style="">
+        <div class="client" style="display: ;">
+            <p class="text-center" style="    
+            background: rgba(0,0,0,0.2);
+            color: white;
+            width: 25%;
+            margin: auto;
+            border-radius: 3px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 15px;">
+                Recherchez un client ...
+            </p>
+        </div>
+    </div>
+<?php
+}
+?>
+
+<?php 
+    if (isset($clients)){
+        if (sizeof($clients) > 0){
+        ?>
+
+            <div class="row" id="table_client" style="margin-top: 40px;">
+            
+                <!-- Table -->
+                <table class="col-md-12 table table-striped table-hover table-condensed" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Date de naissance</th>
+                            <th>Adresse</th>
+                            <th>Numéro de police</th>
+                            <th>Compagnie</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                    <?php 
+                    foreach ($clients as $client) {
+                    ?>
+                        <tr class="client_row" firstname="<?= $client['firstname'] ?>" lastname="<?= $client['lastname'] ?>" status="<?= $client['status'] ?>" dob ="<?= $client['dob'] ?>" dob_search="<?= $client_search_dob ?>" style="cursor: pointer; width: 40px;">
+                            <td><?= $client['firstname'] ?></td>
+                            <td><?= $client['lastname'] ?></td>
+                            <td><?= $client['dob'] ?></td>
+                            <td><?= $client['address'] ?></td>
+                            <td><?= $client['policy_number'] ?></td>
+                            <td><?= $client['company'] ?></td>
+                        </tr>
+
+                    <?php
+                     }
+                    ?>
+                    </tbody>
+                </table>
+
+                 <button type="button" class="btn btn-blue" style="">
+                    <i class="fa fa-check"></i>
+                </button>
             </div>
-            <?php
-        }
-            ?>
-    <?php
-        if (isset($client)) {
-            if ($client['success']) {
-                $status = $client['status'] == true ? '<span class="status_active">Client Actif</span>' : '<span class="status_inactive">Client inactif</span>';
-                echo '<div class="client" style="display: ;">
-            <div class="info_client container-fluid" style="">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="title_search margin-bottom-20">Recherche Active</h3>
-                        <p class="info-container">
-                            <span class="indicatif">Client</span>
-                            <span class="deux-point">:</span>
-                            <span class="result">' . utf8_encode( $client["firstname"] ) . ' ' . utf8_encode($client["lastname"]) . '</span>
-                            <br/>
-                            <span class="indicatif">Date de naissance</span>
-                            <span class="deux-point">:</span>
-                            <span class="result">' . $client["dob"] . '</span>
-                        </p>
-                        <div class="status-carte center-horizontal margin-bottom-20">
-                            '.$status.'
+    <?php 
+    }else{
+    ?>
+            <div class="client row" style="display: ;" id="client_not_exist">
+                <div class="info_client" style="">
+                    <div class="container">
+                        <div class="col-md-12 container-info">
+                            <div class="status-carte center-horizontal margin-top-20 margin-bottom-20">
+                                <span class="status_inactive">Les informations saisies ne correspondent à aucun client de la INASSA</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-    
             </div>
-            <center>
-            <div class="center-horizontal container-fluid center-horizontal margin-10" style="
-                background: rgba(255,255,255,0.7); margin: auto; display: inline-block;">'.
 
-                    $this->Html->link('Voir l\'historique de ce client', [
-                        'controller' => 'logs',
-                        'action' => 'historique',
-                        '?' =>
-                            [
-                                "first_name" => $client["field_firstname"],
-                                "last_name" => $client["field_lastname"],
-                                "dob" => substr($client["field_dob"], 0, 10)
-                            ]
-                    ])
-
-
-                    .'</div>
-                    </center>
-        </div>';
-            }
-            else{
-                echo '
-                    <div class="client" style="display: ;">
-                        <div class="info_client container-fluid" style="">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="status-carte center-horizontal margin-top-20 margin-bottom-20">
-                                        <span class="status_inactive">Les informations saisies ne correspondent à aucun client de la INASSA</span>
-                                    </div>
-                                </div>
-                            </div>
-                
-                        </div>
-                    </div>
-                ';
-            }
-        }
+        <button type="button" class="btn btn-blue" style="">
+            <i class="fa fa-check"></i>
+        </button>
+    <?php 
+    }
+    }else{
+    }
     ?>
+
+ </div>
+
+<div class="client row" id="display_client" style="display: none;">
+    <div class="info_client container-fluid" style="">
+        <div class="container">
+            <div class="col-md-12 container container-info">
+                <h3 class="title_search margin-bottom-20">Recherche Active</h3>
+                <p class="info-container" id="display_client_info">
+                    <!-- info client will be display here -->
+                </p>
+                <div class="status-carte center-horizontal margin-bottom-20" id="display_client_status">
+                    <!-- status will be displayed here -->
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-blue" style="margin-top: 10px;">
+                <i class="fa fa-check"></i>
+            </button>
+
+            <center>
+                <div class="center-horizontal container-fluid center-horizontal margin-10" style="
+                    background: rgba(255,255,255,0.7); margin: auto; display: inline-block;" id="link_to_historic">
+                        <!-- Link to go to the historic of a client will be display here -->
+                </div>
+            </center>
+        </div>
+
+    </div>
 </div>
 
 
+
+
+<!-- Shows when it is the first login of the user -->
 <?php
 $loguser = $this->request->session()->read('Auth.User');
 if ($loguser['first_login']) { ?>
@@ -137,6 +179,8 @@ if ($loguser['first_login']) { ?>
     </div>
 <?php } ?>
 
+
+<!-- Modal to change the change the password of the user -->
 <div class="modal fade in" id="modal" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel">
     <div class="modal-dialog  modal-sm">

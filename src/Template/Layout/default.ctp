@@ -31,9 +31,16 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
     <?= $this->Html->css('default_page')?>
     <?= $this->fetch('meta'); ?>
     <?= $this->fetch('css'); ?>
+
+    <style type="text/css">
+        .ui-dialog-titlebar-close{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
+    <span id="role_user" role="<?= $this->request->session()->read('Auth.User')['role'] ?>"></span>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -53,13 +60,14 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
             else
                 echo "<li>"; ?>
             <?= $this->Html->link('<i class="fa fa-home"></i>' . ' Accueil', ['controller' => 'clients', 'action' => 'gestion'], ['escape' => false]); ?></li>
+            <?php if ($this->request->session()->read('Auth.User')['role'] != "medecin"): ?>
+                <?php if ($this->request->action == 'historique')
+                    echo "<li class='active'>";
+                else
+                    echo "<li>"; ?>
 
-            <?php if ($this->request->action == 'historique')
-                echo "<li class='active'>";
-            else
-                echo "<li>"; ?>
-
-            <?= $this->Html->link('<i class="fa fa-history"></i>' . ' Historique', ['controller' => 'logs', 'action' => 'historique'], ['escape' => false]); ?></li>
+                <?= $this->Html->link('<i class="fa fa-history"></i>' . ' Historique', ['controller' => 'logs', 'action' => 'historique'], ['escape' => false]); ?></li>
+            <?php endif; ?>
            <!--  <li>
                 <a href="#" class="test_api"><i class="fa fa-check-square-o"></i> Test API</a></li> -->
 
@@ -226,11 +234,15 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
 <?= $this->Html->script('test_api'); ?>
 <?= $this->Html->script('clear_logs'); ?>
 <?= $this->Html->script('sidebar'); ?>
+<?= $this->Html->script('gestion'); ?>
+<?= $this->Html->script('youtube'); ?>
+<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 
 <script>
     window.onload = function () { $('#content_loader').hide(200, function () {
 
     })};
 </script>
+
 </html>
 
