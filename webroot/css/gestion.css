@@ -1,0 +1,15 @@
+.libele_client_info{
+	width: 120px;
+	display: inline-block;
+}
+
+.btn-blue{
+	float: right;
+	background: rgb(6, 93, 170);
+	color: #fff;
+}
+
+.btn-blue:hover{
+	background: rgba(6, 93, 170, .9);
+	color: #fff;
+}
