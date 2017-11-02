@@ -211,7 +211,6 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
     </div>
 </div>
 
-<?= $this->fetch('script'); ?>
 </body>
 
 <?= $this->Html->script('jquery.min') ?>
@@ -236,6 +235,20 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
 <?= $this->Html->script('sidebar'); ?>
 <?= $this->Html->script('gestion'); ?>
 <?= $this->Html->script('youtube'); ?>
+
+
+<?= $this->fetch('script'); ?>
+<script>
+    $("#example3").dateDropdowns({
+        submitFieldName: 'date',
+        monthLongValues: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        monthShortValues: ['Janv', 'Fév', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'],
+        daySuffixes: false,
+        monthLabel: 'Mois',
+        dayLabel: 'Jour',
+        yearLabel: 'Année'
+    });
+</script
 <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 
 <script>
