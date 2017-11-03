@@ -239,7 +239,7 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
 
 <?= $this->fetch('script'); ?>
 <script>
-    $("#example3").dateDropdowns({
+    $("#datepicker_dropdown").dateDropdowns({
         submitFieldName: 'date',
         monthLongValues: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
         monthShortValues: ['Janv', 'Fév', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'],
@@ -248,7 +248,7 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
         dayLabel: 'Jour',
         yearLabel: 'Année'
     });
-</script
+</script>
 <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 
 <script>

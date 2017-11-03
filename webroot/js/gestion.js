@@ -34,6 +34,6 @@ $(document).ready(function(){
 
         document.getElementsByName("first_name")[0].value = "" ;
         document.getElementsByName("last_name")[0].value = "" ;
-        document.getElementsByName("dob")[0].value = "" ;
+        document.getElementsByName("datepicker_dropdown")[0].value = "" ;
     });
 });

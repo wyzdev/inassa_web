@@ -13,3 +13,7 @@
 	background: rgba(6, 93, 170, .9);
 	color: #fff;
 }
+
+.date-dropdowns select{
+	margin: 0px 2px;
+}

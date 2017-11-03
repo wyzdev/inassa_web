@@ -2,7 +2,7 @@
 
 <?= $this->Html->css('Card') ?>
 <?= $this->Html->css('gestion') ?>
-<? /*= $this->Html->css('date-dropdown/styles')*/ ?>
+<!-- <? /*= $this->Html->css('date-dropdown/styles')*/ ?> -->
 <?= $this->Html->script('date-dropdown/date_dropdowns.min', ['block' => true]) ?>
 
 
@@ -29,13 +29,13 @@ $dob_input = (isset($client_dob)) ? $client_dob : '';
 
 
                             <?php
-                            echo '<input name="dob" id="example3" type="text" class="form-control "
+                            echo '<input name="dob" id="datepicker_dropdown" type="text" class="form-control "
                                        placeholder="Date de naissance" value="' . $dob_input . '">';
 
                             ?>
                         </div>
                         <div class="form-group  col-md-2 col-md-offset-0 col-xs-10 col-xs-offset-1">
-                            <button type="submit" type="reset" class="btn btn-default filter-col">
+                            <button type="submit" type="reset" class="btn btn-default filter-col" style="margin-top: 4px;">
                                 <span class="glyphicon glyphicon-search"></span> Rechercher
                             </button>
                         </div>
@@ -236,3 +236,11 @@ if ($loguser['first_login']) { ?>
      style="background: #fff; height: 100vh;  top:0px; left: 0px; right: 0px; position: absolute; z-index: 2;">
     <div id="loader"></div>
 </div>
+
+
+
+<?= $this->Html->scriptStart(['block' => true]) ?>
+    <?= "$(function(){
+        $('.day, .month, .year').attr('class', 'form-control');
+    })"; ?>
+<?= $this->Html->scriptEnd(); ?>

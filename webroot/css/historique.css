@@ -14,3 +14,8 @@
 thead th{
 	cursor: pointer;
 }
+
+
+.date-dropdowns select{
+	margin: 0px 2px;
+}
