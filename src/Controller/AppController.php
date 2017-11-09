@@ -17,6 +17,11 @@ use Cake\Controller\Component\RequestHandlerComponent;
  */
 class AppController extends Controller
 {
+    protected $secureActions = array(
+        'login',
+        '',
+        ''
+    );
     /**
      * Constants that used to check the requests of the android application
      * @var string
@@ -49,7 +54,10 @@ class AppController extends Controller
             ]
         ]);
     }
-
+    public function forceSSL()
+    {
+        return $this->redirect('https://' . env('SERVER_NAME') . $this->request->here);
+    }
     /**
      * Function that allows to make some action before the render of the web application.
      * @param Event $event
@@ -70,6 +78,11 @@ class AppController extends Controller
      */
     public function beforeFilter(Event $event)
     {
+        if (in_array($this->request->action, $this->secureActions)
+            && !isset($_SERVER['HTTPS'])) {
+            $this->forceSSL();
+        }
+
         $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search', 'forgotpass', 'login']);
         $this->Auth->authError = __('Vous devez vous connecter pour pouvoir accéder à cette fonctionnalité.');
         // $this->Auth->loginError = __('Invalid Username or Password entered, please try again.');
