@@ -159,11 +159,12 @@ class UsersController extends AppController
 
                     return $this->redirect($this->Auth->redirectUrl(['controller' => 'clients', 'action' => 'gestion']));
                 } else{
-                    $this->logout();
                     $this->set('id_incorrect', 2);
+                    //$this->logout();
                 }
+            }else {
+                $this->set('id_incorrect', 1);
             }
-            $this->set('id_incorrect', 1);
         }
     }
 

@@ -51,7 +51,8 @@ class AppController extends Controller
             'logoutRedirect' => [
                 'controller' => 'users',
                 'action' => 'login'
-            ]
+            ],
+            'authError' => 'Votre session a expiré. Vous devez vous authentifier à nouveau.'
         ]);
     }
     public function forceSSL()
@@ -83,7 +84,7 @@ class AppController extends Controller
             $this->forceSSL();
         }
 
-        $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search', 'forgotpass', 'login']);
+        $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search', 'forgotpass', 'login', 'logout']);
         $this->Auth->authError = __('Vous devez vous connecter pour pouvoir accéder à cette fonctionnalité.');
         // $this->Auth->loginError = __('Invalid Username or Password entered, please try again.');
     }
