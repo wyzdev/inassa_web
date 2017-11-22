@@ -61,8 +61,8 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $randomPassword = $this->randomPassword();
-            $user->last_name = strtoupper($user->last_name);
-            $user->first_name = ucwords($user->first_name);
+            $user->last_name = trim(strtoupper($user->last_name));
+            $user->first_name = trim(ucwords($user->first_name));
             $user->password = $randomPassword;
             $user->status = 1;
             $user->first_login = 1;
