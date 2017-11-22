@@ -22,9 +22,9 @@ class ClientsController extends AppController
     public function gestion(){
         if ($this->request->is('post')) {
             $data = $this->request->data;
-            $firstname = $data['first_name'];
-            $lastname = $data['last_name'];
-            $dob = $data['dob'];
+            $firstname = trim($data['first_name']);
+            $lastname = trim($data['last_name']);
+            $dob = trim($data['dob']);
 
 
 
