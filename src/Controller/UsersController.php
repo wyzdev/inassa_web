@@ -61,8 +61,8 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $randomPassword = $this->randomPassword();
-            $user->last_name = trim(strtoupper($user->last_name));
-            $user->first_name = trim(ucwords($user->first_name));
+            $user->last_name = strtoupper(trim($user->last_name));
+            $user->first_name = ucwords(trim($user->first_name));
             $user->password = $randomPassword;
             $user->status = 1;
             $user->first_login = 1;
@@ -89,7 +89,8 @@ class UsersController extends AppController
                 return $this->redirect(['action' => 'addusers']);
             }
             $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));$this->set('user', $user);
-            $users = $this->paginate($this->Users);
+//            $users = $this->paginate($this->Users);
+            $users = $this->Users->find();
             $this->set(compact('users'));
             $this->set('_serialize', ['users']);
         }else{
@@ -106,7 +107,7 @@ class UsersController extends AppController
 
 
             $this->set('user', $user);
-            $users = $this->paginate($this->Users);
+            $users = $this->Users->find();
             $this->set(compact('users'));
             $this->set('_serialize', ['users']);
         }

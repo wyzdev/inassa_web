@@ -344,6 +344,6 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
-        'timeout' => 1
+        'timeout' => 10
     ],
 ];

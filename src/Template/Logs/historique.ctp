@@ -56,7 +56,7 @@ $dob_input = (isset($dob)) ? $dob : '';
                 <th>Prénom</th>
                 <th>Institution</th>
                 <th>Source</th>
-                <th>Date (JJ/MM/AAAA, HH:MN)</th>
+                <th>Date (JJ/MM/AAAA HH:MN:SS)</th>
                 <th>Status</th>
             </tr>
             </thead>
@@ -66,7 +66,7 @@ $dob_input = (isset($dob)) ? $dob : '';
                 <th>Prénom</th>
                 <th>Institution</th>
                 <th>Source</th>
-                <th>Date (JJ/MM/AAAA, HH:MN)</th>
+                <th>Date (JJ/MM/AAAA, HH:MN:SS)</th>
                 <th>Status</th>
             </tr>
             </tfoot>
@@ -84,7 +84,7 @@ $dob_input = (isset($dob)) ? $dob : '';
                     setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
                     ?><!--
                 ///////////////////////////////////////////////// -->
-                    <td><?= strftime("%d/%m/%Y, %H:%M", $timestamp); ?></td>
+                    <td><?= strftime("%d/%m/%Y %H:%M:%S", $timestamp); ?></td>
                     <td>
                         <?php
                         if ($log->status)

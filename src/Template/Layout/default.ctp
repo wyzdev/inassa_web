@@ -79,6 +79,7 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
                     echo "<li>";
                 ?>
                 <?= $this->Html->link('<i class="fa fa-cog"></i>' . ' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['class' => 'list-dropdown', 'escape' => false]); ?></li>
+                <li><?= $this->Html->link('<i class="fa fa-check"></i>' . ' Test API', ['controller' => 'clients', 'action' => 'testapi'], ['class' => 'list-dropdown', 'escape' => false]); ?></li>
                 <?php
                 if ($this->request->action == 'readlogs')
                     echo "<li class='active'>";
@@ -114,6 +115,9 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
                             echo "<li>";
                         ?>
                         <?= $this->Html->link('<i class="fa fa-cog"></i>' . ' Paramètres', ['controller' => 'users', 'action' => 'addusers'], ['escape' => false]); ?></li>
+                        <li class="divider"></li>
+                        <li>
+                            <?= $this->Html->link('<i class="fa fa-check"></i>' . ' Test API', ['controller' => 'clients', 'action' => 'testapi'], ['escape' => false]); ?></li>
                         <li class="divider"></li>
                         <?php
                         if ($this->request->action == 'readlogs')
@@ -228,6 +232,7 @@ $cakeDescription = 'INASSA: Compagnie d\'assurance';
 <?= $this->Html->script('bootstrap/bootstrap') ?>
 <?= $this->Html->script('data_table/jquery.dataTables.min'); ?>
 <?= $this->Html->script('data_table/dataTables.bootstrap.min'); ?>
+<script src="//cdn.datatables.net/plug-ins/1.10.16/sorting/date-euro.js"></script>
 <?= $this->Html->script('script_datatable'); ?>
 <?= $this->Html->script('jquery-ui/jquery-ui'); ?>
 <?= $this->Html->script('test_api'); ?>

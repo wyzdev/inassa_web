@@ -5,9 +5,11 @@
  * @copyright     Copyright (c) INASSA 2017
  * @link          http://nassagroup.com
  */
+
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Clients Controller
@@ -19,13 +21,13 @@ class ClientsController extends AppController
     /**
      * Function that allows the user to search client.
      */
-    public function gestion(){
+    public function gestion()
+    {
         if ($this->request->is('post')) {
             $data = $this->request->data;
             $firstname = trim($data['first_name']);
             $lastname = trim($data['last_name']);
             $dob = trim($data['dob']);
-
 
 
             // decode the result in JSON
@@ -43,15 +45,15 @@ class ClientsController extends AppController
 
                 $obj_array = array();
                 $i = 0;
-                foreach($array_response as $response_array){
-                    $obj_array[$i ++] = (array)$response_array;
+                foreach ($array_response as $response_array) {
+                    $obj_array[$i++] = (array)$response_array;
                 }
                 //print_r($hello);
 
 
                 $i = 0;
-                foreach($obj_array as $client){
-                    $array_clients[$i ++] =  array(
+                foreach ($obj_array as $client) {
+                    $array_clients[$i++] = array(
                         'lastname' => $client['last_name'],
                         'firstname' => $client['first_name'],
                         'dob' => $client['dob'],
@@ -59,41 +61,139 @@ class ClientsController extends AppController
                         'policy_number' => $client['policy_number'],
                         'company' => $client['company'],
                         'status' => $client['status']
-                         );
+                    );
                 }
-                
+
                 $old_date_timestamp = strtotime($dob);
                 $new_date = date('Y-m-d H:i:s', $old_date_timestamp);
 
 
-                $this->set(array('clients' => $array_clients, 'client_dob'=> $dob, 'client_search_dob' => $new_date));
+                $this->set(array('clients' => $array_clients, 'client_dob' => $dob, 'client_search_dob' => $new_date));
 ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
                 $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
-                    .' '.
+                    . ' ' .
                     $this->request->session()->read('Auth.User')['last_name'],
                     $this->request->session()->read('Auth.User')['role'],
                     $this->request->session()->read('Auth.User')['institution'],
                     "a recherché le client",
-                    strtoupper($firstname).' '.strtoupper($lastname)."\n");
-            }
-            else{
-                
+                    strtoupper($firstname) . ' ' . strtoupper($lastname) . "\n");
+            } else {
+
                 $array_response = (array)$response->clients;
-                $this->set(array('clients' => $array_response, 'client_dob'=> $dob));
-                    }
-        }
-        else{
+                $this->set(array('clients' => $array_response, 'client_dob' => $dob));
+            }
+        } else {
 ////////////////////////// SAVING DATA IN LOGS /////////////////////////////////////////////////////////
             $this->writeinlogs($this->request->session()->read('Auth.User')['first_name']
-                .' '.
+                . ' ' .
                 $this->request->session()->read('Auth.User')['last_name'],
                 $this->request->session()->read('Auth.User')['role'],
                 $this->request->session()->read('Auth.User')['institution'],
                 "est allé dans ACCUEIL",
-                ""."\n");
+                "" . "\n");
         }
 
     }
+
+
+    public function saveInHistoric()
+    {
+        // array that contains the post
+        $array_post = $this->request->getData();
+
+
+        // Table that we are going to use "Logs"
+        $logs_model = TableRegistry::get("Logs");
+
+        $log = $logs_model->newEntity();
+        $log = $logs_model->patchEntity($log, $array_post);
+        if ($logs_model->save($log)) {
+            echo json_encode(
+                [
+                    'error' => false,
+                    'message' => 'Save in historic successfully',
+                    'data' => $log
+                ]);
+            die();
+        } else {
+            echo json_encode(
+                [
+                    'error' => true,
+                    'message' => 'Save in historic failed',
+                    'data' => $log
+                ]);
+            die();
+        }
+    }
+
+
+    private function getResponseFromApiForLogin()
+    {
+
+
+        // init curl
+        $curl_host = curl_init();
+
+        // set some cURL options
+        curl_setopt($curl_host, CURLOPT_URL, "http://200.113.219.221:8180/RequestQuote/RequestLogin");
+        // curl_setopt($curl_host, CURLOPT_URL, "http://192.168.5.8:8180/RequestQuote/RequestLogin");
+        curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl_host, CURLOPT_POST, 1);
+        curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"Login":{"username":"jotest@test.com","password":"P@$$w0rd"}}');
+        curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
+
+        //result from the API of INASSA
+        $result = curl_exec($curl_host);
+
+        return $result;
+    }
+
+    private function isSuccessfullyLoginToApi($result)
+    {
+
+        // decode the result in JSON
+        $response = json_decode($result);
+
+        // if the Auth is 'true' then get the key
+        if (json_encode($response[0]->Response[0]->success)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    private function getKeyFromTheLoginResponse($result)
+    {
+        $response = json_decode($result);
+        return $key = str_replace('"', "", json_encode($response[0]->Response[0]->key));
+    }
+
+    private function getResponseFromApiForSearch($key, $firstname, $lastname, $dob)
+    {
+
+        $curl_host = curl_init();
+
+        curl_setopt($curl_host, CURLOPT_URL, "http://200.113.219.221:8180/RequestQuote/epic_mwClientSearch");
+        // curl_setopt($curl_host, CURLOPT_URL, "http://192.168.5.8:8180/RequestQuote/epic_mwClientSearch");
+        curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl_host, CURLOPT_POST, 1);
+        curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"resquestkey":{"key":"' . $key . '"},"first_name":"' . strtoupper($firstname) . '","last_name":"' . strtoupper($lastname) . '","dob":"' . $dob . '"}');
+        curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
+
+        return curl_exec($curl_host);
+    }
+
+    private function isSearchSuccessfull($result)
+    {
+        $response = json_decode($result);
+
+        if ($response->success and !empty($response->clients)) {
+            return true;
+        }
+
+        return false;
+    }
+
 
     /**
      * Function that gets the client's information from the API of INASSA
@@ -103,7 +203,8 @@ class ClientsController extends AppController
      * @param $dob
      * @return mixed
      */
-    public function getClient($firstname, $lastname, $dob){
+    public function getClient($firstname, $lastname, $dob)
+    {
 
         // init curl
         $curl_host = curl_init();
@@ -137,28 +238,54 @@ class ClientsController extends AppController
         curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"resquestkey":{"key":"' . $key . '"},"first_name":"' . strtoupper($firstname) . '","last_name":"' . strtoupper($lastname) . '","dob":"' . $dob . '"}');
         curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
 
-         return $result = curl_exec($curl_host);
+        return $result = curl_exec($curl_host);
 
     }
 
-    public function testApi(){
+    public function testapi()
+    {
+        $response_login = $this->getResponseFromApiForLogin();
 
-        $curl_host = curl_init();
+        if (!$this->isSuccessfullyLoginToApi($response_login)) {
+            $response = json_encode(
+                [
+                    'error' => true,
+                    'message' => 'Login failed',
+                    'api_response' => $response_login
+                ]
+            );
+            $this->set(array('result' => $response));
+            return;
+        }
 
-        // set some cURL options
-        curl_setopt($curl_host, CURLOPT_URL, "www.google.com");
-        curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl_host, CURLOPT_POST, 1);
-        curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
+        $response_search = $this
+            ->getResponseFromApiForSearch(
+                $this->getKeyFromTheLoginResponse($response_login),
+            'sebastien',
+            'merove-pierre',
+            '9/18/1988');
 
-        curl_setopt($curl_host, CURLOPT_SSL_VERIFYPEER, false);
+        if (!$this->isSearchSuccessfull($response_search)) {
+            $response = json_encode(
+                [
+                    'error' => true,
+                    'message' => 'Search failed',
+                    'api_response' => $response_search
+                ]
+            );
+            $this->set(array('result' => $response));
+            return;
 
-        //result from the API of INASSA
-        $result = curl_exec($curl_host);
-        print_r(curl_getinfo($curl_host));
-        echo "--------------------------------------------------------";
-        print curl_error($curl_host);
-        die();
+        }
+
+        $response = json_encode(
+            [
+                'error' => false,
+                'message' => 'Test successfull'
+            ]
+        );
+        $this->set(array('result' => $response));
+
     }
 }
 

@@ -94,6 +94,8 @@ $dob_input = (isset($client_dob)) ? $client_dob : '';
                     foreach ($clients as $client) {
                         ?>
                         <tr class="client_row" firstname="<?= $client['firstname'] ?>"
+                            user_fullname="<?= $this->request->session()->read('Auth.User')['first_name'] . ' ' .$this->request->session()->read('Auth.User')['last_name'] ?>"
+                            user_institution="<?= $this->request->session()->read('Auth.User')['institution'] ?>"
                             lastname="<?= $client['lastname'] ?>" status="<?= $client['status'] ?>"
                             dob="<?= $client['dob'] ?>" dob_search="<?= $client_search_dob ?>"
                             style="cursor: pointer; width: 40px;">
