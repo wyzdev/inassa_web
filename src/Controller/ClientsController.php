@@ -18,6 +18,9 @@ use Cake\ORM\TableRegistry;
  */
 class ClientsController extends AppController
 {
+    public $components = array('Email');
+    private $API_RESPONSE = '';
+
     /**
      * Function that allows the user to search client.
      */
@@ -254,6 +257,7 @@ class ClientsController extends AppController
                     'api_response' => $response_login
                 ]
             );
+            $this->request->session()->write('api_response', $response);
             $this->set(array('result' => $response));
             return;
         }
@@ -261,9 +265,9 @@ class ClientsController extends AppController
         $response_search = $this
             ->getResponseFromApiForSearch(
                 $this->getKeyFromTheLoginResponse($response_login),
-            'sebastien',
-            'merove-pierre',
-            '9/18/1988');
+                'sebastien',
+                'merove-pierre',
+                '9/18/1988');
 
         if (!$this->isSearchSuccessfull($response_search)) {
             $response = json_encode(
@@ -273,6 +277,7 @@ class ClientsController extends AppController
                     'api_response' => $response_search
                 ]
             );
+            $this->request->session()->write('api_response', $response);
             $this->set(array('result' => $response));
             return;
 
@@ -281,11 +286,55 @@ class ClientsController extends AppController
         $response = json_encode(
             [
                 'error' => false,
-                'message' => 'Test successfull'
+                'message' => 'Test successfull',
+                'api_response' => $response_search
             ]
         );
+        $this->request->session()->write('api_response', $response);
         $this->set(array('result' => $response));
+    }
 
+    private function getAdminAddresses()
+    {
+        return [
+            'hollynderisse93@gmail.com',
+            'hollyn.derisse@esih.edu'
+        ];
+    }
+
+    public function sendresponseapi()
+    {
+        $mail_addresses = $this->getAdminAddresses();
+
+        $mails = '';
+        foreach ($mail_addresses as $key => $mail_address):
+            $mails .= $mail_address . ' - ';
+            $this->sendEmailWithApiResponse($mail_address);
+        endforeach;
+
+        $this->Flash->success('E-mail envoyé à : ' . $mails);
+        return $this->redirect(
+            [
+                'action' => 'gestion'
+            ]
+        );
+    }
+
+    private function sendEmailWithApiResponse($mai_address)
+    {
+        $to = $mai_address;
+        $subject = 'Reponse de l\'API';
+        $message = 'Test API échoué le ' . date('d/m/Y') . ' à ' . date('H:i') . '<br /><br />
+        Le message d erreur est : <br />' .$this->getApiResponse();
+        $mail = $this->Email->send($to, $subject, $message);
+        $this->set('mail', $mail);
+        $this->viewBuilder()->setLayout(false);
+        $this->render(false);
+    }
+
+    private function getApiResponse(){
+        $response = json_decode($this->request->session()->read('api_response'));
+        return $response->api_response;
     }
 }
 
