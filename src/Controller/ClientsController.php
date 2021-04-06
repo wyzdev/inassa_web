@@ -142,7 +142,7 @@ class ClientsController extends AppController
         // curl_setopt($curl_host, CURLOPT_URL, "http://192.168.5.8:8180/RequestQuote/RequestLogin");
         curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl_host, CURLOPT_POST, 1);
-        curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"Login":{"username":"jotest@test.com","password":"P@$$w0rd"}}');
+        curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"Login":{"username":"wyzdev@nassagroup.com","password":"W1Yz$54@8jha$1"}}');
         curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
 
         //result from the API of INASSA
@@ -217,7 +217,7 @@ class ClientsController extends AppController
         // curl_setopt($curl_host, CURLOPT_URL, "http://192.168.5.8:8180/RequestQuote/RequestLogin");
         curl_setopt($curl_host, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl_host, CURLOPT_POST, 1);
-        curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"Login":{"username":"jotest@test.com","password":"P@$$w0rd"}}');
+        curl_setopt($curl_host, CURLOPT_POSTFIELDS, '{"Login":{"username":"wyzdev@nassagroup.com","password":"W1Yz$54@8jha$1"}}');
         curl_setopt($curl_host, CURLOPT_HTTPHEADER, array('Content-Type: text/plain'));
 
         //result from the API of INASSA

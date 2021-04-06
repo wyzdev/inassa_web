@@ -81,7 +81,7 @@ class AppController extends Controller
     {
         if (in_array($this->request->action, $this->secureActions)
             && !isset($_SERVER['HTTPS'])) {
-            $this->forceSSL();
+            // $this->forceSSL();
         }
 
         $this->Auth->allow(['add', 'requestUser', 'forgotPassword', 'changePasswordMedecin', 'search', 'forgotpass', 'login', 'logout']);
