@@ -8,8 +8,8 @@
 
 <!--Block contenant le formulaire pour la recherche d'un client -->
 <?php
- var_dump(date('Y-m-d H:i:s'));
- die();
+// var_dump(date('Y-m-d H:i:s'));
+// die();
 $dob_input = (isset($client_dob)) ? $client_dob : '';
 ?>
 
