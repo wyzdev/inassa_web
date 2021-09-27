@@ -1,0 +1,1 @@
+Copyright (c) INASSA 2017

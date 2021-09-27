@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright (c) INASSA
+ *
+ * @copyright     Copyright (c) INASSA 2017
+ * @link          http://nassagroup.com
+ */
+$allAssociations = array_merge(
+    $this->Bake->aliasExtractor($modelObj, 'BelongsTo'),
+    $this->Bake->aliasExtractor($modelObj, 'BelongsToMany'),
+    $this->Bake->aliasExtractor($modelObj, 'HasOne'),
+    $this->Bake->aliasExtractor($modelObj, 'HasMany')
+);
+?>
+
+    /**
+     * View method
+     *
+     * @param string|null $id <?= $singularHumanName ?> id.
+     * @return \Cake\Network\Response|null
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function view($id = null)
+    {
+        $<?= $singularName?> = $this-><?= $currentModelName ?>->get($id, [
+            'contain' => [<?= $this->Bake->stringifyList($allAssociations, ['indent' => false]) ?>]
+        ]);
+
+        $this->set('<?= $singularName ?>', $<?= $singularName ?>);
+        $this->set('_serialize', ['<?= $singularName ?>']);
+    }

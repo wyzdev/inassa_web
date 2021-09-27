@@ -1,0 +1,21 @@
+
+#example1_wrapper{
+    text-align: right;
+}
+#example1_length, #example1_info, .table
+{
+    text-align: left;
+}
+.input-group
+{
+    width:100%;
+}
+
+thead th{
+    cursor: pointer;
+}
+
+
+.date-dropdowns select{
+    margin: 0px 2px;
+}

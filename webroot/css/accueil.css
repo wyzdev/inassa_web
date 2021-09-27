@@ -1,0 +1,66 @@
+.margin-10{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.info_client{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+tr.backgroundRed{
+	background:#f2dede!important;
+	color:red;
+}
+.container-info	{
+	background: #eee;
+}
+
+.indicatif{
+	display: inline-block;
+	width: 180px;
+	font-size: 16px;
+}
+
+.deux-point{
+	font-size: 16px;
+}
+
+.result{
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.center-horizontal{
+	text-align: center;
+}
+
+.status_active{
+	font-size: 24px;
+	color: #2a8240;
+	font-weight: bold;
+}
+
+.status_inactive{
+	font-size: 24px;
+	color: #993434;
+	font-weight: bold;
+}
+
+.margin-bottom-20{
+	margin-bottom: 20px;
+}
+
+.margin-top-20{
+	margin-bottom: 20px;
+}
+
+.padding-10{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.input-group
+{
+	width:100%;
+}
+
